@@ -42,6 +42,22 @@
             android:name="info.androidhive.tabsswipe.AddDataNeg"
             android:label="@string/title_activity_add_data_neg" >
         </activity>
+        <activity
+            android:name="info.androidhive.tabsswipe.Splash"
+            android:label="@string/title_activity_splash" >
+        </activity>
+        <activity
+            android:name="info.androidhive.tabsswipe.adapter.ABCD"
+            android:label="@string/title_activity_abcd" >
+        </activity>
+        <activity
+            android:name="info.androidhive.tabsswipe.adapter.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name="info.androidhive.tabsswipe.RegisterActivity"
+            android:label="@string/title_activity_register" >
+        </activity>
     </application>
 
 </manifest>

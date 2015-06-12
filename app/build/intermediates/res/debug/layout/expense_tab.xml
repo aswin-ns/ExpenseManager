@@ -9,4 +9,4 @@
         android:id="@+id/lst_expense"
         android:layout_weight="1" />
 </LinearLayout>
-<!-- From: file:/C:/Users/USER/Desktop/NewExpense/app/src/main/res/layout/expense_tab.xml -->
+<!-- From: file:/home/ajaleelp/code/ExpenseManager/app/src/main/res/layout/expense_tab.xml -->

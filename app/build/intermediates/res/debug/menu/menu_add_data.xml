@@ -4,4 +4,4 @@
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" android:showAsAction="never" />
 </menu>
-<!-- From: file:/C:/Users/USER/Desktop/NewExpense/app/src/main/res/menu/menu_add_data.xml -->
+<!-- From: file:/home/ajaleelp/code/ExpenseManager/app/src/main/res/menu/menu_add_data.xml -->
