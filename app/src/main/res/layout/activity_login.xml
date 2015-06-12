@@ -8,32 +8,35 @@
 
     <EditText
         android:layout_width="300dp"
-        android:layout_height="33dp"
-        android:id="@+id/editText"
-        android:layout_marginTop="148dp"
-        android:background="#ffb3b3b3"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_height="40dp"
+        android:id="@+id/edt_usr_name"
+        android:background="#ffc7c7c7"
+        android:layout_above="@+id/edt_psw_wrd"
+        android:layout_centerHorizontal="true"
+        android:autoText="false"
+        android:hint="@string/str_usr_name" />
 
     <EditText
         android:layout_width="300dp"
-        android:layout_height="33dp"
-        android:id="@+id/editText2"
-        android:background="#ffb3b3b3"
+        android:layout_height="40dp"
+        android:id="@+id/edt_psw_wrd"
+        android:background="#FFC7C7C7"
         android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText" />
+        android:layout_alignLeft="@+id/edt_usr_name"
+        android:layout_alignStart="@+id/edt_usr_name"
+        android:layout_marginTop="10dp"
+        android:hint="@string/str_psw_wrd" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button"
-        android:layout_marginTop="79dp"
+        android:text="@string/str_authenticate"
+        android:id="@+id/btn_authenticate_login"
         android:height="66dp"
         android:width="270dp"
-        android:layout_below="@+id/editText2"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/edt_psw_wrd"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
 
     <TextView
         android:layout_width="wrap_content"

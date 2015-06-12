@@ -18,7 +18,7 @@ import info.androidhive.tabsswipe.adapter.ListAdapter;
  */
 public class ExpenseTab extends Fragment {
     static final String[] MOBILE_OS =
-            new String[] { "Android", "iOS", "WindowsMobile", "Blackberry"};
+            new String[] { "Food", "Travel", "Entertainment", "Miscallenous"};
  ListView lst;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
