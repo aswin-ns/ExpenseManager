@@ -94,7 +94,7 @@ public class DatabaseHandlerAddData extends SQLiteOpenHelper {
     {
         List<DataClass> dataList = new ArrayList<DataClass>();
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.query(TABLE_DATA, new String[] { "COALESCE ( SUM ("+KEY_AMNT,"),0)"
+        Cursor cursor = db.query(TABLE_DATA, new String[] { "COALESCE(SUM("+KEY_AMNT+"),0)"
                          }, KEY_TRS_DATE + "=?",
                 new String[] { String.valueOf(date) }, null, null, null, null);
 

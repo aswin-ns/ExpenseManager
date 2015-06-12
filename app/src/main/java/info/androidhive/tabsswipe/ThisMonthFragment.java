@@ -9,6 +9,11 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.util.List;
+
+import info.androidhive.tabsswipe.adapter.DataClass;
+import info.androidhive.tabsswipe.adapter.DatabaseHandlerAddData;
+
 public class ThisMonthFragment extends Fragment {
     ImageButton img;
     TextView expense;
@@ -34,13 +39,14 @@ public class ThisMonthFragment extends Fragment {
                 startActivity(main_to_tab2);
             }
         });
-//        List<DataClass> contacts = db.getPosData(date);
-//
-//        for (DataClass cn : contacts) {
-//            String log = Integer.toString(cn.getAmnt());
-//            // Writing Contacts to log
-//           income.setText(log);
-//        }
+        DatabaseHandlerAddData db = new DatabaseHandlerAddData(getActivity());
+        List<DataClass> contacts = db.getPosData(date);
+
+        for (DataClass cn : contacts) {
+            String log = Integer.toString(cn.getAmnt());
+            // Writing Contacts to log
+           income.setText(log);
+        }
 //        List<DataClass> new1 = db.getNegData(date);
 //
 //        for (DataClass cn : new1) {
