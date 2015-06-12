@@ -82,5 +82,5 @@ public class MainActivity extends FragmentActivity implements
 		Intent intent = new Intent(this , ViewSummaryActivity.class);
 		startActivity(intent);
 	}
-	
+
 }
