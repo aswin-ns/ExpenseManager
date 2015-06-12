@@ -58,4 +58,9 @@ public class ThisMonthFragment extends Fragment {
 //        }
 		return rootView;
 	}
+
+//    listener for onclick on btn_view_summary
+    public void viewSummary(View view) {
+    // Go to Summary vies
+    }
 }
