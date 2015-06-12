@@ -1,22 +1,15 @@
 package info.androidhive.tabsswipe;
 
-import info.androidhive.tabsswipe.R;
-import info.androidhive.tabsswipe.adapter.DataClass;
-import info.androidhive.tabsswipe.adapter.DatabaseHandlerAddData;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import java.util.List;
-
-public class TopRatedFragment extends Fragment {
+public class ThisMonthFragment extends Fragment {
     ImageButton img;
     TextView expense;
     TextView income;
@@ -28,7 +21,7 @@ public class TopRatedFragment extends Fragment {
 			Bundle savedInstanceState) {
 
 
-		View rootView = inflater.inflate(R.layout.fragment_top_rated, container, false);
+		View rootView = inflater.inflate(R.layout.fragment_this_month, container, false);
         expense = (TextView)rootView.findViewById(R.id.expense_trt);
         income = (TextView)rootView.findViewById(R.id.income_trt);
         balance = (TextView)rootView.findViewById(R.id.balance_trt);

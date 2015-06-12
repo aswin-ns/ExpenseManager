@@ -71,8 +71,8 @@ public final class R {
         public static final int activity_main=0x7f030002;
         public static final int activity_tab2=0x7f030003;
         public static final int expense_tab=0x7f030004;
-        public static final int fragment_movies=0x7f030005;
-        public static final int fragment_top_rated=0x7f030006;
+        public static final int fragment_next_month =0x7f030005;
+        public static final int fragment_this_month =0x7f030006;
         public static final int income_tab=0x7f030007;
         public static final int list_item=0x7f030008;
         public static final int yugu=0x7f030009;

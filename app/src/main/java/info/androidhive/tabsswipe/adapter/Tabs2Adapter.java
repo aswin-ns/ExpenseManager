@@ -3,8 +3,7 @@ package info.androidhive.tabsswipe.adapter;
 
 import info.androidhive.tabsswipe.ExpenseTab;
 import info.androidhive.tabsswipe.IncomeTab;
-import info.androidhive.tabsswipe.MoviesFragment;
-import info.androidhive.tabsswipe.TopRatedFragment;
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;

@@ -46,6 +46,18 @@
             android:name=".Splash"
             android:label="@string/title_activity_splash" >
         </activity>
+        <activity
+            android:name=".adapter.ABCD"
+            android:label="@string/title_activity_abcd" >
+        </activity>
+        <activity
+            android:name=".adapter.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:label="@string/title_activity_register" >
+        </activity>
     </application>
 
 </manifest>
