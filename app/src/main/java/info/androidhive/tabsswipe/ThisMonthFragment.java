@@ -62,6 +62,6 @@ public class ThisMonthFragment extends Fragment {
 //    listener for onclick on btn_view_summary
     public void viewSummary(View view) {
         Intent intent = new Intent(this, ViewSummaryActivity.class);
-
+        startActivity(intent);
     }
 }

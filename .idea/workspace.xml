@@ -9,7 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed82757d-ca31-4370-82e8-9c2e89355810" name="Default" comment="add veiwSu">
+    <list default="true" id="ed82757d-ca31-4370-82e8-9c2e89355810" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/ThisMonthFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/ThisMonthFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -60,9 +60,11 @@
       <file leaf-file-name="ThisMonthFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/ThisMonthFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.91964287">
-              <caret line="63" column="52" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="52" />
-              <folding />
+            <state vertical-scroll-proportion="0.7589286">
+              <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1665,7 +1667,13 @@
       <option name="project" value="LOCAL" />
       <updated>1434112318952</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add intent to ViewSummaryActivity">
+      <created>1434112553473</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1434112553473</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1743,7 +1751,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add onclick to btn_view_summary" />
     <MESSAGE value="add veiwSummary method" />
-    <option name="LAST_COMMIT_MESSAGE" value="add veiwSummary method" />
+    <MESSAGE value="add intent to ViewSummaryActivity" />
+    <option name="LAST_COMMIT_MESSAGE" value="add intent to ViewSummaryActivity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1878,9 +1887,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/ThisMonthFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.91964287">
-          <caret line="63" column="52" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="52" />
-          <folding />
+        <state vertical-scroll-proportion="0.7589286">
+          <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
