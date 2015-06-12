@@ -3,6 +3,7 @@ package info.androidhive.tabsswipe;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +20,7 @@ public class ThisMonthFragment extends Fragment {
     TextView expense;
     TextView income;
     TextView balance;
-    String date = "6/6/2015";
+    String date = "6/2015";
 //    final DatabaseHandlerAddData db = new DatabaseHandlerAddData(getActivity());
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,15 +48,15 @@ public class ThisMonthFragment extends Fragment {
             // Writing Contacts to log
            income.setText(log);
         }
-//        List<DataClass> new1 = db.getNegData(date);
-//
-//        for (DataClass cn : new1) {
-//            String log = Integer.toString(cn.getNeg_amnt());
-//            // Writing Contacts to log
-//
-//            expense.setText(log);
-//            Log.d("Name: ", log);
-//        }
+        List<DataClass> new1 = db.getNegData(date);
+
+        for (DataClass cn : new1) {
+            String log = Integer.toString(cn.getNeg_amnt());
+            // Writing Contacts to log
+
+            expense.setText(log);
+            Log.d("Name: ", log);
+        }
 		return rootView;
 	}
 }

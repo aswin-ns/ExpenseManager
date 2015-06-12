@@ -92,12 +92,19 @@ public class DatabaseHandlerAddData extends SQLiteOpenHelper {
     //mnnn////mmmm//
     public List<DataClass>getPosData(String date)
     {
+
+
         List<DataClass> dataList = new ArrayList<DataClass>();
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.query(TABLE_DATA, new String[] { "COALESCE(SUM("+KEY_AMNT+"),0)"
-                         }, KEY_TRS_DATE + "=?",
-                new String[] { String.valueOf(date) }, null, null, null, null);
 
+        String selectQuery = " select coalesce(sum(amount),0) from db where date like '%"+date+"%';";
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+
+//        Cursor cursor = db.query(TABLE_DATA, new String[] { "COALESCE(SUM("+KEY_AMNT+"),0)"
+//                }, KEY_TRS_DATE + "=?",
+//                new String[] { String.valueOf(date) }, null, null, null, null);
 
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
@@ -118,10 +125,9 @@ public class DatabaseHandlerAddData extends SQLiteOpenHelper {
     {
         List<DataClass> dataList = new ArrayList<DataClass>();
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.query(TABLE_DATA, new String[] { "COALESCE ( SUM ("+KEY_NEG_AMNT,"),0)"
-                }, KEY_TRS_DATE + "=?",
-                new String[] { String.valueOf(date) }, null, null, null, null);
+        String selectQuery = " select coalesce(sum(negativeamount),0) from db where date like '%"+date+"%';";
 
+        Cursor cursor = db.rawQuery(selectQuery, null);
 
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
