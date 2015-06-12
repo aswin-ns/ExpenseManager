@@ -4,9 +4,11 @@ import info.androidhive.tabsswipe.adapter.TabsPagerAdapter;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 
 public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener {
@@ -75,4 +77,10 @@ public class MainActivity extends FragmentActivity implements
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 	}
 
+	//    listener for onclick on btn_view_summary
+	public void viewSummary(View view) {
+		Intent intent = new Intent(this , ViewSummaryActivity.class);
+		startActivity(intent);
+	}
+	
 }

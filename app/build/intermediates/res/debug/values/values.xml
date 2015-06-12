@@ -21,6 +21,7 @@
     <string name="title_activity_register">RegisterActivity</string>
     <string name="title_activity_splash">Splash</string>
     <string name="title_activity_tab2">Tab2</string>
+    <string name="title_activity_view_summary">ViewSummaryActivity</string>
     <!-- From: file:/home/ajaleelp/code/ExpenseManager/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">
