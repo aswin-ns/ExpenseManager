@@ -89,7 +89,7 @@ public class DatabaseHandlerAddData extends SQLiteOpenHelper {
         db.insert(TABLE_DATA, null, values);
         db.close(); // Closing database connection
     }
-    //mnnn//
+    //mnnn////mmmm//
     public List<DataClass>getPosData(String date)
     {
         List<DataClass> dataList = new ArrayList<DataClass>();
