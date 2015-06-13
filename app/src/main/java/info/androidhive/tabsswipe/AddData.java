@@ -27,7 +27,7 @@ public class AddData extends Activity {
     EditText pos_note;
     EditText pos_date;
     Button change_date;
-    Button enter;
+    Button enter; //enter button//
     String tye,nte,date;
     int amnt,neg_amnt;
     private DatePicker datePicker;
