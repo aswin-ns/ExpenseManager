@@ -70,7 +70,8 @@
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/textView_date_current_1"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:onClick="OnChange" />
     </RelativeLayout>
 
     <Button

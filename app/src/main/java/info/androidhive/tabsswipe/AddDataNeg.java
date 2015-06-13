@@ -1,13 +1,21 @@
 package info.androidhive.tabsswipe;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.Calendar;
+
+import info.androidhive.tabsswipe.adapter.DataClass;
 import info.androidhive.tabsswipe.adapter.DatabaseHandlerAddData;
 
 
@@ -16,6 +24,11 @@ public class AddDataNeg extends Activity {
     EditText edt_amnt;
     EditText edt_note;
     Button enter;
+    String date;
+    private DatePicker datePicker;
+    private Calendar calendar;
+    private TextView dateView;
+    private int year, month, day;
 
 
     @Override
@@ -36,6 +49,13 @@ public class AddDataNeg extends Activity {
         } else {
             newString= (String) savedInstanceState.getSerializable("STRING_I_NEED");
         }
+        dateView = (TextView) findViewById(R.id.textView_date_current_1);
+        calendar = Calendar.getInstance();
+        year = calendar.get(Calendar.YEAR);
+        month = calendar.get(Calendar.MONTH);
+        day = calendar.get(Calendar.DAY_OF_MONTH);
+        showDate(year, month+1, day);
+        date = dateView.getText().toString();
         edt_amnt = (EditText)findViewById(R.id.editText_amount);
         edt_note = (EditText)findViewById(R.id.edt_note);
         String amnts = edt_amnt.getText().toString();
@@ -47,11 +67,42 @@ public class AddDataNeg extends Activity {
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db.addNegData(newString,note,amnt,);
+                db.addNegData(new DataClass(newString, amnt, note, date));s
             }
         });
 
 
+    }
+    public void OnChange(View v)
+    {
+        showDialog(999);
+        Toast.makeText(getApplicationContext(), "ca", Toast.LENGTH_SHORT)
+                .show();
+
+    }
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        // TODO Auto-generated method stub
+        if (id == 999) {
+            return new DatePickerDialog(this, myDateListener, year, month, day);
+        }
+        return null;
+    }
+
+    private DatePickerDialog.OnDateSetListener myDateListener = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker arg0, int arg1, int arg2, int arg3) {
+            // TODO Auto-generated method stub
+            // arg1 = year
+            // arg2 = month
+            // arg3 = day
+            showDate(arg1, arg2+1, arg3);
+        }
+    };
+
+    private void showDate(int year, int month, int day) {
+        dateView.setText(new StringBuilder().append(day).append("/")
+                .append(month).append("/").append(year));
     }
 
 
