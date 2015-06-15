@@ -62,6 +62,7 @@
             android:name=".ViewSummaryActivity"
             android:label="@string/title_activity_view_summary" >
         </activity>
+        <activity android:name="org.achartengine.GraphicalActivity" ></activity>
     </application>
 
 </manifest>
