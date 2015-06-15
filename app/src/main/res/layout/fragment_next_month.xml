@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ff00456b" >
+    android:background="#f3f3f3" >
 
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="150dp"
-        android:background="#ff006490"
+        android:background="#000000"
         android:id="@+id/relativeLayout1">
 
         <TextView
@@ -20,7 +20,8 @@
             android:id="@+id/textView1"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:textColor="#f2f2f2" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -32,7 +33,8 @@
             android:layout_toRightOf="@+id/textView1"
             android:layout_toEndOf="@+id/textView1"
             android:layout_marginLeft="150dp"
-            android:layout_marginStart="150dp" />
+            android:layout_marginStart="150dp"
+            android:textColor="#f3f3f3" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -42,7 +44,8 @@
             android:id="@+id/textView3_1"
             android:layout_below="@+id/textView1"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:textColor="#f2f2f2" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -52,7 +55,8 @@
             android:id="@+id/textView5_1"
             android:layout_below="@+id/textView3_1"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:textColor="#f2f2f2" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -62,7 +66,8 @@
             android:id="@+id/income_trt_1"
             android:layout_alignTop="@+id/textView3_1"
             android:layout_alignLeft="@+id/expense_trt_1"
-            android:layout_alignStart="@+id/expense_trt_1" />
+            android:layout_alignStart="@+id/expense_trt_1"
+            android:textColor="#f3f3f3" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -72,7 +77,8 @@
             android:id="@+id/balance_trt_1"
             android:layout_below="@+id/income_trt_1"
             android:layout_alignLeft="@+id/income_trt_1"
-            android:layout_alignStart="@+id/income_trt_1" />
+            android:layout_alignStart="@+id/income_trt_1"
+            android:textColor="#f3f3f3" />
 
     </RelativeLayout>
 
@@ -80,10 +86,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/img_trt_1"
-        android:src="@drawable/ic_launcher"
+        android:src="@drawable/button"
 
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="125dp" />
+        android:layout_marginTop="125dp"
+        android:background="@null" />
 
     <Button
         android:layout_width="wrap_content"
@@ -91,7 +98,8 @@
         android:text="New Button"
         android:id="@+id/btn_add_debt_1"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="#efad61" />
 
     <Button
         android:layout_width="wrap_content"
@@ -99,6 +107,8 @@
         android:text="New Button"
         android:id="@+id/btn_view_summary_1"
         android:layout_below="@+id/btn_add_debt_1"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="#efad61"
+        android:layout_marginTop="15dp" />
 
 </RelativeLayout>

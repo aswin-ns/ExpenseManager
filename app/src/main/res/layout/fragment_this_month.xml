@@ -116,6 +116,7 @@
         android:id="@+id/btn_view_summary"
         android:layout_below="@+id/btn_add_debt"
         android:layout_centerHorizontal="true"
-        android:background="#efad61" />
+        android:background="#efad61"
+        android:layout_marginTop="15dp" />
 
 </RelativeLayout>
