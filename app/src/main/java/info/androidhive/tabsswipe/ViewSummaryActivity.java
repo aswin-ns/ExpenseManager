@@ -1,6 +1,7 @@
 package info.androidhive.tabsswipe;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,9 +10,11 @@ import android.view.View;
 
 public class ViewSummaryActivity extends Activity {
 
-    public void pieGraphHandler (View view) {
-        
-    }
+//    public void pieGraphHandler (View view) {
+//        Graphing line = new Graphing();
+//        Intent lineintent = line.getIntent(this);
+//        startActivity(lineintent);
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
