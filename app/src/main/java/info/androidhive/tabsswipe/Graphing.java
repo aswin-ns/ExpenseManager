@@ -3,7 +3,11 @@ package info.androidhive.tabsswipe;
 import android.content.Context;
 import android.content.Intent;
 
+import org.achartengine.ChartFactory;
 import org.achartengine.model.TimeSeries;
+import org.achartengine.model.XYMultipleSeriesDataset;
+import org.achartengine.renderer.XYMultipleSeriesRenderer;
+import org.achartengine.renderer.XYSeriesRenderer;
 
 /**
  * Created by ajaleelp on 15/6/15.
@@ -17,6 +21,16 @@ public class Graphing {
         for (int i=0; i<x.length; i++){
             series.add(x[i],y[i]);
         }
-        return null;
+
+        XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
+        dataset.addSeries(series);
+
+        XYMultipleSeriesRenderer mRenderer = new XYMultipleSeriesRenderer();
+        XYSeriesRenderer renderer = new XYSeriesRenderer();
+        mRenderer.addSeriesRenderer(renderer);
+
+        Intent intent = ChartFactory.getLineChartIntent(context,dataset,mRenderer,"Line Graph Title");
+
+        return intent;
     }
 }
