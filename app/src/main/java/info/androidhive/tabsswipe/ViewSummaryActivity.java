@@ -4,9 +4,14 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class ViewSummaryActivity extends Activity {
+
+    public void pieGraphHandler (View view) {
+        
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
