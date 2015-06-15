@@ -79,9 +79,9 @@ public class MainActivity extends FragmentActivity implements
 
 	//    listener for onclick on btn_view_summary
 	public void pieGraphHandler (View view) {
-		Graphing line = new Graphing();
-		Intent lineintent = line.getIntent(this);
-		startActivity(lineintent);
+		Graphing piechart = new Graphing();
+		Intent pieintent = piechart.getIntent(this);
+		startActivity(pieintent);
 	}
 
 }
