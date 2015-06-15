@@ -9,7 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.Calendar;
 import java.util.List;
 
 import info.androidhive.tabsswipe.adapter.DataClass;
@@ -20,7 +22,7 @@ public class ThisMonthFragment extends Fragment {
     TextView expense;
     TextView income;
     TextView balance;
-    String date = "6/2015";
+    String date = "6/6/2015";
 //    final DatabaseHandlerAddData db = new DatabaseHandlerAddData(getActivity());
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,6 +42,13 @@ public class ThisMonthFragment extends Fragment {
                 startActivity(main_to_tab2);
             }
         });
+        Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH);
+        String newyear = String.valueOf(year);
+        String newmonth = String.valueOf(month);
+        String newdate = newyear+newmonth;
+        Toast.makeText(getActivity(),newdate,Toast.LENGTH_LONG).show();
         DatabaseHandlerAddData db = new DatabaseHandlerAddData(getActivity());
         List<DataClass> contacts = db.getPosData(date);
 

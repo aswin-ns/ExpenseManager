@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ff04cd9e" >
+    android:background="#fff2f2f2" >
 
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="150dp"
-        android:background="#ff04ce9d"
+        android:background="#ff000000"
         android:id="@+id/relativeLayout">
 
         <TextView
@@ -22,7 +22,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="20dp"
+            android:textColor="#fff2f2f2" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,7 +36,8 @@
             android:layout_toEndOf="@+id/textView"
             android:layout_marginLeft="150dp"
             android:layout_marginStart="150dp"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="20dp"
+            android:textColor="#F2f2f2" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,7 +49,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginLeft="10dp"
+            android:textColor="#f2f2f2" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -59,7 +62,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginLeft="10dp"
+            android:textColor="#f2f2f2" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -69,7 +73,8 @@
             android:id="@+id/income_trt"
             android:layout_alignTop="@+id/textView3"
             android:layout_alignLeft="@+id/expense_trt"
-            android:layout_alignStart="@+id/expense_trt" />
+            android:layout_alignStart="@+id/expense_trt"
+            android:textColor="#f2f2f2" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -80,7 +85,8 @@
             android:layout_below="@+id/income_trt"
             android:layout_alignLeft="@+id/income_trt"
             android:layout_alignStart="@+id/income_trt"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="20dp"
+            android:textColor="#f2f2f2" />
 
     </RelativeLayout>
 
@@ -100,7 +106,8 @@
         android:text="New Button"
         android:id="@+id/btn_add_debt"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="#efad61" />
 
     <Button
         android:layout_width="wrap_content"
@@ -108,6 +115,7 @@
         android:text="New Button"
         android:id="@+id/btn_view_summary"
         android:layout_below="@+id/btn_add_debt"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="#efad61" />
 
 </RelativeLayout>

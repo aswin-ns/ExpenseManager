@@ -36,14 +36,28 @@
         android:width="270dp"
         android:layout_below="@+id/edt_psw_wrd"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="50dp"
+        android:background="#efad61"
+        android:onClick="OnAuthenticate" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
+        android:text="New User Register Here"
         android:id="@+id/textView4"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:textSize="33dp" />
+        android:textSize="33dp"
+        android:clickable="true"
+        android:onClick="OnRegisterIntent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/usernew"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
 </RelativeLayout>
