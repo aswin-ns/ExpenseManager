@@ -103,20 +103,22 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="Add Debt"
         android:id="@+id/btn_add_debt"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:background="#efad61" />
+        android:background="#efad61"
+        android:width="152dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="View Summary"
         android:id="@+id/btn_view_summary"
         android:layout_below="@+id/btn_add_debt"
         android:layout_centerHorizontal="true"
         android:background="#efad61"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="15dp"
+        android:width="152dp" />
 
 </RelativeLayout>
