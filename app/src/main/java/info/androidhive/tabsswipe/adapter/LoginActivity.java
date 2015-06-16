@@ -3,13 +3,18 @@ package info.androidhive.tabsswipe.adapter;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.List;
+
+import info.androidhive.tabsswipe.MainActivity;
 import info.androidhive.tabsswipe.R;
 import info.androidhive.tabsswipe.RegisterActivity;
 
@@ -23,6 +28,11 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        username = (EditText)findViewById(R.id.edt_usr_name);
+        password = (EditText)findViewById(R.id.edt_psw_wrd);
+
+
+
     }
 
 
@@ -49,6 +59,24 @@ public class LoginActivity extends Activity {
     }
     public void OnAuthenticate(View v)
     {
+        DatabaseHandler db = new DatabaseHandler(this);
+
+        String usr_name = username.getText().toString();
+        String psw_wrd = password.getText().toString();
+       List<Login>login =  db.getAllContacts();
+        for (Login ln : login) {
+            String usr_name_get = ln.getUsername();
+            String psw_wrd_get = ln.getPassword();
+            if((usr_name == usr_name_get)&&(psw_wrd == psw_wrd_get))
+            {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(getApplicationContext(),"Incorrect Values Try Again With Correct Credentials",Toast.LENGTH_LONG).show();
+            }
+
+        }
 
     }
     public void OnRegisterIntent(View v)

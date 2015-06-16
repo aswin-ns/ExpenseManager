@@ -38,7 +38,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:background="#efad61"
-        android:onClick="OnAuthenticate_Register" />
+        />
 
 
 

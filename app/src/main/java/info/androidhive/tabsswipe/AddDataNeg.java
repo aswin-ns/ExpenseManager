@@ -67,7 +67,7 @@ public class AddDataNeg extends Activity {
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db.addNegData(new DataClass(newString, amnt, note, date));s
+                db.addNegData(new DataClass(newString, amnt, note, date));
             }
         });
 
