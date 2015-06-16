@@ -3,6 +3,7 @@ package info.androidhive.tabsswipe;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +28,7 @@ public class AddData extends Activity {
     EditText pos_amnt;
     EditText pos_note;
     EditText pos_date;
-    Button change_date;
+    ImageButton change_date;
     Button enter; //enter button//
     String tye,nte,date;
     int amnt,neg_amnt;
@@ -82,6 +84,8 @@ public class AddData extends Activity {
                     String log = Integer.toString(cn.getAmnt());
                     // Writing Contacts to log
                     Log.d("Name: ", log);
+                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(intent);
                 }
             }
         });

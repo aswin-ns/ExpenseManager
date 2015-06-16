@@ -19,4 +19,5 @@
     <string name="title_activity_register">RegisterActivity</string>
     <string name="str_usr_name">User Name</string>
     <string name="str_psw_wrd">Password</string>
+    <string name="title_activity_summary_screen">SummaryScreen</string>
 </resources>

@@ -20,7 +20,7 @@ public class Tab2 extends FragmentActivity implements
     private Tabs2Adapter mAdapter;
     private ActionBar actionBar;
     // Tab titles
-    private String[] tabs = {"Top Rated", "Games", "Movies"};
+    private String[] tabs = {"Income", "Expense"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -73,7 +73,7 @@ public class AddDataNeg extends Activity {
 
 
     }
-    public void OnChange(View v)
+    public void OnChangeDateNeg(View v)
     {
         showDialog(999);
         Toast.makeText(getApplicationContext(), "ca", Toast.LENGTH_SHORT)
