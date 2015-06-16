@@ -58,15 +58,16 @@ public class AddDataNeg extends Activity {
         date = dateView.getText().toString();
         edt_amnt = (EditText)findViewById(R.id.editText_amount);
         edt_note = (EditText)findViewById(R.id.edt_note);
-        String amnts = edt_amnt.getText().toString();
-        final int amnt = Integer.parseInt(amnts);
-        final String note = edt_note.getText().toString();
+
         final DatabaseHandlerAddData db = new DatabaseHandlerAddData(this);
         enter = (Button)findViewById(R.id.button_enter);
 
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String amnts = edt_amnt.getText().toString();
+                int amnt = Integer.parseInt(amnts);
+                String note = edt_note.getText().toString();
                 db.addNegData(new DataClass(newString, amnt, note, date));
             }
         });
