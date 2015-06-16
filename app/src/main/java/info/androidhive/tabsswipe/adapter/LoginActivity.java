@@ -67,7 +67,8 @@ public class LoginActivity extends Activity {
         for (Login ln : login) {
             String usr_name_get = ln.getUsername();
             String psw_wrd_get = ln.getPassword();
-            if((usr_name == usr_name_get)&&(psw_wrd == psw_wrd_get))
+            Log.d(psw_wrd,usr_name);
+            if((usr_name).equals(usr_name_get)&&((psw_wrd).equals(psw_wrd_get)))
             {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);

@@ -36,13 +36,13 @@ EditText username;
 
                 db.addContact(new Login(usr_name,psw_wrd));
                 Toast.makeText(getApplicationContext(),"Registration Sucessfull",Toast.LENGTH_LONG).show();
-//                List<Login> login = db.getAllContacts();
-//
-//                for (Login cn : login) {
-//                    String log = "Id: "+cn.getUsername()+" ,Name: " + cn.getUsername() + " ,Phone: " + cn.getPassword();
-//                    // Writing Contacts to log
-//                    Log.d("Name: ", log);
-//                }
+                List<Login> login = db.getAllContacts();
+
+                for (Login cn : login) {
+                    String log = "Id: "+cn.getUsername()+" ,Name: " + cn.getUsername() + " ,Phone: " + cn.getPassword();
+                    // Writing Contacts to log
+                    Log.d("Name: ", log);
+                }
             }
         });
 
