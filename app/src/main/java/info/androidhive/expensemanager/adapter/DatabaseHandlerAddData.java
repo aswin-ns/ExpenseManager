@@ -146,7 +146,37 @@ public class DatabaseHandlerAddData extends SQLiteOpenHelper {
     }
 
 //
+public List<DataClass>getPIEpos(String date)
+{
 
+
+    List<DataClass> dataList = new ArrayList<DataClass>();
+    SQLiteDatabase db = this.getWritableDatabase();
+
+    String selectQuery = " select coalesce(sum(amount),0) from db where date like '%"+date+"'group by(type);";
+
+    Cursor cursor = db.rawQuery(selectQuery, null);
+
+
+//        Cursor cursor = db.query(TABLE_DATA, new String[] { "COALESCE(SUM("+KEY_AMNT+"),0)"
+//                }, KEY_TRS_DATE + "=?",
+//                new String[] { String.valueOf(date) }, null, null, null, null);
+
+    // looping through all rows and adding to list
+    if (cursor.moveToFirst()) {
+        do {
+            DataClass adc = new DataClass();
+            adc.setAmnt(Integer.parseInt(cursor.getString(0)));
+
+            // Adding login to list
+            dataList.add(adc);
+        } while (cursor.moveToNext());
+    }
+
+    // return login list
+    return dataList;
+
+}
     // Getting All logins
     public List<DataClass> getAllData() {
         List<DataClass> dataList = new ArrayList<DataClass>();
@@ -174,6 +204,7 @@ public class DatabaseHandlerAddData extends SQLiteOpenHelper {
         // return login list
         return dataList;
     }
+
     public List<DataClass> getAllPosData() {
         List<DataClass> dataList = new ArrayList<DataClass>();
         // Select All Query
