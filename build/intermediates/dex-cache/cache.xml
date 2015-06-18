@@ -2,6 +2,13 @@
 <items version="2" >
 
     <item
+        jar="C:\Users\USER\Desktop\NewExpense\app\src\main\res\libs\achartengine-1.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9932e3fb9fbe54e80873e77f72a99f79e33b3250">
+        <dex dex="C:\Users\USER\Desktop\NewExpense\app\build\intermediates\pre-dexed\debug\achartengine-1.1.0-89c0be5c07a2af124f8e1cd9ea4bbaea8b7ca681.jar" />
+    </item>
+    <item
         jar="D:\Users\USER\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
         jumboMode="false"
         revision="21.1.2"

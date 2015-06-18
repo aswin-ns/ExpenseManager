@@ -1,6 +1,7 @@
-package info.androidhive.tabsswipe;
+package info.androidhive.expensemanager;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -12,8 +13,10 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import info.androidhive.tabsswipe.adapter.DatabaseHandler;
-import info.androidhive.tabsswipe.adapter.Login;
+import info.androidhive.expensemanager.adapter.DatabaseHandler;
+import info.androidhive.expensemanager.adapter.LoginActivity;
+import info.androidhive.tabsswipe.R;
+import info.androidhive.expensemanager.adapter.Login;
 
 
 public class RegisterActivity extends Activity {
@@ -42,6 +45,8 @@ EditText username;
                     String log = "Id: "+cn.getUsername()+" ,Name: " + cn.getUsername() + " ,Phone: " + cn.getPassword();
                     // Writing Contacts to log
                     Log.d("Name: ", log);
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(intent);
                 }
             }
         });

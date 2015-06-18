@@ -4,7 +4,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="info.androidhive.tabsswipe.adapter.LoginActivity">
+    tools:context="info.androidhive.expensemanager.adapter.LoginActivity">
 
     <EditText
         android:layout_width="300dp"
@@ -12,6 +12,8 @@
         android:id="@+id/edt_usr_name"
         android:background="#ffc7c7c7"
         android:layout_above="@+id/edt_psw_wrd"
+        android:lines="1"
+        android:maxLines="1"
         android:layout_centerHorizontal="true"
         android:autoText="false"
         android:hint="@string/str_usr_name" />
@@ -19,13 +21,16 @@
     <EditText
         android:layout_width="300dp"
         android:layout_height="40dp"
+        android:lines="1"
+        android:maxLines="1"
         android:id="@+id/edt_psw_wrd"
         android:background="#FFC7C7C7"
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/edt_usr_name"
         android:layout_alignStart="@+id/edt_usr_name"
         android:layout_marginTop="10dp"
-        android:hint="@string/str_psw_wrd" />
+        android:hint="@string/str_psw_wrd"
+        android:inputType="textPassword" />
 
     <Button
         android:layout_width="wrap_content"

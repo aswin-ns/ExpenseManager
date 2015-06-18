@@ -1,4 +1,4 @@
-package info.androidhive.tabsswipe.adapter;
+package info.androidhive.expensemanager.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,9 +14,9 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import info.androidhive.tabsswipe.MainActivity;
+import info.androidhive.expensemanager.MainActivity;
 import info.androidhive.tabsswipe.R;
-import info.androidhive.tabsswipe.RegisterActivity;
+import info.androidhive.expensemanager.RegisterActivity;
 
 public class LoginActivity extends Activity {
  EditText username;

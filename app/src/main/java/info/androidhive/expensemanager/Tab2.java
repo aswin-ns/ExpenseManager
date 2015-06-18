@@ -1,16 +1,13 @@
-package info.androidhive.tabsswipe;
+package info.androidhive.expensemanager;
 
 import android.app.ActionBar;
-import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.view.Menu;
-import android.view.MenuItem;
 
-import info.androidhive.tabsswipe.adapter.Tabs2Adapter;
-import info.androidhive.tabsswipe.adapter.TabsPagerAdapter;
+import info.androidhive.tabsswipe.R;
+import info.androidhive.expensemanager.adapter.Tabs2Adapter;
 
 
 public class Tab2 extends FragmentActivity implements

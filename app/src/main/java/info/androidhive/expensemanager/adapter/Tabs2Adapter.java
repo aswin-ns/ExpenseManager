@@ -1,8 +1,8 @@
-package info.androidhive.tabsswipe.adapter;
+package info.androidhive.expensemanager.adapter;
 
 
-import info.androidhive.tabsswipe.ExpenseTab;
-import info.androidhive.tabsswipe.IncomeTab;
+import info.androidhive.expensemanager.ExpenseTab;
+import info.androidhive.expensemanager.IncomeTab;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

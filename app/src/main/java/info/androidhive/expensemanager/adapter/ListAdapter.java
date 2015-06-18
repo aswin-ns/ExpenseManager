@@ -1,4 +1,4 @@
-package info.androidhive.tabsswipe.adapter;
+package info.androidhive.expensemanager.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

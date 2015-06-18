@@ -20,4 +20,7 @@
     <string name="str_usr_name">User Name</string>
     <string name="str_psw_wrd">Password</string>
     <string name="title_activity_summary_screen">SummaryScreen</string>
+    <string name="str_amount">Amount</string>
+    <string name="str_note">Note</string>
+    <string name="title_activity_view_summary">ViewSummary</string>
 </resources>

@@ -1,4 +1,4 @@
-package info.androidhive.tabsswipe;
+package info.androidhive.expensemanager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,27 +14,25 @@ import android.widget.Toast;
 import java.util.Calendar;
 import java.util.List;
 
-import info.androidhive.tabsswipe.adapter.DataClass;
-import info.androidhive.tabsswipe.adapter.DatabaseHandlerAddData;
+import info.androidhive.tabsswipe.R;
+import info.androidhive.expensemanager.adapter.DataClass;
+import info.androidhive.expensemanager.adapter.DatabaseHandlerAddData;
 
-public class ThisMonthFragment extends Fragment {
+public class NextMonthFragment extends Fragment {
     ImageButton img;
     TextView expense;
     TextView income;
     TextView balance;
     String date = "6/6/2015";
-//    final DatabaseHandlerAddData db = new DatabaseHandlerAddData(getActivity());
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_next_month, container, false);
+        expense = (TextView)rootView.findViewById(R.id.expense_trt_1);
+        income = (TextView)rootView.findViewById(R.id.income_trt_1);
+        balance = (TextView)rootView.findViewById(R.id.balance_trt_1);
 
-
-		View rootView = inflater.inflate(R.layout.fragment_this_month, container, false);
-        expense = (TextView)rootView.findViewById(R.id.expense_trt);
-        income = (TextView)rootView.findViewById(R.id.income_trt);
-        balance = (TextView)rootView.findViewById(R.id.balance_trt);
-
-        img = (ImageButton)rootView.findViewById(R.id.img_trt);
+        img = (ImageButton)rootView.findViewById(R.id.img_trt_1);
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,18 +44,19 @@ public class ThisMonthFragment extends Fragment {
         int year = c.get(Calendar.YEAR);
         int month = c.get(Calendar.MONTH);
         String newyear = String.valueOf(year);
-        String newmonth = String.valueOf(month);
-        String newdate = newyear+newmonth;
-        Toast.makeText(getActivity(),newdate,Toast.LENGTH_LONG).show();
+        String newmonth = String.valueOf(month+2);
+
+        String newdate = newmonth+"/"+newyear;
+        Toast.makeText(getActivity(), newdate, Toast.LENGTH_LONG).show();
         DatabaseHandlerAddData db = new DatabaseHandlerAddData(getActivity());
-        List<DataClass> contacts = db.getPosData(date);
+        List<DataClass> contacts = db.getPosData(newdate);
 
         for (DataClass cn : contacts) {
             String log = Integer.toString(cn.getAmnt());
             // Writing Contacts to log
-           income.setText(log);
+            income.setText(log);
         }
-        List<DataClass> new1 = db.getNegData(date);
+        List<DataClass> new1 = db.getNegData(newdate);
 
         for (DataClass cn : new1) {
             String log = Integer.toString(cn.getNeg_amnt());
@@ -66,6 +65,10 @@ public class ThisMonthFragment extends Fragment {
             expense.setText(log);
             Log.d("Name: ", log);
         }
+
+
+		
 		return rootView;
 	}
+
 }

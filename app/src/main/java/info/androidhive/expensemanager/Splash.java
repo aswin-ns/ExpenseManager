@@ -1,13 +1,12 @@
-package info.androidhive.tabsswipe;
+package info.androidhive.expensemanager;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Menu;
-import android.view.MenuItem;
 
-import info.androidhive.tabsswipe.adapter.LoginActivity;
+import info.androidhive.expensemanager.adapter.LoginActivity;
+import info.androidhive.tabsswipe.R;
 
 
 public class Splash extends Activity {

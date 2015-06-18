@@ -1,6 +1,5 @@
-package info.androidhive.tabsswipe;
+package info.androidhive.expensemanager;
 
-import android.app.ListFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,7 +10,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import info.androidhive.tabsswipe.adapter.ListAdapter;
+import info.androidhive.tabsswipe.R;
+import info.androidhive.expensemanager.adapter.ListAdapter;
 
 /**
  * Created by USER on 03-06-2015.

@@ -1,86 +1,113 @@
-package info.androidhive.tabsswipe;
+package info.androidhive.expensemanager;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.List;
 
-import info.androidhive.tabsswipe.adapter.DataClass;
-import info.androidhive.tabsswipe.adapter.DatabaseHandlerAddData;
+import info.androidhive.tabsswipe.R;
+import info.androidhive.expensemanager.adapter.DataClass;
+import info.androidhive.expensemanager.adapter.DatabaseHandlerAddData;
 
 
-public class AddDataNeg extends Activity {
-    Button btn_type;
-    EditText edt_amnt;
-    EditText edt_note;
-    Button enter;
-    String date;
+public class AddData extends Activity {
+    Button type;
+    EditText pos_amnt;
+    EditText pos_note;
+    EditText pos_date;
+    ImageButton change_date;
+    Button enter; //enter button//
+    String tye,nte,date;
+    int amnt,neg_amnt;
     private DatePicker datePicker;
     private Calendar calendar;
     private TextView dateView;
     private int year, month, day;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_data_neg);
-        final String newString;
+        setContentView(R.layout.activity_add_data);
+        String newString;
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras == null) {
                 newString= null;
             } else {
                 newString= extras.getString("STRING_I_NEED");
-                btn_type = (Button)findViewById(R.id.button_type_1);
-                btn_type.setText(newString);
-
             }
         } else {
             newString= (String) savedInstanceState.getSerializable("STRING_I_NEED");
         }
-        dateView = (TextView) findViewById(R.id.textView_date_current_1);
+
+        final DatabaseHandlerAddData db = new DatabaseHandlerAddData(this);
+        dateView = (TextView) findViewById(R.id.textView2);
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
+        pos_amnt = (EditText)findViewById(R.id.edt_amnt);
+        pos_note = (EditText)findViewById(R.id.edt_note);
+
+
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
         showDate(year, month+1, day);
-        date = dateView.getText().toString();
-        edt_amnt = (EditText)findViewById(R.id.editText_amount);
-        edt_note = (EditText)findViewById(R.id.edt_note);
-
-        final DatabaseHandlerAddData db = new DatabaseHandlerAddData(this);
-        enter = (Button)findViewById(R.id.button_enter);
-
+        type = (Button)findViewById(R.id.btn_type);
+        type.setText(newString);
+        enter = (Button)findViewById(R.id.button3);
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String amnts = edt_amnt.getText().toString();
-                int amnt = Integer.parseInt(amnts);
-                String note = edt_note.getText().toString();
-                db.addNegData(new DataClass(newString, amnt, note, date));
+
+                Log.d("enter","enter");
+                tye = type.getText().toString();
+                amnt = Integer.parseInt(pos_amnt.getText().toString());
+                nte = pos_note.getText().toString();
+                date = dateView.getText().toString();
+               db.addPosData(new DataClass(tye,amnt,nte,date));
+                Log.d("Sucess",date);
+                List<DataClass> contacts = db.getPosData(date);
+
+                for (DataClass cn : contacts) {
+                    String log = Integer.toString(cn.getAmnt());
+                    // Writing Contacts to log
+                    Log.d("Name: ", log);
+                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(intent);
+                }
             }
         });
-
-
     }
-    public void OnChangeDateNeg(View v)
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_add_data, menu);
+        return true;
+    }
+
+    public void OnChangeDate(View v)
     {
         showDialog(999);
         Toast.makeText(getApplicationContext(), "ca", Toast.LENGTH_SHORT)
                 .show();
 
     }
+
     @Override
     protected Dialog onCreateDialog(int id) {
         // TODO Auto-generated method stub
@@ -104,14 +131,6 @@ public class AddDataNeg extends Activity {
     private void showDate(int year, int month, int day) {
         dateView.setText(new StringBuilder().append(day).append("/")
                 .append(month).append("/").append(year));
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_add_data_neg, menu);
-        return true;
     }
 
     @Override

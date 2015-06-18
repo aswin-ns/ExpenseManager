@@ -1,8 +1,9 @@
-package info.androidhive.tabsswipe.adapter;
+package info.androidhive.expensemanager.adapter;
 
 
-import info.androidhive.tabsswipe.NextMonthFragment;
-import info.androidhive.tabsswipe.ThisMonthFragment;
+import info.androidhive.expensemanager.NextMonthFragment;
+import info.androidhive.expensemanager.ThisMonthFragment;
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;

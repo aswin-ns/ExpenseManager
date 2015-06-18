@@ -1,9 +1,11 @@
-package info.androidhive.tabsswipe;
+package info.androidhive.expensemanager;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import info.androidhive.tabsswipe.R;
 
 
 public class SummaryScreen extends Activity {

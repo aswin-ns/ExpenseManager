@@ -1,4 +1,4 @@
-package info.androidhive.tabsswipe.adapter;
+package info.androidhive.expensemanager.adapter;
 
 /**
  * Created by USER on 02-06-2015.
