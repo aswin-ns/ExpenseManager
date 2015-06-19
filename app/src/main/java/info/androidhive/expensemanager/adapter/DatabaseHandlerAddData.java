@@ -165,9 +165,7 @@ public List<DataClass>getPIEpos(String date)
     // looping through all rows and adding to list
     if (cursor.moveToFirst()) {
         do {
-            DataClass adc = new DataClass();
-            adc.setAmnt(Integer.parseInt(cursor.getString(0)));
-
+           int a= Integer.parseInt(cursor.getString(0));
             // Adding login to list
             dataList.add(adc);
         } while (cursor.moveToNext());

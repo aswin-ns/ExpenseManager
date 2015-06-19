@@ -24,6 +24,10 @@ public class ViewSummary extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_summary);
         piegraph = (Button)findViewById(R.id.btn_pie);
+        PieGraph graph = new PieGraph();
+        GraphicalView gView = graph.getView(this);
+        LinearLayout graph_l = (LinearLayout)findViewById(R.id.chart);
+        graph_l.addView(gView);
 
     }
 
@@ -51,9 +55,6 @@ public class ViewSummary extends Activity {
     }
 public void oNPie(View v)
 {
-    PieGraph graph = new PieGraph();
-    GraphicalView gView = graph.getView(this);
-    LinearLayout graph_l = (LinearLayout)findViewById(R.id.chart);
-    graph_l.addView(gView);
+
 }
 }
