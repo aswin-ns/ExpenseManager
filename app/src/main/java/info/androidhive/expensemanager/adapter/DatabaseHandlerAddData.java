@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -111,7 +112,7 @@ public class DatabaseHandlerAddData extends SQLiteOpenHelper {
             do {
                 DataClass adc = new DataClass();
                 adc.setAmnt(Integer.parseInt(cursor.getString(0)));
-
+                Log.d("abc",String.valueOf(cursor.getString(0)));
                 // Adding login to list
                 dataList.add(adc);
             } while (cursor.moveToNext());
@@ -146,35 +147,31 @@ public class DatabaseHandlerAddData extends SQLiteOpenHelper {
     }
 
 //
-public List<DataClass>getPIEpos(String date)
-{
-
-
-    List<DataClass> dataList = new ArrayList<DataClass>();
+    public List<SumByClass>getPIEpos(String date) {
+List<SumByClass> dlc = new ArrayList<SumByClass>();
     SQLiteDatabase db = this.getWritableDatabase();
 
-    String selectQuery = " select coalesce(sum(amount),0) from db where date like '%"+date+"'group by(type);";
+    String selectQuery = " select type, coalesce(sum(amount),0) from db where date like '%"+date+"%'group by type";
 
     Cursor cursor = db.rawQuery(selectQuery, null);
 
 
-//        Cursor cursor = db.query(TABLE_DATA, new String[] { "COALESCE(SUM("+KEY_AMNT+"),0)"
-//                }, KEY_TRS_DATE + "=?",
-//                new String[] { String.valueOf(date) }, null, null, null, null);
-
-    // looping through all rows and adding to list
     if (cursor.moveToFirst()) {
         do {
-           int a= Integer.parseInt(cursor.getString(0));
-            // Adding login to list
-            dataList.add(adc);
+
+SumByClass sbc = new SumByClass();
+            Log.d("Value", cursor.getString(0));
+            Log.d("Value",cursor.getString(1));
+           sbc.setGroup_name(cursor.getString(0));
+            sbc.setAmnt(cursor.getInt(1));
+            dlc.add(sbc);
         } while (cursor.moveToNext());
     }
-
+return dlc;
     // return login list
-    return dataList;
 
 }
+
     // Getting All logins
     public List<DataClass> getAllData() {
         List<DataClass> dataList = new ArrayList<DataClass>();

@@ -59,26 +59,37 @@ public class LoginActivity extends Activity {
     }
     public void OnAuthenticate(View v)
     {
-        DatabaseHandler db = new DatabaseHandler(this);
+//        DatabaseHandler db = new DatabaseHandler(this);
+//
+//        String usr_name = username.getText().toString();
+//        String psw_wrd = password.getText().toString();
+//       List<Login>login =  db.getAllContacts();
+//        for (Login ln : login) {
+//            String usr_name_get = ln.getUsername();
+//            String psw_wrd_get = ln.getPassword();
+//            Log.d(psw_wrd,usr_name);
+//            if((usr_name.equals(usr_name_get))&&(psw_wrd.equals(psw_wrd_get)))
+//            {
+//                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//                startActivity(intent);
+//            }
+//            else {
+//                Toast.makeText(getApplicationContext(),"Incorrect Values Try Again With Correct Credentials",Toast.LENGTH_LONG).show();
+//            }
+//
+//        }
+ //Test DBAdd Data Class Function;
+       DatabaseHandlerAddData db = new DatabaseHandlerAddData(this);
+        String [] type = {};
+        int [] amnt = {};
+        int i = 0;
+        List<SumByClass>data = db.getPIEpos("13/06/2015");
+        for(SumByClass sln : data) {
+    type[i] = sln.getGroup_name();
+     amnt[i] = sln.getAmnt();
 
-        String usr_name = username.getText().toString();
-        String psw_wrd = password.getText().toString();
-       List<Login>login =  db.getAllContacts();
-        for (Login ln : login) {
-            String usr_name_get = ln.getUsername();
-            String psw_wrd_get = ln.getPassword();
-            Log.d(psw_wrd,usr_name);
-            if((usr_name.equals(usr_name_get))&&(psw_wrd.equals(psw_wrd_get)))
-            {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-            }
-            else {
-                Toast.makeText(getApplicationContext(),"Incorrect Values Try Again With Correct Credentials",Toast.LENGTH_LONG).show();
-            }
-
+i++;
         }
-
     }
     public void OnRegisterIntent(View v)
     {
