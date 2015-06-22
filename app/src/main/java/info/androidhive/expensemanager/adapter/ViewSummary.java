@@ -3,6 +3,7 @@ package info.androidhive.expensemanager.adapter;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,23 +12,40 @@ import android.widget.LinearLayout;
 
 import org.achartengine.GraphicalView;
 
+import java.util.List;
+
 import info.androidhive.expensemanager.PieGraph;
 import info.androidhive.tabsswipe.R;
 
 public class ViewSummary extends Activity {
     Button piegraph;
     LinearLayout graphView;
-
+Button pie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_summary);
-        piegraph = (Button)findViewById(R.id.btn_pie);
-        PieGraph graph = new PieGraph();
-        GraphicalView gView = graph.getView(this);
-        LinearLayout graph_l = (LinearLayout)findViewById(R.id.chart);
-        graph_l.addView(gView);
+
+        pie = (Button)findViewById(R.id.btn_pie);
+        pie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseHandlerAddData db = new DatabaseHandlerAddData(ViewSummary.this);
+                String [] type = {};
+                int [] amnt = {};
+                int i = 0;
+                List<SumByClass>data = db.getPIEpos("13/06/2015");
+                for(SumByClass sln : data) {
+                    type[i] = sln.getGroup_name();
+                    amnt[i] = sln.getAmnt();
+
+                    i++;
+                }
+
+            }
+        });
+
 
     }
 
@@ -53,8 +71,16 @@ public class ViewSummary extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-public void oNPie(View v)
-{
+public void oNPie(View v) {
 
 }
+//    PieGraph graph = new PieGraph();
+//    GraphicalView gView = graph.getView(this,type,amnt);
+//    LinearLayout graph_l = (LinearLayout)findViewById(R.id.chart);
+//    graph_l.addView(gView);
+
+
+
 }
+
+

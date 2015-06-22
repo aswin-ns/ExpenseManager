@@ -151,15 +151,15 @@ public class DatabaseHandlerAddData extends SQLiteOpenHelper {
 List<SumByClass> dlc = new ArrayList<SumByClass>();
     SQLiteDatabase db = this.getWritableDatabase();
 
-    String selectQuery = " select type, coalesce(sum(amount),0) from db where date like '%"+date+"%'group by type";
+    String selectQuery = "select type, coalesce(sum(amount),0) from db where date like '%"+date+"%'group by type";
 
     Cursor cursor = db.rawQuery(selectQuery, null);
-
+        SumByClass sbc = new SumByClass();
 
     if (cursor.moveToFirst()) {
         do {
 
-SumByClass sbc = new SumByClass();
+
             Log.d("Value", cursor.getString(0));
             Log.d("Value",cursor.getString(1));
            sbc.setGroup_name(cursor.getString(0));
@@ -171,7 +171,22 @@ return dlc;
     // return login list
 
 }
+public List<Integer>getPie(String date)
+{
+    List<Integer>abc = new ArrayList<Integer>();
+    SQLiteDatabase db = this.getWritableDatabase();
+    String selectQuery = "select type, coalesce(sum(amount),0) from db where date like '%"+date+"%'group by type";
 
+    Cursor cursor = db.rawQuery(selectQuery, null);
+    if (cursor.moveToFirst()) {
+        do {
+            Log.d("Value", cursor.getString(0));
+            Log.d("Value",cursor.getString(1));
+
+        } while (cursor.moveToNext());
+    }
+    return abc;
+}
     // Getting All logins
     public List<DataClass> getAllData() {
         List<DataClass> dataList = new ArrayList<DataClass>();

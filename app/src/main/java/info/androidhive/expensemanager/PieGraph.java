@@ -14,9 +14,12 @@ import org.achartengine.renderer.SimpleSeriesRenderer;
  * Created by USER on 17-06-2015.
  */
 public class PieGraph {
-    public GraphicalView getView(Context context) {
+    public GraphicalView getView(Context context,String type[],int amnt[]) {
 
-        int[] values = { 100, 2, 3, 4, 5 };
+
+
+
+        int[] values = amnt;
         CategorySeries series = new CategorySeries("Pie Graph");
         int k = 0;
         for (int value : values) {
