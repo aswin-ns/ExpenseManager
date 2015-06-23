@@ -34,13 +34,25 @@ Button pie;
 
             @Override
             public void onClick(View view) {
+
               List<SumByClass>a = db.getPie("6/2015");
+                String [] type = new String[a.size()];
+                  int [] amnt = new int[a.size()];
+                  int i = 0;
                 for (SumByClass cn : a) {
-                    String log = Integer.toString(cn.getAmnt());
-                    String log1 = cn.getGroup_name();
-                    Log.d("Log1",log);
-                    Log.d("Log",log1);
+                    type[i] = cn.getGroup_name();
+                     amnt[i] = cn.getAmnt();
+                    i++;
+
                 }
+                for(i=0;i<4;i++)
+                {
+                    Log.d("a",type[i]);
+                }
+//                PieGraph graph = new PieGraph();
+//                GraphicalView gView = graph.getView(ViewSummary.this,type,amnt);
+//                LinearLayout graph_l = (LinearLayout)findViewById(R.id.chart);
+//                graph_l.addView(gView);
             }
         });
 
