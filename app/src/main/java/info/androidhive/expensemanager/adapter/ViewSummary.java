@@ -45,14 +45,11 @@ Button pie;
                     i++;
 
                 }
-                for(i=0;i<4;i++)
-                {
-                    Log.d("a",type[i]);
-                }
-//                PieGraph graph = new PieGraph();
-//                GraphicalView gView = graph.getView(ViewSummary.this,type,amnt);
-//                LinearLayout graph_l = (LinearLayout)findViewById(R.id.chart);
-//                graph_l.addView(gView);
+
+                PieGraph graph = new PieGraph();
+                GraphicalView gView = graph.getView(ViewSummary.this,type,amnt);
+                LinearLayout graph_l = (LinearLayout)findViewById(R.id.chart);
+                graph_l.addView(gView);
             }
         });
 

@@ -19,6 +19,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1529bfe3-b59b-40ec-b6bb-aa181be9517c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/expensemanager/adapter/ViewSummary.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/expensemanager/adapter/ViewSummary.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -51,21 +52,21 @@
       <file leaf-file-name="ThisMonthFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/expensemanager/ThisMonthFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="1122">
-              <caret line="67" column="56" selection-start-line="66" selection-start-column="7" selection-end-line="67" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="768" max-vertical-offset="1122">
+              <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ViewSummary.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ViewSummary.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/expensemanager/adapter/ViewSummary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8559322" vertical-offset="258" max-vertical-offset="1462">
-              <caret line="49" column="39" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="411" max-vertical-offset="1411">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding>
-                <element signature="e#925#1783#0" expanded="true" />
-                <element signature="e#1772#1773#0" expanded="true" />
+                <element signature="e#925#1667#0" expanded="true" />
+                <element signature="e#1656#1657#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PieGraph.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PieGraph.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/expensemanager/PieGraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="765">
-              <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.42372882" vertical-offset="139" max-vertical-offset="765">
+              <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -1394,8 +1395,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_view_summary.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/expensemanager/adapter/LoginActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/expensemanager/adapter/DatabaseHandlerAddData.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/expensemanager/PieGraph.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/expensemanager/adapter/ViewSummary.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/expensemanager/PieGraph.java" />
       </list>
     </option>
   </component>
@@ -1986,7 +1987,11 @@
       <created>1435039523766</created>
       <updated>1435039523766</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Slack Test">
+      <created>1435043116229</created>
+      <updated>1435043116229</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2056,7 +2061,8 @@
     <MESSAGE value="Db fn added Working" />
     <MESSAGE value="error" />
     <MESSAGE value="DB Error Solved&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="DB Error Solved&#10;" />
+    <MESSAGE value="Slack Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Slack Test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2468,11 +2474,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/expensemanager/ThisMonthFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/expensemanager/adapter/ViewSummary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="1122">
-          <caret line="67" column="56" selection-start-line="66" selection-start-column="7" selection-end-line="67" selection-end-column="56" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="411" max-vertical-offset="1411">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="e#925#1667#0" expanded="true" />
+            <element signature="e#1656#1657#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2486,22 +2495,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/expensemanager/PieGraph.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/expensemanager/ThisMonthFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="765">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="768" max-vertical-offset="1122">
+          <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/expensemanager/adapter/ViewSummary.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/expensemanager/PieGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8559322" vertical-offset="258" max-vertical-offset="1462">
-          <caret line="49" column="39" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
-          <folding>
-            <element signature="e#925#1783#0" expanded="true" />
-            <element signature="e#1772#1773#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.42372882" vertical-offset="139" max-vertical-offset="765">
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -23,7 +23,7 @@ public class PieGraph {
         CategorySeries series = new CategorySeries("Pie Graph");
         int k = 0;
         for (int value : values) {
-            series.add("Section " + ++k, value);
+            series.add("Sectin " + ++k, value);
         }
 
         int[] colors = new int[] { Color.BLUE, Color.GREEN, Color.MAGENTA, Color.YELLOW, Color.CYAN };
