@@ -26,17 +26,17 @@ public final class R {
         public static final int usernew=0x7f020008;
     }
     public static final class id {
-        public static final int action_settings=0x7f080033;
-        public static final int balance_trt=0x7f08002c;
-        public static final int balance_trt_1=0x7f080022;
-        public static final int btn_add_debt=0x7f08002e;
-        public static final int btn_add_debt_1=0x7f080024;
+        public static final int action_settings=0x7f080034;
+        public static final int balance_trt=0x7f08002d;
+        public static final int balance_trt_1=0x7f080023;
+        public static final int btn_add_debt=0x7f08002f;
+        public static final int btn_add_debt_1=0x7f080025;
         public static final int btn_authenticate_login=0x7f08000f;
         public static final int btn_authenticate_login_register=0x7f080015;
         public static final int btn_pie=0x7f080019;
         public static final int btn_type=0x7f080003;
-        public static final int btn_view_summary=0x7f08002f;
-        public static final int btn_view_summary_1=0x7f080025;
+        public static final int btn_view_summary=0x7f080030;
+        public static final int btn_view_summary_1=0x7f080026;
         public static final int button3=0x7f080006;
         public static final int button_enter=0x7f08000c;
         public static final int button_type_1=0x7f080008;
@@ -49,35 +49,36 @@ public final class R {
         public static final int edt_text_note=0x7f08000a;
         public static final int edt_usr_name=0x7f08000d;
         public static final int edt_usr_name_register=0x7f080013;
-        public static final int expense_trt=0x7f080028;
-        public static final int expense_trt_1=0x7f08001e;
+        public static final int expense_trt=0x7f080029;
+        public static final int expense_trt_1=0x7f08001f;
         public static final int imageView=0x7f080011;
         public static final int imageView_Register=0x7f080016;
-        public static final int img_trt=0x7f08002d;
-        public static final int img_trt_1=0x7f080023;
-        public static final int income_trt=0x7f08002b;
-        public static final int income_trt_1=0x7f080021;
-        public static final int label=0x7f080032;
-        public static final int logo=0x7f080031;
-        public static final int lst_expense=0x7f08001b;
-        public static final int lst_income=0x7f080030;
+        public static final int img_trt=0x7f08002e;
+        public static final int img_trt_1=0x7f080024;
+        public static final int income_trt=0x7f08002c;
+        public static final int income_trt_1=0x7f080022;
+        public static final int label=0x7f080033;
+        public static final int logo=0x7f080032;
+        public static final int lst_expense=0x7f08001c;
+        public static final int lst_income=0x7f080031;
         public static final int pager=0x7f080012;
-        public static final int relativeLayout=0x7f080026;
-        public static final int relativeLayout1=0x7f08001c;
+        public static final int relativeLayout=0x7f080027;
+        public static final int relativeLayout1=0x7f08001d;
         public static final int relativeLayout2=0x7f080000;
         public static final int relativeLayout3=0x7f080001;
         public static final int relativeLayout4=0x7f080007;
         public static final int tab2pager=0x7f080018;
-        public static final int textView=0x7f080027;
-        public static final int textView1=0x7f08001d;
+        public static final int textView=0x7f080028;
+        public static final int textView1=0x7f08001e;
         public static final int textView2=0x7f080005;
-        public static final int textView3=0x7f080029;
-        public static final int textView3_1=0x7f08001f;
+        public static final int textView3=0x7f08002a;
+        public static final int textView3_1=0x7f080020;
         public static final int textView4=0x7f080010;
-        public static final int textView5=0x7f08002a;
-        public static final int textView5_1=0x7f080020;
+        public static final int textView5=0x7f08002b;
+        public static final int textView5_1=0x7f080021;
         public static final int textView6=0x7f080017;
         public static final int textView_date_current_1=0x7f08000b;
+        public static final int txt_date_summary=0x7f08001b;
     }
     public static final class layout {
         public static final int activity_add_data=0x7f030000;
@@ -89,12 +90,14 @@ public final class R {
         public static final int activity_summary_screen=0x7f030006;
         public static final int activity_tab2=0x7f030007;
         public static final int activity_view_summary=0x7f030008;
-        public static final int expense_tab=0x7f030009;
-        public static final int fragment_next_month=0x7f03000a;
-        public static final int fragment_this_month=0x7f03000b;
-        public static final int income_tab=0x7f03000c;
-        public static final int list_item=0x7f03000d;
-        public static final int splash_screen=0x7f03000e;
+        public static final int activity_view_summary_expense=0x7f030009;
+        public static final int activity_view_summary_host=0x7f03000a;
+        public static final int expense_tab=0x7f03000b;
+        public static final int fragment_next_month=0x7f03000c;
+        public static final int fragment_this_month=0x7f03000d;
+        public static final int income_tab=0x7f03000e;
+        public static final int list_item=0x7f03000f;
+        public static final int splash_screen=0x7f030010;
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -107,6 +110,8 @@ public final class R {
         public static final int menu_summary_screen=0x7f070007;
         public static final int menu_tab2=0x7f070008;
         public static final int menu_view_summary=0x7f070009;
+        public static final int menu_view_summary_expense=0x7f07000a;
+        public static final int menu_view_summary_host=0x7f07000b;
     }
     public static final class string {
         public static final int action_settings=0x7f050000;
@@ -130,6 +135,8 @@ public final class R {
         public static final int title_activity_summary_screen=0x7f050012;
         public static final int title_activity_tab2=0x7f050013;
         public static final int title_activity_view_summary=0x7f050014;
+        public static final int title_activity_view_summary_expense=0x7f050015;
+        public static final int title_activity_view_summary_host=0x7f050016;
     }
     public static final class style {
         /** 
