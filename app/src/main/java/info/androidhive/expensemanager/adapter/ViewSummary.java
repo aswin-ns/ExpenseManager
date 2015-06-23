@@ -54,7 +54,7 @@ Button pie;
             @Override
             public void onClick(View view) {
          date = dateView.getText().toString();
-              List<SumByClass>a = db.getPie(date);
+              List<SumByClass>a = db.getPie("6/2015");
                 String [] type = new String[a.size()];
                   int [] amnt = new int[a.size()];
                   int i = 0;
