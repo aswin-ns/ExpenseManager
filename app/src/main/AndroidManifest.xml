@@ -67,7 +67,14 @@
             android:label="@string/title_activity_view_summary" >
         </activity>
         <activity android:name="org.achartengine.GraphicalActivity" />
-
+        <activity
+            android:name=".ViewSummaryHost"
+            android:label="@string/title_activity_view_summary_host" >
+        </activity>
+        <activity
+            android:name=".ViewSummaryExpense"
+            android:label="@string/title_activity_view_summary_expense" >
+        </activity>
     </application>
 
 </manifest>

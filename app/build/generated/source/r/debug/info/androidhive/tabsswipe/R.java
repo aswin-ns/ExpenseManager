@@ -42,11 +42,11 @@ public final class R {
         public static final int button_type_1=0x7f080008;
         public static final int chart=0x7f08001a;
         public static final int editText_amount=0x7f080009;
-        public static final int editText_note=0x7f08000a;
         public static final int edt_amnt=0x7f080002;
         public static final int edt_note=0x7f080004;
         public static final int edt_psw_wrd=0x7f08000e;
         public static final int edt_psw_wrd_register=0x7f080014;
+        public static final int edt_text_note=0x7f08000a;
         public static final int edt_usr_name=0x7f08000d;
         public static final int edt_usr_name_register=0x7f080013;
         public static final int expense_trt=0x7f080028;

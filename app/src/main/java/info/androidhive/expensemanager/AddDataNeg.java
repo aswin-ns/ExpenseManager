@@ -3,6 +3,7 @@ package info.androidhive.expensemanager;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -58,7 +59,7 @@ public class AddDataNeg extends Activity {
         showDate(year, month+1, day);
         date = dateView.getText().toString();
         edt_amnt = (EditText)findViewById(R.id.editText_amount);
-        edt_note = (EditText)findViewById(R.id.edt_note);
+        edt_note = (EditText)findViewById(R.id.edt_text_note);
 
         final DatabaseHandlerAddData db = new DatabaseHandlerAddData(this);
         enter = (Button)findViewById(R.id.button_enter);
@@ -66,10 +67,11 @@ public class AddDataNeg extends Activity {
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String amnts = edt_amnt.getText().toString();
-                int amnt = Integer.parseInt(amnts);
+                int amnt = Integer.parseInt(edt_amnt.getText().toString());
                 String note = edt_note.getText().toString();
                 db.addNegData(new DataClass(newString, amnt, note, date));
+                Intent intent = new Intent(getApplicationContext(),Tab2.class);
+                startActivity(intent);
             }
         });
 

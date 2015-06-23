@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import org.achartengine.GraphicalView;
+import org.achartengine.model.CategorySeries;
 
 import java.util.List;
 
@@ -45,6 +46,8 @@ Button pie;
                     i++;
 
                 }
+
+                Log.d("Size Of A",String.valueOf(a.size()));
 
                 PieGraph graph = new PieGraph();
                 GraphicalView gView = graph.getView(ViewSummary.this,type,amnt);
