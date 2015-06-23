@@ -78,14 +78,9 @@ public class LoginActivity extends Activity {
             }
 
         }
- //Test DBAdd Data Class Function;
-//        Log.d("Strimg","Abcd");
-//        DatabaseHandlerAddData db = new DatabaseHandlerAddData(this);
-//        String [] type = {};
-//        int [] amnt = {};
-//        int i = 0;
-//       String daten = "13/06/2015";
-//        List<Integer>ab= db.getPie("13/06/2015");
+// Test DBAdd Data Class Function;
+
+
     }
     public void OnRegisterIntent(View v)
     {

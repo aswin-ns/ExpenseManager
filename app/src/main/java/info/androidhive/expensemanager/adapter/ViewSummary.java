@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import org.achartengine.GraphicalView;
 
@@ -28,21 +29,18 @@ Button pie;
         setContentView(R.layout.activity_view_summary);
 
         pie = (Button)findViewById(R.id.btn_pie);
+        final DatabaseHandlerAddData db = new DatabaseHandlerAddData(this);
         pie.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
-                DatabaseHandlerAddData db = new DatabaseHandlerAddData(ViewSummary.this);
-                String [] type = {};
-                int [] amnt = {};
-                int i = 0;
-                List<SumByClass>data = db.getPIEpos("13/06/2015");
-                for(SumByClass sln : data) {
-                    type[i] = sln.getGroup_name();
-                    amnt[i] = sln.getAmnt();
-
-                    i++;
+              List<SumByClass>a = db.getPie("6/2015");
+                for (SumByClass cn : a) {
+                    String log = Integer.toString(cn.getAmnt());
+                    String log1 = cn.getGroup_name();
+                    Log.d("Log1",log);
+                    Log.d("Log",log1);
                 }
-
             }
         });
 

@@ -147,41 +147,25 @@ public class DatabaseHandlerAddData extends SQLiteOpenHelper {
     }
 
 //
-    public List<SumByClass>getPIEpos(String date) {
-List<SumByClass> dlc = new ArrayList<SumByClass>();
-    SQLiteDatabase db = this.getWritableDatabase();
 
-    String selectQuery = "select type, coalesce(sum(amount),0) from db where date like '%"+date+"%'group by type";
-
-    Cursor cursor = db.rawQuery(selectQuery, null);
-        SumByClass sbc = new SumByClass();
-
-    if (cursor.moveToFirst()) {
-        do {
-
-
-            Log.d("Value", cursor.getString(0));
-            Log.d("Value",cursor.getString(1));
-           sbc.setGroup_name(cursor.getString(0));
-            sbc.setAmnt(cursor.getInt(1));
-            dlc.add(sbc);
-        } while (cursor.moveToNext());
-    }
-return dlc;
-    // return login list
-
-}
-public List<Integer>getPie(String date)
+public List<SumByClass>getPie(String date)
 {
-    List<Integer>abc = new ArrayList<Integer>();
+    List<SumByClass>abc = new ArrayList<SumByClass>();
     SQLiteDatabase db = this.getWritableDatabase();
-    String selectQuery = "select type, coalesce(sum(amount),0) from db where date like '%"+date+"%'group by type";
+    String selectQuery = "select type, coalesce(sum(amount),0) from db where date like '%"+date+"'group by type ";
 
     Cursor cursor = db.rawQuery(selectQuery, null);
     if (cursor.moveToFirst()) {
         do {
-            Log.d("Value", cursor.getString(0));
-            Log.d("Value",cursor.getString(1));
+//            Log.d("Enter","Enter");
+//            Log.d("Value", cursor.getString(0));
+//            Log.d("Value",cursor.getString(1));
+            SumByClass adc = new SumByClass();
+            adc.setGroup_name(cursor.getString(0));
+            adc.setAmnt(Integer.parseInt(cursor.getString(1)));
+
+            // Adding login to list
+            abc.add(adc);
 
         } while (cursor.moveToNext());
     }
