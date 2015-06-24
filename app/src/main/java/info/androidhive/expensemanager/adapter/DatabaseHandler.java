@@ -110,6 +110,21 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return loginList;
     }
 
+    // Function to validate password of given username
+    private Boolean validatePwd(String userName,String passWord) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(TABLE_DETAILS,new String[] {KEY_PS_WRD},KEY_USR_NAME+
+                                    "=?",new String[] {userName},null,null,null,"1");
+        if (cursor != null){
+            cursor.moveToFirst();
+            return cursor.getString(0).equals(passWord);
+        }
+        else {
+            return false;
+        }
+
+    }
+
     // Updating single contact
     public int updateContact(Login login) {
         SQLiteDatabase db = this.getWritableDatabase();
