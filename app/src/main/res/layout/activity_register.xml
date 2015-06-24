@@ -9,8 +9,7 @@
     <EditText
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:lines="1"
-        android:maxLines="1"
+        android:singleLine="true"
         android:id="@+id/edt_usr_name_register"
         android:background="#ffc7c7c7"
         android:layout_above="@+id/edt_psw_wrd_register"
@@ -21,8 +20,7 @@
     <EditText
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:lines="1"
-        android:maxLines="1"
+        android:singleLine="true"
         android:id="@+id/edt_psw_wrd_register"
         android:background="#FFC7C7C7"
         android:layout_centerVertical="true"

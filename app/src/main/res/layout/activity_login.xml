@@ -12,8 +12,7 @@
         android:id="@+id/edt_usr_name"
         android:background="#ffc7c7c7"
         android:layout_above="@+id/edt_psw_wrd"
-        android:lines="1"
-        android:maxLines="1"
+        android:singleLine="true"
         android:layout_centerHorizontal="true"
         android:autoText="false"
         android:hint="@string/str_usr_name" />
@@ -21,8 +20,7 @@
     <EditText
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:lines="1"
-        android:maxLines="1"
+        android:singleLine="true"
         android:id="@+id/edt_psw_wrd"
         android:background="#FFC7C7C7"
         android:layout_centerVertical="true"
