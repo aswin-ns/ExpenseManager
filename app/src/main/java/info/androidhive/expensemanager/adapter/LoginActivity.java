@@ -58,23 +58,21 @@ public class LoginActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
     public void OnAuthenticate(View v) {
+        DatabaseHandler db = new DatabaseHandler(this);
         String usr_name = username.getText().toString();
         String psw_wrd = password.getText().toString();
 
-            if(DatabaseHandler.validatePwd(usr_name,psw_wrd))
+            if(db.validatePwd(usr_name,psw_wrd))
             {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }
             else {
-                Toast.makeText(getApplicationContext(),"Incorrect Values Try Again With Correct Credentials",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Invalid Username/Password",Toast.LENGTH_LONG).show();
             }
 
     }
 // Test DBAdd Data Class Function;
-
-
-    }
     public void OnRegisterIntent(View v)
     {
         Intent reg = new Intent(getApplicationContext(), RegisterActivity.class);
