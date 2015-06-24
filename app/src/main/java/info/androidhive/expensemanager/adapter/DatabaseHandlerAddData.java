@@ -174,6 +174,29 @@ public List<SumByClass>getPie(String date)
     }
     return abc;
 }
+    public List<SumByClass>getNegPie(String date)
+    {
+        List<SumByClass>abc = new ArrayList<SumByClass>();
+        SQLiteDatabase db = this.getWritableDatabase();
+        String selectQuery = "select negativetype, coalesce(sum(negativeamount),0) from db where date like '%"+date+"'group by negativetype ";
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+            Log.d("Enter","Enter");
+            Log.d("Value", cursor.getString(0));
+            Log.d("Value",cursor.getString(1));
+                SumByClass adc = new SumByClass();
+                adc.setNegative_groupname(cursor.getString(0));
+                adc.setAmnt(Integer.parseInt(cursor.getString(1)));
+
+                // Adding login to list
+                abc.add(adc);
+
+            } while (cursor.moveToNext());
+        }
+        return abc;
+    }
     // Getting All logins
     public List<DataClass> getAllData() {
         List<DataClass> dataList = new ArrayList<DataClass>();
@@ -186,6 +209,7 @@ public List<SumByClass>getPie(String date)
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
             do {
+
                 DataClass dlc = new DataClass();
                 dlc.setId(Integer.parseInt(cursor.getString(0)));
                 dlc.setType(cursor.getString(1));

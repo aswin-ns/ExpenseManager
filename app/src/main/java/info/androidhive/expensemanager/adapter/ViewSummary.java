@@ -32,8 +32,9 @@ Button pie;
     private Calendar calendar;
     private TextView dateView;
     private int year, month, day;
-    String date;
 
+    String date;
+    String month_passed;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +46,7 @@ Button pie;
 
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
-        showDate(year, month+1, day);
+        showDate(year, month+1);
         date = dateView.getText().toString();
         pie = (Button)findViewById(R.id.btn_pie);
         final DatabaseHandlerAddData db = new DatabaseHandlerAddData(this);
@@ -54,7 +55,7 @@ Button pie;
             @Override
             public void onClick(View view) {
 
-              List<SumByClass>a = db.getPie("6/2015");
+              List<SumByClass>a = db.getPie("date");
                 String [] type = new String[a.size()];
                   int [] amnt = new int[a.size()];
                   int i = 0;
@@ -77,7 +78,7 @@ Button pie;
 
 
     }
-    public void OnShowDateNew(View v)
+    public void ShowDateNew(View v)
     {
         showDialog(999);
         Toast.makeText(getApplicationContext(), "ca", Toast.LENGTH_SHORT)
@@ -101,13 +102,14 @@ Button pie;
             // arg1 = year
             // arg2 = month
             // arg3 = day
-            showDate(arg1, arg2+1, arg3);
+            showDate(arg1, arg2+1);
         }
     };
 
-    private void showDate(int year, int month, int day) {
-        dateView.setText(new StringBuilder().append(day).append("/")
+    private void showDate(int year, int month) {
+        dateView.setText(new StringBuilder()
                 .append(month).append("/").append(year));
+
     }
 
 
