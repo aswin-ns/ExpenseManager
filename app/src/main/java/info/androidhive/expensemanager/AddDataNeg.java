@@ -69,7 +69,7 @@ public class AddDataNeg extends Activity {
             public void onClick(View view) {
                 int amnt = Integer.parseInt(edt_amnt.getText().toString());
                 String note = edt_note.getText().toString();
-                db.addNegData(new DataClass(newString, amnt, note, date));
+                db.addNegData(new DataClass(newString,note,amnt,date));
                 Intent intent = new Intent(getApplicationContext(),Tab2.class);
                 startActivity(intent);
             }

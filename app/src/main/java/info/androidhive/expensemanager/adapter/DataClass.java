@@ -94,7 +94,7 @@ public class DataClass {
         this.date = date;
 
     }
-    public DataClass(int id,String type,String note,int neg_amnt,String date)
+    public DataClass(String type,String note,int neg_amnt,String date)
     {
         this.id = id;
         this.type = type;

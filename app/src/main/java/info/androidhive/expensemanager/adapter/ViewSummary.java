@@ -46,18 +46,19 @@ Button pie;
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
         showDate(year, month+1, day);
-
+        date = dateView.getText().toString();
         pie = (Button)findViewById(R.id.btn_pie);
         final DatabaseHandlerAddData db = new DatabaseHandlerAddData(this);
         pie.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-         date = dateView.getText().toString();
-              List<SumByClass>a = db.getPie("6/2015");
+
+              List<SumByClass>a = db.getPie("13/6/2015");
                 String [] type = new String[a.size()];
                   int [] amnt = new int[a.size()];
                   int i = 0;
+                int k=a.size();
                 for (SumByClass cn : a) {
                     type[i] = cn.getGroup_name();
                      amnt[i] = cn.getAmnt();

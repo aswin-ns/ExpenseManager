@@ -72,11 +72,11 @@ public class ThisMonthFragment extends Fragment {
         List<DataClass> new1 = db.getNegData(newdate);
 
         for (DataClass cn : new1) {
-            String log = Integer.toString(cn.getNeg_amnt());
+            String log2 = Integer.toString(cn.getNeg_amnt());
             // Writing Contacts to log
 
-            expense.setText(log);
-            Log.d("Name: ", log);
+            expense.setText(log2);
+            Log.d("Name: ", log2);
         }
 		return rootView;
 	}

@@ -52,9 +52,10 @@
         android:id="@+id/textView4"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:textSize="33dp"
+        android:textSize="20dp"
         android:clickable="true"
-        android:onClick="OnRegisterIntent" />
+        android:onClick="OnRegisterIntent"
+        android:typeface="monospace" />
 
     <ImageView
         android:layout_width="wrap_content"

@@ -82,12 +82,14 @@ public class DatabaseHandlerAddData extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
         values.put(KEY_TRS_TYPE, dcl.getType()); // Contact Phone
-        values.put(KEY_NEG_AMNT, dcl.getNeg_amnt()); // Contact Name
+
         values.put(KEY_TRS_NOTE, dcl.getNote());
+        values.put(KEY_NEG_AMNT, dcl.getNeg_amnt()); // Contact Name
         values.put(KEY_TRS_DATE, dcl.getDate()); // Contact Name
 
         // Inserting Row
         db.insert(TABLE_DATA, null, values);
+
         db.close(); // Closing database connection
     }
     //mnnn////mmmm//
