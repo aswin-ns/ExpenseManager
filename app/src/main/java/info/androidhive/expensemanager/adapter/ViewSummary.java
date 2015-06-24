@@ -32,9 +32,8 @@ Button pie;
     private Calendar calendar;
     private TextView dateView;
     private int year, month, day;
-
     String date;
-    String month_passed;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +54,7 @@ Button pie;
             @Override
             public void onClick(View view) {
 
-              List<SumByClass>a = db.getPie("date");
+              List<SumByClass>a = db.getPie("6/2015");
                 String [] type = new String[a.size()];
                   int [] amnt = new int[a.size()];
                   int i = 0;
@@ -71,8 +70,24 @@ Button pie;
 
                 PieGraph graph = new PieGraph();
                 GraphicalView gView = graph.getView(ViewSummary.this,type,amnt);
-                LinearLayout graph_l = (LinearLayout)findViewById(R.id.chart);
+                LinearLayout graph_l = (LinearLayout)findViewById(R.id.chart_1);
                 graph_l.addView(gView);
+                List<SumByClass>b = db.getNegPie("6/2015");
+                String [] neg_type = new String[b.size()];
+                int [] neg_amnt = new int[b.size()];
+                int l = 0;
+                int m = b.size();
+                for(SumByClass dn : b)
+                {
+                    neg_type[i] = dn.getNegative_groupname();
+                    neg_amnt[i] = dn.getAmnt();
+                    i++;
+                }
+
+                PieGraph graph1 = new PieGraph();
+                GraphicalView gView1 = graph1.getView(ViewSummary.this,neg_type,neg_amnt);
+                LinearLayout graph_l_1 = (LinearLayout)findViewById(R.id.chart_2);
+                graph_l_1.addView(gView1);
             }
         });
 
@@ -107,8 +122,7 @@ Button pie;
     };
 
     private void showDate(int year, int month) {
-        dateView.setText(new StringBuilder()
-                .append(month).append("/").append(year));
+        dateView.setText(new StringBuilder().append(month).append("/").append(year));
 
     }
 

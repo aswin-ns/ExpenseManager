@@ -40,7 +40,7 @@ int [] colors = new int[size];
         }
         renderer.setChartTitle("Pie Chart Demo");
         renderer.setChartTitleTextSize(10);
-        renderer.setZoomButtonsVisible(true);
+        renderer.setZoomButtonsVisible(false);
 
          return ChartFactory.getPieChartView(context,series,renderer);
 
