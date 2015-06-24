@@ -23,7 +23,7 @@
     <string name="str_psw_wrd">Password</string>
     <string name="title_activity_summary_screen">SummaryScreen</string>
     <string name="str_amount">Amount</string>
-    <string name="str_note">Note</string>
+    <string name="str_remarks">Remarks</string>
     <string name="title_activity_view_summary">ViewSummary</string>
     <string name="title_activity_view_summary_host">ViewSummaryHost</string>
     <string name="title_activity_view_summary_expense">ViewSummaryExpense</string>
