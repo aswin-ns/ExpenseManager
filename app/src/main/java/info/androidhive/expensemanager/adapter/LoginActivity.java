@@ -19,7 +19,7 @@ import info.androidhive.tabsswipe.R;
 import info.androidhive.expensemanager.RegisterActivity;
 
 public class LoginActivity extends Activity {
- EditText username;
+    EditText username;
     EditText password;
     Button Login;
     TextView RegisterIntent;
@@ -57,18 +57,11 @@ public class LoginActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-    public void OnAuthenticate(View v)
-    {
-        DatabaseHandler db = new DatabaseHandler(this);
-
+    public void OnAuthenticate(View v) {
         String usr_name = username.getText().toString();
         String psw_wrd = password.getText().toString();
-       List<Login>login =  db.getAllContacts();
-        for (Login ln : login) {
-            String usr_name_get = ln.getUsername();
-            String psw_wrd_get = ln.getPassword();
-            Log.d(psw_wrd,usr_name);
-            if((usr_name.equals(usr_name_get))&&(psw_wrd.equals(psw_wrd_get)))
+
+            if(DatabaseHandler.validatePwd(usr_name,psw_wrd))
             {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
@@ -77,7 +70,7 @@ public class LoginActivity extends Activity {
                 Toast.makeText(getApplicationContext(),"Incorrect Values Try Again With Correct Credentials",Toast.LENGTH_LONG).show();
             }
 
-        }
+    }
 // Test DBAdd Data Class Function;
 
 

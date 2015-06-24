@@ -73,9 +73,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     Login getlogin(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_DETAILS, new String[] { KEY_ID,
-                        KEY_USR_NAME, KEY_PS_WRD }, KEY_ID + "=?",
-                new String[] { String.valueOf(id) }, null, null, null, null);
+        Cursor cursor = db.query(TABLE_DETAILS, new String[]{KEY_ID,
+                        KEY_USR_NAME, KEY_PS_WRD}, KEY_ID + "=?",
+                new String[]{String.valueOf(id)}, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
 
@@ -111,7 +111,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // Function to validate password of given username
-    private Boolean validatePwd(String userName,String passWord) {
+    public static Boolean validatePwd(String userName, String passWord) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_DETAILS,new String[] {KEY_PS_WRD},KEY_USR_NAME+
                                     "=?",new String[] {userName},null,null,null,"1");
