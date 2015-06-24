@@ -32,6 +32,7 @@ public class DatabaseHandlerAddData extends SQLiteOpenHelper {
     private static final String KEY_NEG_AMNT = "negativeamount";
     private static final String KEY_TRS_NOTE = "note";
     private static final String KEY_TRS_DATE = "date";
+    private static final String KEYSTRING = "negativetype";
 
 
 
@@ -44,7 +45,7 @@ public class DatabaseHandlerAddData extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_DATA_TABLE = "CREATE TABLE " + TABLE_DATA + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_TRS_TYPE + " TEXT,"
-                + KEY_AMNT + " INTEGER,"+ KEY_NEG_AMNT + " INTEGER,"
+                + KEYSTRING + " TEXT," + KEY_AMNT + " INTEGER,"+ KEY_NEG_AMNT + " INTEGER,"
                 + KEY_TRS_NOTE+ " TEXT,"+ KEY_TRS_DATE + " TEXT" + ")";
         db.execSQL(CREATE_DATA_TABLE);
     }
@@ -81,7 +82,7 @@ public class DatabaseHandlerAddData extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_TRS_TYPE, dcl.getType()); // Contact Phone
+        values.put(KEYSTRING, dcl.getNegativetype()); // Contact Phone
 
         values.put(KEY_TRS_NOTE, dcl.getNote());
         values.put(KEY_NEG_AMNT, dcl.getNeg_amnt()); // Contact Name

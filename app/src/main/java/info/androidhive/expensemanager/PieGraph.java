@@ -17,19 +17,20 @@ public class PieGraph {
     public GraphicalView getView(Context context,String type[],int values[]) {
 
 
+int size = values.length;
+
+int [] colors = new int[size];
 
 
+     CategorySeries series = new CategorySeries("Pie Graph");
+     int k = 0;
+     for (int value : values) {
+         series.add("Section " + ++k, value);
+     }
+            for(int i=0;i<size;i++) {
+                colors[i] = Color.argb(((i*i)+50),((i*100)%255),((i*200)%255),((i*300)%255));
 
-
-
-        CategorySeries series = new CategorySeries("Pie Graph");
-        int k = 0;
-        for (int value : values) {
-            series.add("Section " + ++k, value);
-        }
-
-        int[] colors = new int[] { Color.BLUE, Color.GREEN, Color.MAGENTA, Color.LTGRAY};
-
+            }
         DefaultRenderer renderer = new DefaultRenderer();
         for (int color : colors) {
             SimpleSeriesRenderer r = new SimpleSeriesRenderer();

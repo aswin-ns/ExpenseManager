@@ -11,6 +11,15 @@ public class DataClass {
     private String note;
     private String date;
 
+    public String getNegativetype() {
+        return negativetype;
+    }
+
+    public void setNegativetype(String negativetype) {
+        this.negativetype = negativetype;
+    }
+
+    private String negativetype;
     public int getId() {
         return id;
     }
@@ -94,10 +103,10 @@ public class DataClass {
         this.date = date;
 
     }
-    public DataClass(String type,String note,int neg_amnt,String date)
+    public DataClass(String negativetype ,String note,int neg_amnt,String date)
     {
-        this.id = id;
-        this.type = type;
+
+        this.negativetype = negativetype;
         this.note = note;
         this.neg_amnt = neg_amnt;
 
