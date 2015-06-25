@@ -15,6 +15,7 @@ import android.widget.Toast;
 import java.util.Calendar;
 import java.util.List;
 
+import info.androidhive.expensemanager.adapter.LoginActivity;
 import info.androidhive.expensemanager.adapter.ViewSummary;
 import info.androidhive.tabsswipe.R;
 import info.androidhive.expensemanager.adapter.DataClass;
@@ -82,5 +83,10 @@ public class ThisMonthFragment extends Fragment {
         }
 		return rootView;
 	}
+    public void OnLogout(View v)
+    {
+        Intent intent = new Intent(getActivity(), LoginActivity.class);
+        startActivity(intent);
+    }
 
 }

@@ -11,7 +11,7 @@
     <string name="str_register">Register</string>
     <string name="title_activity_tab2">Tab2</string>
 
-
+<string name="str_logout">Logout</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_add_data">AddData</string>
     <string name="title_activity_abcd">AddData</string>

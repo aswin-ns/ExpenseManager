@@ -5,5 +5,11 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/action_settings"/>
+    <item
+        android:id="@+id/Logout"
+        android:orderInCategory="99"
+        android:showAsAction="always"
+        android:title="@string/str_logout"
+        android:onClick="Logout"/>
 
 </menu>
