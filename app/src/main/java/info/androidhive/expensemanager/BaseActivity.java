@@ -1,6 +1,8 @@
 package info.androidhive.expensemanager;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,6 +11,8 @@ import android.widget.Toast;
 import info.androidhive.tabsswipe.R;
 
 public class BaseActivity extends Activity {
+
+    public static final String PREFS_NAME = "preferences";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +36,20 @@ public class BaseActivity extends Activity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_logout) {
-            Toast.makeText(this, "Log Out Clicked", Toast.LENGTH_SHORT).show();
+            SharedPreferences pref = getSharedPreferences(PREFS_NAME,0);
+            SharedPreferences.Editor prefEditor = pref.edit();
+            prefEditor.putBoolean("logged_in", false);
+            prefEditor.apply();
+            Intent i = new Intent(this, LoginActivity.class);
+            startActivity(i);
+            Toast.makeText(this, "You have logged out!", Toast.LENGTH_SHORT).show();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public static void log_out_now(){
+
     }
 }

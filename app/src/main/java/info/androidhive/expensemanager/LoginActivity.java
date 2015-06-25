@@ -25,7 +25,6 @@ public class LoginActivity extends Activity {
     EditText password;
     Button Login;
     TextView RegisterIntent;
-    // TODO: Move this to a BaseActivity
     public static final String PREFS_NAME = "preferences";
 
 

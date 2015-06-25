@@ -10,7 +10,7 @@ import info.androidhive.tabsswipe.R;
 import info.androidhive.expensemanager.adapter.Tabs2Adapter;
 
 
-public class Tab2 extends FragmentActivity implements
+public class Tab2 extends FragmentBaseActivity implements
         ActionBar.TabListener {
 
     private ViewPager viewPager;
