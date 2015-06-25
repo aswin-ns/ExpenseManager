@@ -1,9 +1,7 @@
-package info.androidhive.expensemanager.adapter;
+package info.androidhive.expensemanager;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -16,15 +14,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.achartengine.GraphicalView;
-import org.achartengine.model.CategorySeries;
 
 import java.util.Calendar;
 import java.util.List;
 
-import info.androidhive.expensemanager.PieGraph;
+import info.androidhive.expensemanager.adapter.DatabaseHandlerAddData;
+import info.androidhive.expensemanager.adapter.SumByClass;
 import info.androidhive.tabsswipe.R;
 
-public class ViewSummary extends Activity {
+public class ViewSummary extends BaseActivity {
     Button piegraph;
     LinearLayout graphView;
 Button pie;

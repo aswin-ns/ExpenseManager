@@ -1,4 +1,4 @@
-package info.androidhive.expensemanager.adapter;
+package info.androidhive.expensemanager;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -16,6 +16,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import info.androidhive.expensemanager.MainActivity;
+import info.androidhive.expensemanager.adapter.DatabaseHandler;
 import info.androidhive.tabsswipe.R;
 import info.androidhive.expensemanager.RegisterActivity;
 

@@ -14,7 +14,6 @@ import android.widget.Toast;
 import java.util.List;
 
 import info.androidhive.expensemanager.adapter.DatabaseHandler;
-import info.androidhive.expensemanager.adapter.LoginActivity;
 import info.androidhive.tabsswipe.R;
 import info.androidhive.expensemanager.adapter.Login;
 

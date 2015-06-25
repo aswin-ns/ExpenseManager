@@ -21,7 +21,7 @@ import info.androidhive.expensemanager.adapter.DatabaseHandlerAddData;
 import info.androidhive.tabsswipe.R;
 
 
-public class AddDataNeg extends Activity {
+public class AddDataNeg extends BaseActivity {
     Button btn_type;
     EditText edt_amnt;
     EditText edt_note;

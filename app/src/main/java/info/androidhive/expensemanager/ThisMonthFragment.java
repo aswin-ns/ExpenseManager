@@ -15,8 +15,6 @@ import android.widget.Toast;
 import java.util.Calendar;
 import java.util.List;
 
-import info.androidhive.expensemanager.adapter.LoginActivity;
-import info.androidhive.expensemanager.adapter.ViewSummary;
 import info.androidhive.tabsswipe.R;
 import info.androidhive.expensemanager.adapter.DataClass;
 import info.androidhive.expensemanager.adapter.DatabaseHandlerAddData;
@@ -27,6 +25,8 @@ public class ThisMonthFragment extends Fragment {
     TextView income;
     TextView balance;
     Button  viewsummary;
+//    // TODO: Move this to a BaseActivity
+//    public static final String PREFS_NAME = "preferences";
 //    final DatabaseHandlerAddData db = new DatabaseHandlerAddData(getActivity());
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -83,10 +83,14 @@ public class ThisMonthFragment extends Fragment {
         }
 		return rootView;
 	}
-    public void OnLogout(View v)
-    {
-        Intent intent = new Intent(getActivity(), LoginActivity.class);
-        startActivity(intent);
-    }
+//    public void OnLogout(View v)
+//    {
+//        SharedPreferences pref = v.getContext().getSharedPreferences(PREFS_NAME,0);
+//        SharedPreferences.Editor prefEditor = pref.edit();
+//        prefEditor.putBoolean("logged_in", false);
+//        prefEditor.apply();
+//        Intent intent = new Intent(getActivity(), LoginActivity.class);
+//        startActivity(intent);
+//    }
 
 }

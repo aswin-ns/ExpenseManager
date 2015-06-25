@@ -51,7 +51,7 @@
             android:label="@string/title_activity_abcd" >
         </activity>
         <activity
-            android:name="info.androidhive.expensemanager.adapter.LoginActivity"
+            android:name="info.androidhive.expensemanager.LoginActivity"
             android:label="@string/title_activity_login" >
         </activity>
         <activity
@@ -63,7 +63,7 @@
             android:label="@string/title_activity_summary_screen" >
         </activity>
         <activity
-            android:name="info.androidhive.expensemanager.adapter.ViewSummary"
+            android:name="info.androidhive.expensemanager.ViewSummary"
             android:label="@string/title_activity_view_summary" >
         </activity>
         <activity android:name="org.achartengine.GraphicalActivity" />

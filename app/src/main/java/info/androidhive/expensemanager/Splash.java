@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
-import info.androidhive.expensemanager.adapter.LoginActivity;
 import info.androidhive.tabsswipe.R;
 
 

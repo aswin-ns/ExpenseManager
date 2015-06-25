@@ -24,7 +24,7 @@ import info.androidhive.expensemanager.adapter.DataClass;
 import info.androidhive.expensemanager.adapter.DatabaseHandlerAddData;
 
 
-public class AddData extends Activity {
+public class AddData extends BaseActivity {
     Button type;
     EditText pos_amnt;
     EditText pos_note;

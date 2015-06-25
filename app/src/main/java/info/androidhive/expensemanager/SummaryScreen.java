@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import info.androidhive.tabsswipe.R;
 
 
-public class SummaryScreen extends Activity {
+public class SummaryScreen extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
