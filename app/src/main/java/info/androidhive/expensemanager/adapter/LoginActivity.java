@@ -24,9 +24,8 @@ public class LoginActivity extends Activity {
     EditText password;
     Button Login;
     TextView RegisterIntent;
-    public static final String PREFS_NAME = "MyPrefsFile";
-    private static final String PREF_USERNAME = "username";
-    private static final String PREF_PASSWORD = "password";
+    public static final String PREFS_NAME = "preferences";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +34,6 @@ public class LoginActivity extends Activity {
         username = (EditText)findViewById(R.id.edt_usr_name);
         password = (EditText)findViewById(R.id.edt_psw_wrd);
         String date = "13/06/2015";
-        SharedPreferences pref = getSharedPreferences(PREFS_NAME,MODE_PRIVATE);
-        String username = pref.getString(PREF_USERNAME, null);
-        String password = pref.getString(PREF_PASSWORD, null);
-
         if (username == null || password == null) {
             //Prompt for username and password
         }
@@ -75,14 +70,13 @@ public class LoginActivity extends Activity {
 
             if(db.validatePwd(usr_name,psw_wrd))
             {
+                SharedPreferences pref = getSharedPreferences(PREFS_NAME,0);
+                SharedPreferences.Editor prefEditor = pref.edit();
+                prefEditor.putBoolean("logged_in", true);
+
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
-                getSharedPreferences(PREFS_NAME,MODE_PRIVATE)
-                        .edit()
-                        .putString(PREF_USERNAME, usr_name)
-                        .putString(PREF_PASSWORD, psw_wrd)
-                        .commit();
             }
             else {
                 Toast.makeText(getApplicationContext(),"Invalid Username/Password",Toast.LENGTH_LONG).show();
