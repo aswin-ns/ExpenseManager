@@ -75,6 +75,7 @@ public class LoginActivity extends Activity {
             SharedPreferences pref = getSharedPreferences(PREFS_NAME,0);
             SharedPreferences.Editor prefEditor = pref.edit();
             prefEditor.putBoolean("logged_in", true);
+            prefEditor.apply();
 
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
