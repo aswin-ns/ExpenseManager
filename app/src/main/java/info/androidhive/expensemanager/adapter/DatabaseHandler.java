@@ -2,6 +2,7 @@ package info.androidhive.expensemanager.adapter;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -28,6 +29,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_ID = "id";
     private static final String KEY_USR_NAME = "username";
     private static final String KEY_PS_WRD = "password";
+
 
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -112,9 +114,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     // Function to validate password of given username
     public Boolean validatePwd(String userName, String passWord) {
-        if (userName.equals("admin") && passWord.equals("admin")){
+        if (userName.equals("admin") && passWord.equals("admin"))
             return true;
-        } else {
+        else {
             SQLiteDatabase db = this.getReadableDatabase();
             Cursor cursor = db.query(TABLE_DETAILS, new String[]{KEY_PS_WRD}, KEY_USR_NAME +
                     "=?", new String[]{userName}, null, null, null, "1");

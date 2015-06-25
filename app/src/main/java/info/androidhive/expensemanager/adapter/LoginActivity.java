@@ -24,6 +24,7 @@ public class LoginActivity extends Activity {
     EditText password;
     Button Login;
     TextView RegisterIntent;
+    // TODO: Move this to a BaseActivity
     public static final String PREFS_NAME = "preferences";
 
 
@@ -68,19 +69,17 @@ public class LoginActivity extends Activity {
         String usr_name = username.getText().toString();
         String psw_wrd = password.getText().toString();
 
-            if(db.validatePwd(usr_name,psw_wrd))
-            {
-                SharedPreferences pref = getSharedPreferences(PREFS_NAME,0);
-                SharedPreferences.Editor prefEditor = pref.edit();
-                prefEditor.putBoolean("logged_in", true);
+        if (!db.validatePwd(usr_name,psw_wrd)) {
+            Toast.makeText(getApplicationContext(),"Invalid Username/Password",Toast.LENGTH_LONG).show();
+        } else {
+            SharedPreferences pref = getSharedPreferences(PREFS_NAME,0);
+            SharedPreferences.Editor prefEditor = pref.edit();
+            prefEditor.putBoolean("logged_in", true);
 
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-            else {
-                Toast.makeText(getApplicationContext(),"Invalid Username/Password",Toast.LENGTH_LONG).show();
-            }
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
     }
 // Test DBAdd Data Class Function;
