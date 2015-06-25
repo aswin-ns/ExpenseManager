@@ -75,6 +75,10 @@
             android:name=".ViewSummaryExpense"
             android:label="@string/title_activity_view_summary_expense" >
         </activity>
+        <activity
+            android:name="info.androidhive.expensemanager.BaseActivity"
+            android:label="@string/title_activity_base" >
+        </activity>
     </application>
 
 </manifest>
