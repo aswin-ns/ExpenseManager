@@ -27,4 +27,5 @@
     <string name="title_activity_view_summary_host">ViewSummaryHost</string>
     <string name="title_activity_view_summary_expense">ViewSummaryExpense</string>
     <string name="title_activity_base">BaseActivity</string>
+    <string name="title_activity_fragment_base">FragmentBaseActivity</string>
 </resources>

@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 
-public class MainActivity extends FragmentActivity implements
+public class MainActivity extends FragmentBaseActivity implements
 		ActionBar.TabListener {
 
 	private ViewPager viewPager;

@@ -79,6 +79,10 @@
             android:name="info.androidhive.expensemanager.BaseActivity"
             android:label="@string/title_activity_base" >
         </activity>
+        <activity
+            android:name="info.androidhive.expensemanager.FragmentBaseActivity"
+            android:label="@string/title_activity_fragment_base" >
+        </activity>
     </application>
 
 </manifest>
