@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ public class LoginActivity extends Activity {
     EditText password;
     Button Login;
     TextView RegisterIntent;
+    private CheckBox remeber_me;
     public static final String PREFS_NAME = "preferences";
 
 
@@ -28,6 +30,7 @@ public class LoginActivity extends Activity {
         setContentView(R.layout.activity_login);
         username = (EditText)findViewById(R.id.edt_usr_name);
         password = (EditText)findViewById(R.id.edt_psw_wrd);
+        remeber_me = (CheckBox)findViewById(R.id.chk_box_remeber_me);
         String date = "13/06/2015";
         if (username == null || password == null) {
             //Prompt for username and password
@@ -66,14 +69,17 @@ public class LoginActivity extends Activity {
         if (!db.validatePwd(usr_name,psw_wrd)) {
             Toast.makeText(getApplicationContext(),"Invalid Username/Password",Toast.LENGTH_LONG).show();
         } else {
-            SharedPreferences pref = getSharedPreferences(PREFS_NAME,0);
-            SharedPreferences.Editor prefEditor = pref.edit();
-            prefEditor.putBoolean("logged_in", true);
-            prefEditor.apply();
+            if(remeber_me.isChecked()) {
+                SharedPreferences pref = getSharedPreferences(PREFS_NAME, 0);
+                SharedPreferences.Editor prefEditor = pref.edit();
+                prefEditor.putBoolean("logged_in", true);
+                prefEditor.apply();
+            }
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
 
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
-            finish();
+
         }
 
     }
