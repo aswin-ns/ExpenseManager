@@ -1,0 +1,60 @@
+[33m54d0323[m Delete unused files, modify package name
+[33m866bcee[m Disable back button after logout
+[33mc4d87f1[m Implement logout listener for menu
+[33m03b17d0[m Use FragmentBaseActivity to share menu
+[33m7be7a47[m Create shared menu for Fragment activities
+[33m75c5336[m Override default menu handlers to use super
+[33m4370dcf[m Move activities outside adapter, inherit from Baseactivity
+[33mc07f751[m Add a baseclass for inheriting shared_menu
+[33mc49b552[m Create a shared_menu xml
+[33m555a2ef[m Add missed apply() for shared preference editor
+[33m2409cf8[m Use preferences to automatically login
+[33m0c5601f[m Set logged_in inside preferences upon authentication
+[33m84e0007[m WIP Login Screen
+[33ma6f0cd9[m Show numeric keypads to add amounts
+[33m4da33a7[m Modify incorrectly assigned texts to hints
+[33m09c84c9[m Mark some TODOs inside code
+[33m1f79dad[m Add default admin username and password
+[33m9f2e915[m Add better implementation of singleline for username/pwd
+[33m01251c9[m Correct errors in authentication
+[33m398a8a3[m use validatPwd method in OnAuthenticate
+[33m94cd8da[m Add new validatePwd method for authentication
+[33m2efd7af[m Move new user prompt to string.xml
+[33mc2ea1ac[m Change text of register button
+[33m15d824f[m fixed untracked files in git
+[33m4038018[m Database Functions Added Working
+[33m68308ff[m Database Functions Added Working
+[33m57a73fa[m Database Functions Added Working
+[33m1ff8845[m Pie Chart Completed
+[33m8e8bba3[m Solved Issue With Expense Calculation
+[33mf78c806[m Date Picker Added
+[33m8820f15[m remove faulty comment from line
+[33m07383aa[m Date Picker Added
+[33m7fb7dbc[m Solved Intent Issues In Expense Tab Added Files Required For Tab Inflation
+[33mc387473[m .gitignore test
+[33me5fc1a5[m Slack Test
+[33m5e24708[m Slack Test
+[33m20598d6[m DB Error Solved
+[33m5c2f813[m error
+[33ma66b732[m Db fn added Working
+[33mc05a9a9[m Db Code Added But Not Working
+[33m97fe9ad[m Db Code Added But Not Working
+[33m8d79e35[m Graphs Rendered Minor Fixes In Classes
+[33m52aa0c5[m Edit Design
+[33m36a3353[m Solved Issues With Expense Tab
+[33m84fa6e0[m Design Fixed Almost Splash Screen Added
+[33m1bd1a8d[m '
+[33m7debeb1[m '
+[33m2e463e4[m '
+[33m14904f6[m '
+[33m0d7eb74[m Login Activity Added Designs Fixed For 3 Activities
+[33mbff7fd6[m Negative Data Function Added
+[33m43b44fb[m Negative Data Function Added
+[33m55a1fe5[m Coalsace Completed
+[33m1522142[m Coalsace Completed
+[33m6cd141a[m Coalsace Completed
+[33md925bec[m Activities Added... Refractor Done
+[33m868953f[m Commit
+[33m2d5f194[m Latest Change
+[33mf42df80[m Latest Change
+[33m186e56e[m Latest Change
