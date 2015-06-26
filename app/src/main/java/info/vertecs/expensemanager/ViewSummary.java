@@ -204,6 +204,39 @@ Button pie;
         return super.onOptionsItemSelected(item);
     }
 
+    // Function which return the GraphicalView for the given month,
+    private GraphicalView getGraphViewForMonth(int month,int year,String transactionType){
+
+        String date = String.valueOf(month)+"/"+String.valueOf(year);
+        List<SumByClass> data = (transactionType.equals("exp")) ? db.getPie(date) : db.getNegPie(date);
+        String [] categories = stripCategory(data);
+        int [] amounts = stripAmount(data);
+        PieGraph graph = new PieGraph();
+        GraphicalView gView = graph.getView(ViewSummary.this,categories, amounts);
+        return gView;
+    }
+
+    // Function to return an array of categories in the SumByClass list.
+    private String [] stripCategory(List<SumByClass> data){
+        String [] category = new String[data.size()];
+        int i=0;
+        for (SumByClass k : data){
+            category[i] = k.getGroup_name();
+            i++;
+        }
+        return category;
+    }
+
+    // Function to return an array of amounts in the SumByClass list.
+    private int [] stripAmount(List<SumByClass> data){
+        int [] amount = new int[data.size()];
+        int i=0;
+        for (SumByClass k : data){
+            amount[i] = k.getAmnt();
+            i++;
+        }
+        return amount;
+    }
 
 }
 
