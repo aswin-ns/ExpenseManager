@@ -183,9 +183,7 @@ public List<SumByClass>getPie(String date)
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
-            Log.d("Enter","Enter");
-            Log.d("Value", cursor.getString(0));
-            Log.d("Value",cursor.getString(1));
+
                 SumByClass adc = new SumByClass();
                 adc.setNegative_groupname(cursor.getString(0));
                 adc.setAmnt(Integer.parseInt(cursor.getString(1)));

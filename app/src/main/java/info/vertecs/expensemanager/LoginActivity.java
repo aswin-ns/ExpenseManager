@@ -92,4 +92,5 @@ public class LoginActivity extends Activity {
 //        DatabaseHandlerAddData db = new DatabaseHandlerAddData(this);
 //        List<SumByClass>a = db.getNegPie("6/2015");
     }
+
 }

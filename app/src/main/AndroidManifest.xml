@@ -38,7 +38,9 @@
             android:label="@string/title_activity_add_data_neg" >
         </activity>
         <activity
+
             android:name="info.vertecs.expensemanager.Splash"
+            android:noHistory="true"
             android:label="@string/title_activity_splash" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,11 +53,14 @@
             android:label="@string/title_activity_abcd" >
         </activity>
         <activity
+
             android:name="info.vertecs.expensemanager.LoginActivity"
+            android:noHistory="true"
             android:label="@string/title_activity_login" >
         </activity>
         <activity
             android:name="info.vertecs.expensemanager.RegisterActivity"
+            android:noHistory="true"
             android:label="@string/title_activity_register" >
         </activity>
         <activity
