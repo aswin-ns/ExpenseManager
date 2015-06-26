@@ -88,9 +88,7 @@ public class LoginActivity extends Activity {
     {
         Intent reg = new Intent(getApplicationContext(), RegisterActivity.class);
         startActivity(reg);
-        //TEST DB NEGATIVE GROUP BY DATA GET FUNCTION//
-//        DatabaseHandlerAddData db = new DatabaseHandlerAddData(this);
-//        List<SumByClass>a = db.getNegPie("6/2015");
+
     }
 
 }
