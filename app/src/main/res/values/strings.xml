@@ -29,4 +29,10 @@
     <string name="title_activity_base">BaseActivity</string>
     <string name="title_activity_fragment_base">FragmentBaseActivity</string>
     <string name="str_remember">Remember Me</string>
+    <string name="str_add_debtt_1" />
+    <string name="str_add_debt_1">ADD DEBT</string>
+    <string name="str_view_summary_1">VIEW SUMMARY</string>
+    <string name="str_add_debt_2">ADD DEBT</string>
+    <string name="str_view_summary_2">VIEW SUMMARY</string>
+    <string name="str_enter_1">ENTER</string>
 </resources>

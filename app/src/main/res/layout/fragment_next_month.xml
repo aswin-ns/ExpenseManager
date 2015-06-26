@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/str_expense"
-            android:id="@+id/textView1"
+            android:id="@+id/txt_lbl_expense_next_month"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -29,10 +29,10 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
-            android:id="@+id/expense_trt_1"
+            android:id="@+id/txt_expense_next_month"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/textView1"
-            android:layout_toEndOf="@+id/textView1"
+            android:layout_toRightOf="@+id/txt_lbl_expense_next_month"
+            android:layout_toEndOf="@+id/txt_lbl_expense_next_month"
             android:layout_marginLeft="150dp"
             android:layout_marginStart="150dp"
             android:textColor="#f3f3f3" />
@@ -42,8 +42,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/str_income"
-            android:id="@+id/textView3_1"
-            android:layout_below="@+id/textView1"
+            android:id="@+id/txt_lbl_income_next_month"
+            android:layout_below="@+id/txt_lbl_expense_next_month"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textColor="#f2f2f2"
@@ -55,8 +55,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/str_balance"
-            android:id="@+id/textView5_1"
-            android:layout_below="@+id/textView3_1"
+            android:id="@+id/txt_lbl_bal_next_month"
+            android:layout_below="@+id/txt_lbl_income_next_month"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textColor="#f2f2f2"
@@ -68,10 +68,10 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
-            android:id="@+id/income_trt_1"
-            android:layout_alignTop="@+id/textView3_1"
-            android:layout_alignLeft="@+id/expense_trt_1"
-            android:layout_alignStart="@+id/expense_trt_1"
+            android:id="@+id/txt_income_next_month"
+            android:layout_alignTop="@+id/txt_lbl_income_next_month"
+            android:layout_alignLeft="@+id/txt_expense_next_month"
+            android:layout_alignStart="@+id/txt_expense_next_month"
             android:textColor="#f3f3f3" />
 
         <TextView
@@ -79,10 +79,10 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
-            android:id="@+id/balance_trt_1"
-            android:layout_below="@+id/income_trt_1"
-            android:layout_alignLeft="@+id/income_trt_1"
-            android:layout_alignStart="@+id/income_trt_1"
+            android:id="@+id/txt_bal_next_month"
+            android:layout_below="@+id/txt_income_next_month"
+            android:layout_alignLeft="@+id/txt_income_next_month"
+            android:layout_alignStart="@+id/txt_income_next_month"
             android:textColor="#f3f3f3"
             android:layout_marginTop="20dp" />
 
@@ -91,7 +91,7 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/img_trt_1"
+        android:id="@+id/img_btn_next_month"
         android:src="@drawable/button"
 
         android:layout_centerHorizontal="true"
@@ -101,18 +101,21 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/btn_add_debt_1"
+        android:text="@string/str_add_debt_2"
+        android:id="@+id/btn_add_next_month"
+        android:background="#efad61"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:background="#efad61" />
+        android:layout_alignLeft="@+id/btn_view_summary_next_month"
+        android:layout_alignStart="@+id/btn_view_summary_next_month"
+        android:layout_alignRight="@+id/btn_view_summary_next_month"
+        android:layout_alignEnd="@+id/btn_view_summary_next_month" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/btn_view_summary_1"
-        android:layout_below="@+id/btn_add_debt_1"
+        android:text="@string/str_view_summary_2"
+        android:id="@+id/btn_view_summary_next_month"
+        android:layout_below="@+id/btn_add_next_month"
         android:layout_centerHorizontal="true"
         android:background="#efad61"
         android:layout_marginTop="15dp" />

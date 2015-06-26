@@ -41,10 +41,28 @@ public class ThisMonthFragment extends Fragment {
         String newmonth = String.valueOf(month+1);
         final String newdate = newmonth+"/"+newyear;
 
-        expense = (TextView)rootView.findViewById(R.id.expense_trt);
-        income = (TextView)rootView.findViewById(R.id.income_trt);
-        balance = (TextView)rootView.findViewById(R.id.balance_trt);
-        viewsummary =(Button)rootView.findViewById(R.id.btn_view_summary);
+        expense = (TextView)rootView.findViewById(R.id.txt_expense);
+        income = (TextView)rootView.findViewById(R.id.txt_income);
+        balance = (TextView)rootView.findViewById(R.id.txt_bal);
+        viewsummary =(Button)rootView.findViewById(R.id.btn_view_summary_this_month);
+
+        DatabaseHandlerAddData db = new DatabaseHandlerAddData(getActivity());
+        List<DataClass> thismonthdata = db.getPosData(newdate);
+
+        for (DataClass cn : thismonthdata) {
+            String log = Integer.toString(cn.getAmnt());
+            // Writing Contacts to log
+            income.setText(log);
+        }
+        List<DataClass> thismonthnegdata = db.getNegData(newdate);
+
+        for (DataClass cn : thismonthnegdata) {
+            String log2 = Integer.toString(cn.getNeg_amnt());
+            // Writing Contacts to log
+
+            expense.setText(log2);
+            Log.d("Name: ", log2);
+        }
         viewsummary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,7 +74,7 @@ public class ThisMonthFragment extends Fragment {
                 startActivity(viewSummary);
             }
         });
-        img = (ImageButton)rootView.findViewById(R.id.img_trt);
+        img = (ImageButton)rootView.findViewById(R.id.img_btn_this_month);
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,25 +83,12 @@ public class ThisMonthFragment extends Fragment {
             }
         });
 
-        //TODO: these toasts should not be in onCreateView. Consider using onStart or onResume
-        Toast.makeText(getActivity(),newdate,Toast.LENGTH_LONG).show();
-        DatabaseHandlerAddData db = new DatabaseHandlerAddData(getActivity());
-        List<DataClass> contacts = db.getPosData(newdate);
 
-        for (DataClass cn : contacts) {
-            String log = Integer.toString(cn.getAmnt());
-            // Writing Contacts to log
-           income.setText(log);
-        }
-        List<DataClass> new1 = db.getNegData(newdate);
 
-        for (DataClass cn : new1) {
-            String log2 = Integer.toString(cn.getNeg_amnt());
-            // Writing Contacts to log
-
-            expense.setText(log2);
-            Log.d("Name: ", log2);
-        }
+        int exp = Integer.parseInt(expense.getText().toString());
+        int inc = Integer.parseInt(income.getText().toString());
+        int bal = (inc-exp);
+        balance.setText(bal);
 		return rootView;
 	}
 

@@ -22,14 +22,14 @@ public class NextMonthFragment extends Fragment {
     TextView expense;
     TextView income;
     TextView balance;
-    String date = "6/6/2015";
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_next_month, container, false);
-        expense = (TextView)rootView.findViewById(R.id.expense_trt_1);
-        income = (TextView)rootView.findViewById(R.id.income_trt_1);
-        balance = (TextView)rootView.findViewById(R.id.balance_trt_1);
+        expense = (TextView)rootView.findViewById(R.id.txt_expense_next_month);
+        income = (TextView)rootView.findViewById(R.id.txt_income_next_month);
+        balance = (TextView)rootView.findViewById(R.id.txt_bal_next_month);
 
         img = (ImageButton)rootView.findViewById(R.id.img_trt_1);
         img.setOnClickListener(new View.OnClickListener() {
@@ -49,24 +49,27 @@ public class NextMonthFragment extends Fragment {
         //TODO: these toasts should not be in onCreateView. Consider using onStart or onResume
         Toast.makeText(getActivity(), newdate, Toast.LENGTH_LONG).show();
         DatabaseHandlerAddData db = new DatabaseHandlerAddData(getActivity());
-        List<DataClass> contacts = db.getPosData(newdate);
+        List<DataClass> nextmonthlist = db.getPosData(newdate);
 
-        for (DataClass cn : contacts) {
+        for (DataClass cn : nextmonthlist) {
             String log = Integer.toString(cn.getAmnt());
             // Writing Contacts to log
             income.setText(log);
         }
-        List<DataClass> new1 = db.getNegData(newdate);
+        List<DataClass> nextmonthexpenselist = db.getNegData(newdate);
 
-        for (DataClass cn : new1) {
+        for (DataClass cn : nextmonthexpenselist) {
             String log = Integer.toString(cn.getNeg_amnt());
             // Writing Contacts to log
 
             expense.setText(log);
             Log.d("Name: ", log);
         }
-
-
+        int exp,inc;
+        exp = Integer.parseInt(expense.getText().toString());
+        inc = Integer.parseInt(income.getText().toString());
+        int bal = (inc-exp);
+        balance.setText(bal);
 		
 		return rootView;
 	}

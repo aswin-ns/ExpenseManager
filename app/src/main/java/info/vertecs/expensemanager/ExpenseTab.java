@@ -14,9 +14,9 @@ import info.vertecs.expensemanager.adapter.ListAdapter;
 
 /**
  * Created by USER on 03-06-2015.
- */
+0 */
 public class ExpenseTab extends Fragment {
-    static final String[] MOBILE_OS =
+    static final String[] LIST_STRING_DATA_EXPENSE =
             new String[] { "Food", "Travel", "Entertainment", "Miscallenous"};
  ListView lst;
     @Override
@@ -25,16 +25,16 @@ public class ExpenseTab extends Fragment {
 
         View rootView = inflater.inflate(R.layout.expense_tab, container, false);
        lst = (ListView)rootView.findViewById(R.id.lst_expense);
-        lst.setAdapter(new ListAdapter(getActivity(), MOBILE_OS));
+        lst.setAdapter(new ListAdapter(getActivity(), LIST_STRING_DATA_EXPENSE));
         lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String sl =(String)(lst.getItemAtPosition(i));
+                String string_val =(String)(lst.getItemAtPosition(i));
                 Intent intent = new Intent(getActivity(), AddDataNeg.class);
                 String keyIdentifer  = null;
-                intent.putExtra("STRING_I_NEED", sl);
+                intent.putExtra("STRING_I_NEED", string_val);
                 startActivity(intent);
-            Toast.makeText(getActivity(),sl,Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(),string_val,Toast.LENGTH_SHORT).show();
             }
         });
         return rootView;

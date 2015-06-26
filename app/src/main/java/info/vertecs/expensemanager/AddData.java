@@ -53,7 +53,7 @@ public class AddData extends BaseActivity {
         }
 
         final DatabaseHandlerAddData db = new DatabaseHandlerAddData(this);
-        dateView = (TextView) findViewById(R.id.textView2);
+        dateView = (TextView) findViewById(R.id.txt_date_picker);
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
         pos_amnt = (EditText)findViewById(R.id.edt_amnt);

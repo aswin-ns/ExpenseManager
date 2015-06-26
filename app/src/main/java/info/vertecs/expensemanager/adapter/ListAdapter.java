@@ -39,12 +39,15 @@ public class ListAdapter extends ArrayAdapter<String> {
 
         System.out.println(s);
 
-        if (s.equals("WindowsMobile")) {
+        if (s.equals("Travel")) {
             imageView.setImageResource(R.drawable.cars);
-        } else if (s.equals("iOS")) {
+        } else if (s.equals("Entertainment")) {
             imageView.setImageResource(R.drawable.fj);
-        } else if (s.equals("Blackberry")) {
+        } else if (s.equals("Food")) {
             imageView.setImageResource(R.drawable.food);
+        }
+        else if (s.equals("Miscallenous")) {
+            imageView.setImageResource(R.drawable.ic_launcher);
         }
         return rowView;
     }
