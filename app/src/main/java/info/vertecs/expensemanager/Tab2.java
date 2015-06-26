@@ -5,7 +5,6 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
-import info.vertecs.tabsswipe.R;
 import info.vertecs.expensemanager.adapter.Tabs2Adapter;
 
 

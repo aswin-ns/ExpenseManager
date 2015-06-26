@@ -14,7 +14,6 @@ import android.widget.Toast;
 import java.util.Calendar;
 import java.util.List;
 
-import info.vertecs.tabsswipe.R;
 import info.vertecs.expensemanager.adapter.DataClass;
 import info.vertecs.expensemanager.adapter.DatabaseHandlerAddData;
 

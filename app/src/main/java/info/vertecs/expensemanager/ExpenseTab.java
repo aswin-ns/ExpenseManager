@@ -10,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import info.vertecs.tabsswipe.R;
 import info.vertecs.expensemanager.adapter.ListAdapter;
 
 /**

@@ -1,6 +1,5 @@
 package info.vertecs.expensemanager;
 
-import info.vertecs.tabsswipe.R;
 import info.vertecs.expensemanager.adapter.TabsPagerAdapter;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;

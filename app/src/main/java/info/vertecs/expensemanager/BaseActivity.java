@@ -8,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import info.vertecs.tabsswipe.R;
 
 public class BaseActivity extends Activity {
 

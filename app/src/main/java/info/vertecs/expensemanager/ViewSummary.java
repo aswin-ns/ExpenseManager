@@ -21,7 +21,6 @@ import java.util.List;
 import info.vertecs.expensemanager.adapter.DatabaseHandlerAddData;
 import info.vertecs.expensemanager.adapter.PieGraph;
 import info.vertecs.expensemanager.adapter.SumByClass;
-import info.vertecs.tabsswipe.R;
 
 public class ViewSummary extends BaseActivity {
     Button piegraph;

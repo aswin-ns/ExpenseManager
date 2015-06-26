@@ -13,7 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import info.vertecs.expensemanager.adapter.DatabaseHandler;
-import info.vertecs.tabsswipe.R;
 
 public class LoginActivity extends Activity {
     EditText username;

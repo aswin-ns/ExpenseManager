@@ -8,7 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import info.vertecs.tabsswipe.R;
+import info.vertecs.expensemanager.R;
+
 
 /**
  * Created by USER on 03-06-2015.

@@ -14,7 +14,6 @@ import android.widget.Toast;
 import java.util.List;
 
 import info.vertecs.expensemanager.adapter.DatabaseHandler;
-import info.vertecs.tabsswipe.R;
 import info.vertecs.expensemanager.adapter.Login;
 
 

@@ -17,7 +17,6 @@ import java.util.Calendar;
 
 import info.vertecs.expensemanager.adapter.DataClass;
 import info.vertecs.expensemanager.adapter.DatabaseHandlerAddData;
-import info.vertecs.tabsswipe.R;
 
 
 public class AddDataNeg extends BaseActivity {
