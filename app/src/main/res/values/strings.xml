@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Entertainment</string>
+    <string name="app_name">XpenseManager</string>
     <string name="action_settings">Settings</string>
     <string name="str_expense">Expense</string>
     <string name="str_income">Income</string>
@@ -28,4 +28,5 @@
     <string name="title_activity_view_summary_expense">ViewSummaryExpense</string>
     <string name="title_activity_base">BaseActivity</string>
     <string name="title_activity_fragment_base">FragmentBaseActivity</string>
+    <string name="str_remember">Remember Me</string>
 </resources>
