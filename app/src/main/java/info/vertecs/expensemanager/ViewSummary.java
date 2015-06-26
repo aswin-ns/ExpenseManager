@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,11 +32,77 @@ Button pie;
     private TextView dateView;
     private int year, month, day;
     String date;
-
+    TextView ErrorMessage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_summary);
+        ErrorMessage = (TextView)findViewById(R.id.txt_error_message);
+       //TODO GETTING PUT EXTRA FROM THE FRAGMENT//
+
+        String newString;
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
+                newString= null;
+            } else {
+                newString= extras.getString("STRING_I_NEED");
+            }
+        } else {
+            newString= (String) savedInstanceState.getSerializable("STRING_I_NEED");
+        }
+        //TODO CODE SNIPPET END//
+
+
+        //TODO CALLING PIE CHART FUNCTIONS FOR THE GIVEN SET OF DATAS//
+        //TODO CALLING DB FUNCTION IF DATA THEN PIE CHART FUNCTIONS ELSE ERROR MESSAGE SET//
+        final DatabaseHandlerAddData db = new DatabaseHandlerAddData(this);
+
+        List<SumByClass>ThisMonthPos = db.getPie(newString);
+        List<SumByClass>ThisMonthNegPie = db.getNegPie(newString);
+        if(ThisMonthPos == null)
+        {
+            ErrorMessage.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            String [] thismonpostype = new String[ThisMonthPos.size()];
+            int [] thismonposamnt = new int[ThisMonthPos.size()];
+            int i = 0;
+            int k=  ThisMonthPos.size();
+
+            for (SumByClass cn : ThisMonthPos) {
+                thismonpostype[i] = cn.getGroup_name();
+                thismonposamnt[i] = cn.getAmnt();
+                i++;
+
+            }
+            PieGraph graph = new PieGraph();
+            GraphicalView gViewtp = graph.getView(ViewSummary.this,thismonpostype,thismonposamnt);
+            LinearLayout graph_l = (LinearLayout)findViewById(R.id.chart_1);
+            graph_l.addView(gViewtp);
+
+
+
+            String [] thismonnegtype = new String[ThisMonthNegPie.size()];
+            int [] thismonnegamnt = new int[ThisMonthNegPie.size()];
+            int in = 0;
+            int kn=  ThisMonthNegPie.size();
+
+            for (SumByClass cn : ThisMonthNegPie) {
+                thismonnegtype[i] = cn.getGroup_name();
+                thismonnegamnt[i] = cn.getAmnt();
+                i++;
+
+            }
+            PieGraph graphnp = new PieGraph();
+            GraphicalView gViewnp = graphnp.getView(ViewSummary.this,thismonnegtype,thismonnegamnt);
+            LinearLayout graph_np = (LinearLayout)findViewById(R.id.chart_2);
+            graph_np.addView(gViewnp);
+        }
+
+
+
 
         dateView = (TextView) findViewById(R.id.txt_date_summary);
         calendar = Calendar.getInstance();
@@ -46,13 +113,13 @@ Button pie;
         showDate(year, month+1);
         date = dateView.getText().toString();
         pie = (Button)findViewById(R.id.btn_pie);
-        final DatabaseHandlerAddData db = new DatabaseHandlerAddData(this);
+
         pie.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
 
-              List<SumByClass>a = db.getPie("6/2015");
+              List<SumByClass>a = db.getPie(date);
                 String [] type = new String[a.size()];
                   int [] amnt = new int[a.size()];
                   int i = 0;
@@ -66,11 +133,14 @@ Button pie;
 
                 Log.d("Size Of A",String.valueOf(a.size()));
 
-                PieGraph graph = new PieGraph();
-                GraphicalView gView = graph.getView(ViewSummary.this,type,amnt);
+                PieGraph graphdp = new PieGraph();
+                GraphicalView gViewdp = graphdp.getView(ViewSummary.this,type,amnt);
                 LinearLayout graph_l = (LinearLayout)findViewById(R.id.chart_1);
-                graph_l.addView(gView);
-                List<SumByClass>b = db.getNegPie("6/2015");
+                graph_l.addView(gViewdp);
+
+
+
+                List<SumByClass>b = db.getNegPie(date);
                 String [] neg_type = new String[b.size()];
                 int [] neg_amnt = new int[b.size()];
                 int l = 0;

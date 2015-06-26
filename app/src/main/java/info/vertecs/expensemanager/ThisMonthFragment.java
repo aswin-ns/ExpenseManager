@@ -33,7 +33,13 @@ public class ThisMonthFragment extends Fragment {
 
 
 		View rootView = inflater.inflate(R.layout.fragment_this_month, container, false);
-
+        Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH);
+        //TODO: need to account for end month December
+        String newyear = String.valueOf(year);
+        String newmonth = String.valueOf(month+1);
+        final String newdate = newmonth+"/"+newyear;
 
         expense = (TextView)rootView.findViewById(R.id.expense_trt);
         income = (TextView)rootView.findViewById(R.id.income_trt);
@@ -42,7 +48,11 @@ public class ThisMonthFragment extends Fragment {
         viewsummary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+
                 Intent viewSummary = new Intent(getActivity(),ViewSummary.class);
+                viewSummary.putExtra("STRING_I_NEED", newdate);
                 startActivity(viewSummary);
             }
         });
@@ -54,13 +64,7 @@ public class ThisMonthFragment extends Fragment {
                 startActivity(main_to_tab2);
             }
         });
-        Calendar c = Calendar.getInstance();
-        int year = c.get(Calendar.YEAR);
-        int month = c.get(Calendar.MONTH);
-        //TODO: need to account for end month December
-        String newyear = String.valueOf(year);
-        String newmonth = String.valueOf(month+1);
-        String newdate = newmonth+"/"+newyear;
+
         //TODO: these toasts should not be in onCreateView. Consider using onStart or onResume
         Toast.makeText(getActivity(),newdate,Toast.LENGTH_LONG).show();
         DatabaseHandlerAddData db = new DatabaseHandlerAddData(getActivity());
