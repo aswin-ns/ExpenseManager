@@ -64,37 +64,11 @@ Button pie;
         if (ThisMonthPos == null) {
             ErrorMessage.setVisibility(View.VISIBLE);
         } else {
-            String[] thismonpostype = new String[ThisMonthPos.size()];
-            int[] thismonposamnt = new int[ThisMonthPos.size()];
-            int i = 0;
-            int k = ThisMonthPos.size();
-
-            for (SumByClass cn : ThisMonthPos) {
-                thismonpostype[i] = cn.getGroup_name();
-                thismonposamnt[i] = cn.getAmnt();
-                i++;
-
-            }
-            PieGraph graph = new PieGraph();
-
-            GraphicalView gViewtp = graph.getView(ViewSummary.this, thismonpostype, thismonposamnt);
+            GraphicalView gViewtp = getGraphViewForMonth(newString, "exp");
             LinearLayout graph_l = (LinearLayout) findViewById(R.id.chart_1);
             graph_l.addView(gViewtp);
 
-
-            String[] thismonnegtype = new String[ThisMonthNegPie.size()];
-            int[] thismonnegamnt = new int[ThisMonthNegPie.size()];
-            int in = 0;
-            int kn = ThisMonthNegPie.size();
-
-            for (SumByClass cn : ThisMonthNegPie) {
-                thismonnegtype[in] = cn.getGroup_name();
-                thismonnegamnt[in] = cn.getAmnt();
-                in++;
-
-            }
-            PieGraph graphnp = new PieGraph();
-            GraphicalView gViewnp = graphnp.getView(ViewSummary.this, thismonnegtype, thismonnegamnt);
+            GraphicalView gViewnp = getGraphViewForMonth(newString, "inc");
             LinearLayout graph_np = (LinearLayout) findViewById(R.id.chart_2);
             graph_np.addView(gViewnp);
         }
@@ -114,45 +88,11 @@ Button pie;
            @Override
            public void onClick(View view) {
                date = dateView.getText().toString();
-               Log.d("enter",date);
-
-               List<SumByClass>a = db.getPie(date);
-               String [] type = new String[a.size()];
-               int [] amnt = new int[a.size()];
-               int ip = 0;
-               int k=a.size();
-               for (SumByClass cn : a) {
-                   type[ip] = cn.getGroup_name();
-                   amnt[ip]= cn.getAmnt();
-                   ip++;
-
-               }
-
-               Log.d("Size Of A",String.valueOf(a.size()));
-
-               PieGraph graphdp = new PieGraph();
-
-
-               GraphicalView gViewdp = graphdp.getView(ViewSummary.this,type,amnt);
+               GraphicalView gViewdp = getGraphViewForMonth(date, "exp");
                LinearLayout graph_l = (LinearLayout)findViewById(R.id.chart_1);
                graph_l.addView(gViewdp);
 
-
-
-               List<SumByClass>b = db.getNegPie(date);
-               String [] neg_type = new String[b.size()];
-               int [] neg_amnt = new int[b.size()];
-               int l = 0;
-               int m = b.size();
-               for(SumByClass dn : b)
-               {
-                   neg_type[l] = dn.getNegative_groupname();
-                   neg_amnt[l] = dn.getAmnt();
-                   l++;
-               }
-
-               PieGraph graph1 = new PieGraph();
-               GraphicalView gView1 = graph1.getView(ViewSummary.this,neg_type,neg_amnt);
+               GraphicalView gView1 = getGraphViewForMonth(date, "inc");
                LinearLayout graph_l_1 = (LinearLayout)findViewById(R.id.chart_2);
                graph_l_1.addView(gView1);
            }
@@ -205,9 +145,8 @@ Button pie;
     }
 
     // Function which return the GraphicalView for the given month,
-    private GraphicalView getGraphViewForMonth(int month,int year,String transactionType){
+    private GraphicalView getGraphViewForMonth(String date,String transactionType){
 
-        String date = String.valueOf(month)+"/"+String.valueOf(year);
         List<SumByClass> data = (transactionType.equals("exp")) ? db.getPie(date) : db.getNegPie(date);
         String [] categories = stripCategory(data);
         int [] amounts = stripAmount(data);
