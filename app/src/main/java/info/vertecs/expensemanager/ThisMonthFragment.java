@@ -86,14 +86,5 @@ public class ThisMonthFragment extends Fragment {
         }
 		return rootView;
 	}
-//    public void OnLogout(View v)
-//    {
-//        SharedPreferences pref = v.getContext().getSharedPreferences(PREFS_NAME,0);
-//        SharedPreferences.Editor prefEditor = pref.edit();
-//        prefEditor.putBoolean("logged_in", false);
-//        prefEditor.apply();
-//        Intent intent = new Intent(getActivity(), LoginActivity.class);
-//        startActivity(intent);
-//    }
 
 }
