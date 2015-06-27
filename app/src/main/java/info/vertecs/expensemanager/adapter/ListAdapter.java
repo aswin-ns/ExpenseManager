@@ -40,14 +40,23 @@ public class ListAdapter extends ArrayAdapter<String> {
         System.out.println(s);
 
         if (s.equals("Travel")) {
-            imageView.setImageResource(R.drawable.cars);
+            imageView.setImageResource(R.drawable.travel);
         } else if (s.equals("Entertainment")) {
-            imageView.setImageResource(R.drawable.fj);
+            imageView.setImageResource(R.drawable.enter);
         } else if (s.equals("Food")) {
-            imageView.setImageResource(R.drawable.food);
+            imageView.setImageResource(R.drawable.foodnew);
+        }
+        else if (s.equals("Salary")) {
+            imageView.setImageResource(R.drawable.salarynew);
+        }
+            else if (s.equals("Awards")) {
+            imageView.setImageResource(R.drawable.award);
+        }
+            else if (s.equals("Gifts")) {
+                imageView.setImageResource(R.drawable.gifts);
         }
         else if (s.equals("Miscallenous")) {
-            imageView.setImageResource(R.drawable.ic_launcher);
+            imageView.setImageResource(R.drawable.miscallenous);
         }
         return rowView;
     }
