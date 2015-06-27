@@ -151,10 +151,11 @@ Button pie;
     private GraphicalView getGraphViewForMonth(String date,String transactionType){
 
         List<SumByClass> data = (transactionType.equals("exp")) ? db.getPie(date) : db.getNegPie(date);
+        String title = (transactionType.equals("exp")) ? "EXPENDITURE" : "INCOME" ;
         String [] categories = stripCategory(data);
         int [] amounts = stripAmount(data);
         PieGraph graph = new PieGraph();
-        GraphicalView gView = graph.getView(ViewSummary.this,categories, amounts);
+        GraphicalView gView = graph.getView(ViewSummary.this,categories, amounts, title);
         return gView;
     }
 

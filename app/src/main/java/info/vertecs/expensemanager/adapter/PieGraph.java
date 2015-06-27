@@ -14,7 +14,7 @@ import org.achartengine.renderer.SimpleSeriesRenderer;
  */
 public class PieGraph {
 
-    public GraphicalView getView(Context context,String type[],int values[]) {
+    public GraphicalView getView(Context context,String type[],int values[],String title) {
 
 
 int size = values.length;
@@ -24,7 +24,7 @@ int [] colors = new int[size];
 
      CategorySeries series = new CategorySeries("Pie Graph");
      for (int i=0;i<size;i++) {
-         series.add(String.valueOf(type[i]), values[i]);
+         series.add(String.valueOf(type[i]).concat(getPercent(values[i], values)), values[i]);
          colors[i] = Color.argb(255,(((i+1)*100)%255),(((i+1)*200)%255),(((i+1)*300)%255));
      }
         DefaultRenderer renderer = new DefaultRenderer();
@@ -32,15 +32,25 @@ int [] colors = new int[size];
             SimpleSeriesRenderer r = new SimpleSeriesRenderer();
             r.setColor(color);
             renderer.addSeriesRenderer(r);
-            renderer.setPanEnabled(false);
-            renderer.setLabelsColor(Color.BLACK);
         }
-        renderer.setChartTitle("Pie Chart Demo");
-        renderer.setChartTitleTextSize(10);
+        renderer.setPanEnabled(false);
+        renderer.setLabelsColor(Color.BLACK);
+        renderer.setChartTitle(title);
+        renderer.setChartTitleTextSize(15);
         renderer.setZoomButtonsVisible(false);
+        renderer.setShowLegend(false);
 
          return ChartFactory.getPieChartView(context,series,renderer);
 
+    }
+
+    private String getPercent(int i,int [] group){
+        int sum=0;
+        for (int k : group){
+            sum += k;
+        }
+        double percent = (double)i/sum*100;
+        return " (".concat(String.format("%.1f",percent).concat("%)"));
     }
 }
 
