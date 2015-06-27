@@ -13,6 +13,7 @@ import org.achartengine.renderer.SimpleSeriesRenderer;
  * Created by USER on 17-06-2015.
  */
 public class PieGraph {
+
     public GraphicalView getView(Context context,String type[],int values[]) {
 
 
@@ -32,6 +33,7 @@ int [] colors = new int[size];
             r.setColor(color);
             renderer.addSeriesRenderer(r);
             renderer.setPanEnabled(false);
+            renderer.setLabelsColor(Color.BLACK);
         }
         renderer.setChartTitle("Pie Chart Demo");
         renderer.setChartTitleTextSize(10);
