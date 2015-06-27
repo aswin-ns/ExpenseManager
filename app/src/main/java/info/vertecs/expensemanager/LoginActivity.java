@@ -22,6 +22,8 @@ public class LoginActivity extends Activity {
     TextView RegisterIntent;
     private CheckBox remeber_me;
     public static final String PREFS_NAME = "preferences";
+    public static final String PREFS_USERNAME = "username";
+    public static final String PREFS_PASSWORD = "password";
 
 
     @Override
@@ -30,7 +32,16 @@ public class LoginActivity extends Activity {
         setContentView(R.layout.activity_login);
         username = (EditText)findViewById(R.id.edt_usr_name);
         password = (EditText)findViewById(R.id.edt_psw_wrd);
+
         remeber_me = (CheckBox)findViewById(R.id.chk_box_remeber_me);
+        SharedPreferences pref = getSharedPreferences(PREFS_NAME,MODE_PRIVATE);
+        String usernameg = pref.getString(PREFS_USERNAME, null);
+        String passwordg = pref.getString(PREFS_PASSWORD, null);
+
+        if (usernameg == null || passwordg == null) {
+            username.setText(usernameg);
+            password.setText(passwordg);
+        }
         String date = "13/06/2015";
         if (username == null || password == null) {
             //Prompt for username and password
@@ -74,6 +85,11 @@ public class LoginActivity extends Activity {
                 SharedPreferences.Editor prefEditor = pref.edit();
                 prefEditor.putBoolean("logged_in", true);
                 prefEditor.apply();
+                getSharedPreferences(PREFS_NAME,MODE_PRIVATE)
+                        .edit()
+                        .putString(PREFS_USERNAME, usr_name)
+                        .putString(PREFS_PASSWORD, psw_wrd)
+                        .commit();
             }
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);

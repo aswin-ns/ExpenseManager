@@ -61,8 +61,11 @@ Button pie;
 
         List<SumByClass> ThisMonthPos = db.getPie(newString);
         List<SumByClass> ThisMonthNegPie = db.getNegPie(newString);
-        if (ThisMonthPos == null) {
-//            ErrorMessage.setVisibility(View.VISIBLE);
+        if ((ThisMonthPos.isEmpty())||ThisMonthNegPie.isEmpty()) {
+         View view1 = (View)findViewById(R.id.view_1);
+            LinearLayout gpl = (LinearLayout)findViewById(R.id.chart_1);
+            view1.setVisibility(View.VISIBLE);
+
         } else {
             GraphicalView gViewtp = getGraphViewForMonth(newString, "exp");
             LinearLayout graph_l = (LinearLayout) findViewById(R.id.chart_1);
@@ -88,17 +91,32 @@ Button pie;
        pie.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
+               View view1 = (View) findViewById(R.id.view_1);
+               LinearLayout gpl = (LinearLayout) findViewById(R.id.chart_1);
+               view1.setVisibility(View.GONE);
                date = dateView.getText().toString();
-               GraphicalView gViewdp = getGraphViewForMonth(date, "exp");
-               LinearLayout graph_l = (LinearLayout)findViewById(R.id.chart_1);
-               graph_l.removeAllViews();
-               graph_l.addView(gViewdp);
+               List<SumByClass> list = db.getPie(date);
+               List<SumByClass> list2 =db.getNegPie(date);
+               if ((list.isEmpty())||(list2.isEmpty())) {
 
-               GraphicalView gView1 = getGraphViewForMonth(date, "inc");
-               LinearLayout graph_l_1 = (LinearLayout)findViewById(R.id.chart_2);
-               graph_l_1.removeAllViews();
-               graph_l_1.addView(gView1);
+                   view1.setVisibility(View.VISIBLE);
+               } else {
+
+
+                   GraphicalView gViewdp = getGraphViewForMonth(date, "exp");
+                   LinearLayout graph_l = (LinearLayout) findViewById(R.id.chart_1);
+                   graph_l.removeAllViews();
+                   graph_l.addView(gViewdp);
+
+                   GraphicalView gView1 = getGraphViewForMonth(date, "inc");
+                   LinearLayout graph_l_1 = (LinearLayout) findViewById(R.id.chart_2);
+                   graph_l_1.removeAllViews();
+                   graph_l_1.addView(gView1);
+               }
            }
+
+
+
 
        });
     }
@@ -148,15 +166,18 @@ Button pie;
     }
 
     // Function which return the GraphicalView for the given month,
-    private GraphicalView getGraphViewForMonth(String date,String transactionType){
+    private GraphicalView getGraphViewForMonth(String date,String transactionType) {
 
         List<SumByClass> data = (transactionType.equals("exp")) ? db.getPie(date) : db.getNegPie(date);
-        String title = (transactionType.equals("exp")) ? "INCOME" : "EXPENDITURE" ;
-        String [] categories = stripCategory(data);
-        int [] amounts = stripAmount(data);
-        PieGraph graph = new PieGraph();
-        GraphicalView gView = graph.getView(ViewSummary.this,categories, amounts, title);
-        return gView;
+        String title = (transactionType.equals("exp")) ? "INCOME" : "EXPENDITURE";
+
+        String[] categories = stripCategory(data);
+        int[] amounts = stripAmount(data);
+
+            PieGraph graph = new PieGraph();
+            GraphicalView gView = graph.getView(ViewSummary.this, categories, amounts, title);
+            return gView;
+
     }
 
     // Function to return an array of categories in the SumByClass list.

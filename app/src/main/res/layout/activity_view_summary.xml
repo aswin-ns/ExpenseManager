@@ -33,6 +33,12 @@
                 android:layout_weight="1"
                 />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/textView" />
+
             <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -50,8 +56,17 @@
             >
 
 
-        </LinearLayout>
+            <View
+                android:id="@+id/view_1"
+                android:layout_width="fill_parent"
+    android:background="@drawable/abc"
 
+
+    android:visibility="gone"
+                android:layout_height="409dp">
+
+            </View>
+        </LinearLayout>
         <!--<TextView-->
             <!--android:visibility="gone"-->
             <!--android:layout_width="wrap_content"-->
