@@ -26,8 +26,7 @@ public class DatabaseHandlerAddDebt extends SQLiteOpenHelper {
     // Contacts Table Columns names
     private static final String KEY_ID = "id";
     private static final String KEY_TRS_TYPE = "type";
-    private static final String KEY_BORROWED_AMNT = "borrowedamount";
-    private static final String KEY_LEASED_AMNT = "lended_amnt";
+    private static final String KEY_AMNT = "amnt";
 
     private static final String KEY_NAME = "name";
 
@@ -42,51 +41,38 @@ public class DatabaseHandlerAddDebt extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_DATA_TABLE = "CREATE TABLE " + TABLE_DEBT + "("
-                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME+ " TEXT,"
-                + KEY_TRS_TYPE + " TEXT," + KEY_BORROWED_AMNT + " INTEGER,"+ KEY_LEASED_AMNT + " INTEGER" + ")";
+                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME+ " TEXT," + KEY_AMNT+ " INTEGER,"
+                + KEY_TRS_TYPE + " TEXT"  + ")";
         db.execSQL(CREATE_DATA_TABLE);
     }
 
-public void OnDebtAdd(Debt dbt)
+public void OnAdd(Debt dbt)
 {
     SQLiteDatabase db = this.getWritableDatabase();
 
     ContentValues values = new ContentValues();
     values.put(KEY_NAME, dbt.getName()); // Contact Phone
     values.put(KEY_TRS_TYPE, dbt.getType()); // Contact Name
-    values.put(KEY_BORROWED_AMNT, dbt.getBorrowedamnt());
+    values.put(KEY_AMNT, dbt.getAmnt());
  // Contact Name
 
     // Inserting Row
     db.insert(TABLE_DEBT, null, values);
     db.close(); // Closing database connection
 }
-    public void OnLeaseAdd(Debt dbt)
-    {
-        SQLiteDatabase db = this.getWritableDatabase();
 
-        ContentValues values = new ContentValues();
-        values.put(KEY_NAME, dbt.getName()); // Contact Phone
-        values.put(KEY_TRS_TYPE, dbt.getType()); // Contact Name
-        values.put(KEY_LEASED_AMNT, dbt.getLeasedamnt());
-        // Contact Name
-
-        // Inserting Row
-        db.insert(TABLE_DEBT, null, values);
-        db.close(); // Closing database connection
-    }
 
 List<Debt>getDebtData() {
     List<Debt> dbtdata = new ArrayList<Debt>();
     SQLiteDatabase db = this.getWritableDatabase();
-    String selectQuery = "select name, borrowedamount from debt where date like '%borrowed' ";
+    String selectQuery = "select name, amnt from debt where date like '%borrowed' ";
 
     Cursor cursor = db.rawQuery(selectQuery, null);
     if (cursor.moveToFirst()) {
         do {
             Debt dbt = new Debt();
             dbt.setName(cursor.getString(0));
-            dbt.setBorrowedamnt(Integer.parseInt(cursor.getString(1)));
+            dbt.setAmnt(Integer.parseInt(cursor.getString(1)));
             dbtdata.add(dbt);
         } while (cursor.moveToNext());
     }
@@ -102,7 +88,7 @@ List<Debt>getDebtData() {
             do {
                 Debt dbt = new Debt();
                 dbt.setName(cursor.getString(0));
-                dbt.setLeasedamnt(Integer.parseInt(cursor.getString(1)));
+                dbt.setAmnt(Integer.parseInt(cursor.getString(1)));
                 dbtdata.add(dbt);
             } while (cursor.moveToNext());
         }
