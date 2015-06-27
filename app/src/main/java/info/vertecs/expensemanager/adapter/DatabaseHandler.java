@@ -149,8 +149,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-
-    // Getting logins Count
+// gwt logins count
     public int getloginsCount() {
         String countQuery = "SELECT  * FROM " + TABLE_DETAILS;
         SQLiteDatabase db = this.getReadableDatabase();
