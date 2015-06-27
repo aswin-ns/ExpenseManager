@@ -27,7 +27,7 @@ int [] colors = new int[size];
          series.add("Section " + ++k, value);
      }
             for(int i=0;i<size;i++) {
-                colors[i] = Color.argb(((i*i)+50),((i*100)%255),((i*200)%255),((i*300)%255));
+                colors[i] = Color.argb(255,(((i+1)*100)%255),(((i+1)*200)%255),(((i+1)*300)%255));
 
             }
         DefaultRenderer renderer = new DefaultRenderer();
