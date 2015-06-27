@@ -22,26 +22,25 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="info.vertecs.expensemanager.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="info.vertecs.expensemanager.Tab2"
+            android:name=".Tab2"
             android:label="@string/title_activity_tab2" >
         </activity>
         <activity
-            android:name="info.vertecs.expensemanager.AddData"
+            android:name=".AddData"
             android:label="@string/title_activity_add_data" >
         </activity>
         <activity
-            android:name="info.vertecs.expensemanager.AddDataNeg"
+            android:name=".AddDataNeg"
             android:label="@string/title_activity_add_data_neg" >
         </activity>
         <activity
-
-            android:name="info.vertecs.expensemanager.Splash"
-            android:noHistory="true"
-            android:label="@string/title_activity_splash" >
+            android:name=".Splash"
+            android:label="@string/title_activity_splash"
+            android:noHistory="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -53,28 +52,31 @@
             android:label="@string/title_activity_abcd" >
         </activity>
         <activity
-
-            android:name="info.vertecs.expensemanager.LoginActivity"
-            android:noHistory="true"
-            android:label="@string/title_activity_login" >
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:noHistory="true" >
         </activity>
         <activity
-            android:name="info.vertecs.expensemanager.RegisterActivity"
-            android:noHistory="true"
-            android:label="@string/title_activity_register" >
+            android:name=".RegisterActivity"
+            android:label="@string/title_activity_register"
+            android:noHistory="true" >
         </activity>
         <activity
-            android:name="info.vertecs.expensemanager.ViewSummary"
+            android:name=".ViewSummary"
             android:label="@string/title_activity_view_summary" >
         </activity>
         <activity android:name="org.achartengine.GraphicalActivity" />
         <activity
-            android:name="info.vertecs.expensemanager.BaseActivity"
+            android:name=".BaseActivity"
             android:label="@string/title_activity_base" >
         </activity>
         <activity
-            android:name="info.vertecs.expensemanager.FragmentBaseActivity"
+            android:name=".FragmentBaseActivity"
             android:label="@string/title_activity_fragment_base" >
+        </activity>
+        <activity
+            android:name=".AddDebt"
+            android:label="@string/title_activity_add_debt" >
         </activity>
     </application>
 

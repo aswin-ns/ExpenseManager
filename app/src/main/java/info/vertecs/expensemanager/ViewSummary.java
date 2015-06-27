@@ -39,7 +39,7 @@ Button pie;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_summary);
-        ErrorMessage = (TextView) findViewById(R.id.txt_error_message);
+//        ErrorMessage = (TextView) findViewById(R.id.txt_error_message);
         //TODO GETTING PUT EXTRA FROM THE FRAGMENT//
 
         String newString;
@@ -62,7 +62,7 @@ Button pie;
         List<SumByClass> ThisMonthPos = db.getPie(newString);
         List<SumByClass> ThisMonthNegPie = db.getNegPie(newString);
         if (ThisMonthPos == null) {
-            ErrorMessage.setVisibility(View.VISIBLE);
+//            ErrorMessage.setVisibility(View.VISIBLE);
         } else {
             GraphicalView gViewtp = getGraphViewForMonth(newString, "exp");
             LinearLayout graph_l = (LinearLayout) findViewById(R.id.chart_1);

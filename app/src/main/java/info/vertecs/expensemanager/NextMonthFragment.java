@@ -31,7 +31,7 @@ public class NextMonthFragment extends Fragment {
         income = (TextView)rootView.findViewById(R.id.txt_income_next_month);
         balance = (TextView)rootView.findViewById(R.id.txt_bal_next_month);
 
-        img = (ImageButton)rootView.findViewById(R.id.img_trt_1);
+        img = (ImageButton)rootView.findViewById(R.id.img_btn_next_month);
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,7 +69,7 @@ public class NextMonthFragment extends Fragment {
         exp = Integer.parseInt(expense.getText().toString());
         inc = Integer.parseInt(income.getText().toString());
         int bal = (inc-exp);
-        balance.setText(bal);
+//        balance.setText(bal);
 		
 		return rootView;
 	}

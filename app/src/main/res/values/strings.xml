@@ -37,4 +37,8 @@
     <string name="str_add_debt_2">ADD DEBT</string>
     <string name="str_view_summary_2">VIEW SUMMARY</string>
     <string name="str_enter_1">ENTER</string>
+    <string name="title_activity_add_debt">AddDebt</string>
+    <string name="str_category">str_category</string>
+    <string name="str_lbl_category">Category</string>
+    <string name="str_name">Name</string>
 </resources>

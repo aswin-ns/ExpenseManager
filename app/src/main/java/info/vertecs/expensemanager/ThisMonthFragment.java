@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.List;
@@ -24,6 +23,7 @@ public class ThisMonthFragment extends Fragment {
     TextView income;
     TextView balance;
     Button  viewsummary;
+    Button adddebt;
 //    // TODO: Move this to a BaseActivity
 //    public static final String PREFS_NAME = "preferences";
 //    final DatabaseHandlerAddData db = new DatabaseHandlerAddData(getActivity());
@@ -82,7 +82,14 @@ public class ThisMonthFragment extends Fragment {
                 startActivity(main_to_tab2);
             }
         });
-
+adddebt = (Button)rootView.findViewById(R.id.btn_add_debt_this_month);
+        adddebt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent main_activity_to_add_debt = new Intent(getActivity(),AddDebt.class);
+                startActivity(main_activity_to_add_debt);
+            }
+        });
 
         //TODO: these toasts should not be in onCreateView. Consider using onStart or onResume
 
@@ -94,7 +101,7 @@ public class ThisMonthFragment extends Fragment {
         int exp = Integer.parseInt(expense.getText().toString());
         int inc = Integer.parseInt(income.getText().toString());
         int bal = (inc-exp);
-        balance.setText(bal);
+//        balance.setText(bal);
 		return rootView;
 	}
 

@@ -65,7 +65,7 @@ public class AddData extends BaseActivity {
         showDate(year, month+1, day);
         type = (Button)findViewById(R.id.btn_type);
         type.setText(newString);
-        enter = (Button)findViewById(R.id.button3);
+        enter = (Button)findViewById(R.id.btn_enter);
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,7 +75,7 @@ public class AddData extends BaseActivity {
                 amnt = Integer.parseInt(pos_amnt.getText().toString());
                 nte = pos_note.getText().toString();
                 date = dateView.getText().toString();
-               db.addPosData(new DataClass(tye,amnt,nte,date));
+                db.addPosData(new DataClass(tye,amnt,nte,date));
                 Log.d("Sucess",date);
                 List<DataClass> contacts = db.getPosData(date);
 
