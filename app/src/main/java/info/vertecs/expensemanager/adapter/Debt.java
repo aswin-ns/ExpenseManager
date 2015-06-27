@@ -1,19 +1,40 @@
 package info.vertecs.expensemanager.adapter;
 
-/**
- * Created by USER on 25-06-2015.
- */
-public class Debt {
+public class Debt
+{
+
+    public Debt(int id, String name, String type, int leasedamnt, int borrowedamnt) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.leasedamnt = leasedamnt;
+        this.borrowedamnt = borrowedamnt;
+    }
+
     int id;
-    int name;
 
-    public int getDebt() {
-        return debt;
+    public Debt(String name, String type, int borrowedamnt) {
+        this.name = name;
+        this.type = type;
+        this.borrowedamnt = borrowedamnt;
     }
+public Debt(String name, int leasedamnt,String type)
+{
+    this.name = name;
+    this.leasedamnt = leasedamnt;
+    this.type = type;
+}
+    String name;
+    String type;
 
-    public void setDebt(int debt) {
-        this.debt = debt;
-    }
+    int leasedamnt;
+    int borrowedamnt;
+    //TODO EMPTY CONSTRUCTOR//
+
+ public Debt()
+ {
+
+}
 
     public int getId() {
         return id;
@@ -23,40 +44,37 @@ public class Debt {
         this.id = id;
     }
 
-    public int getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(int name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public int getLease() {
-        return lease;
+    public String getType() {
+        return type;
     }
 
-    public void setLease(int lease) {
-        this.lease = lease;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public int getAmnt() {
-        return amnt;
+    public int getBorrowedamnt() {
+        return borrowedamnt;
     }
 
-    public void setAmnt(int amnt) {
-        this.amnt = amnt;
+    public void setBorrowedamnt(int borrowedamnt) {
+        this.borrowedamnt = borrowedamnt;
     }
 
-    public int getLeaseamnt() {
-        return leaseamnt;
+    public int getLeasedamnt() {
+        return leasedamnt;
     }
 
-    public void setLeaseamnt(int leaseamnt) {
-        this.leaseamnt = leaseamnt;
+    public void setLeasedamnt(int leasedamnt) {
+        this.leasedamnt = leasedamnt;
     }
 
-    int debt;
-    int lease;
-    int amnt;
-    int leaseamnt;
+
 }
