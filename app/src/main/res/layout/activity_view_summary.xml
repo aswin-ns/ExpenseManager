@@ -24,7 +24,8 @@
             android:id="@+id/txt_date_summary"
             android:text="@string/this_month"
             android:clickable="true"
-            android:onClick="ShowDateNew" />
+            android:onClick="ShowDateNew"
+            style="?android:attr/spinnerStyle"    />
 
             <View
                 android:layout_width="0dp"
