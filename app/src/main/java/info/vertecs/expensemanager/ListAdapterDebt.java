@@ -49,10 +49,10 @@ public class ListAdapterDebt extends ArrayAdapter<String> {
         TextView textView2 = (TextView) rowView.findViewById(R.id.code);
         TextView textView3 = (TextView) rowView.findViewById(R.id.amount);
 
-        textView.setText(name[position]);
-textView2.setText(type[position]);
-        textView3.setText(amnt[position]);
-        // Change icon based on name
+//        textView.setText(name[position]);
+//textView2.setText(type[position]);
+//        textView3.setText(amnt[position]);
+//        // Change icon based on name
 
 
 
