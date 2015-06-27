@@ -8,7 +8,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+
 import info.vertecs.expensemanager.R;
+import info.vertecs.expensemanager.adapter.DatabaseHandlerAddDebt;
+import info.vertecs.expensemanager.adapter.Debt;
 
 
 /**
@@ -16,15 +20,23 @@ import info.vertecs.expensemanager.R;
  */
 public class ListAdapterDebt extends ArrayAdapter<String> {
     private final Context context;
-    private final String[] name;
-    private final String[] type;
-    private final int[] amnt;
-    public ListAdapterDebt(Context context, String[] name,String[] type,int[] amnt) {
-        super(context, R.layout.list_item,name );
+
+    public ListAdapterDebt(Context context) {
+        super(context, R.layout.list_item );
         this.context = context;
-        this.name = name;
-        this.amnt = amnt;
-        this.type = type;
+        DatabaseHandlerAddDebt db = new DatabaseHandlerAddDebt(context);
+        List<Debt >list = db.getDebtData();
+        String [] type = new String[list.size()];
+        int [] amnt = new int[list.size()];
+        String [] name = new String[list.size()];
+        int i=0;
+        for(Debt cn:list)
+        {
+            name[i] = cn.getName();
+            type[i] = cn.getType();
+            amnt[i] = cn.getAmnt();
+
+        }
     }
 
     @Override
@@ -39,7 +51,7 @@ public class ListAdapterDebt extends ArrayAdapter<String> {
 
         textView.setText(name[position]);
 textView2.setText(type[position]);
-//        textView3.setText(amnt[position]);
+        textView3.setText(amnt[position]);
         // Change icon based on name
 
 

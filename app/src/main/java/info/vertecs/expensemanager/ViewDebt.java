@@ -19,18 +19,7 @@ public class ViewDebt extends BaseActivity {
         setContentView(R.layout.activity_view_debt);
         DatabaseHandlerAddDebt db = new DatabaseHandlerAddDebt(this);
 
-        List<Debt>list = db.getDebtData();
-        String [] type = new String[list.size()];
-        int [] amnt = new int[list.size()];
-        String [] name = new String[list.size()];
-        int i=0;
-        for(Debt cn:list)
-        {
-            name[i] = cn.getName();
-            type[i] = cn.getType();
-            amnt[i] = cn.getAmnt();
 
-        }
 
         ListView ls= (ListView)findViewById(R.id.listView);
         ls.setAdapter(new ListAdapterDebt(getApplicationContext(),name,type,amnt));
