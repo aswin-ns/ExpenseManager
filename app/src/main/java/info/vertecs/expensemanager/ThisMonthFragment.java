@@ -109,7 +109,8 @@ adddebt = (Button)rootView.findViewById(R.id.btn_add_debt_this_month);
         int exp = Integer.parseInt(expense.getText().toString());
         int inc = Integer.parseInt(income.getText().toString());
         int bal = (inc-exp);
-//        balance.setText(bal);
+        String baln = String.valueOf(bal);
+        balance.setText(baln);
 		return rootView;
 	}
 
