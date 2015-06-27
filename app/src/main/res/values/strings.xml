@@ -41,4 +41,6 @@
     <string name="str_category">str_category</string>
     <string name="str_lbl_category">Category</string>
     <string name="str_name">Name</string>
+    <string name="title_activity_view_debt">ViewDebt</string>
+    <string name="str_view_debt">VIEW DEBT</string>
 </resources>

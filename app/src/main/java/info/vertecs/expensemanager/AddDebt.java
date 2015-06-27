@@ -33,7 +33,7 @@ public class AddDebt extends Activity {
         spinner_dbt.setAdapter(adapter);
         name = (EditText) findViewById(R.id.edt_name_dbt);
         amnt = (EditText) findViewById(R.id.edt_amnt_dbt);
-        Button enter = (Button) findViewById(R.id.btn_enter);
+        Button enter = (Button)findViewById(R.id.btn_enter_dbt);
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -62,10 +62,10 @@ public void OnAdd(Debt dbt)
 }
 
 
-List<Debt>getDebtData() {
+public List<Debt>getDebtData() {
     List<Debt> dbtdata = new ArrayList<Debt>();
     SQLiteDatabase db = this.getWritableDatabase();
-    String selectQuery = "select name, amnt from debt where date like '%borrowed' ";
+    String selectQuery = "select name, amnt from debt ";
 
     Cursor cursor = db.rawQuery(selectQuery, null);
     if (cursor.moveToFirst()) {

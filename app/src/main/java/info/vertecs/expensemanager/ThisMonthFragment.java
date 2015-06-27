@@ -24,6 +24,7 @@ public class ThisMonthFragment extends Fragment {
     TextView balance;
     Button  viewsummary;
     Button adddebt;
+    Button viewdebt;
 //    // TODO: Move this to a BaseActivity
 //    public static final String PREFS_NAME = "preferences";
 //    final DatabaseHandlerAddData db = new DatabaseHandlerAddData(getActivity());
@@ -45,7 +46,14 @@ public class ThisMonthFragment extends Fragment {
         income = (TextView)rootView.findViewById(R.id.txt_income);
         balance = (TextView)rootView.findViewById(R.id.txt_bal);
         viewsummary =(Button)rootView.findViewById(R.id.btn_view_summary_this_month);
-
+ viewdebt = (Button)rootView.findViewById(R.id.btn_view_debt);
+        viewdebt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),ViewDebt.class);
+                startActivity(intent);
+            }
+        });
         DatabaseHandlerAddData db = new DatabaseHandlerAddData(getActivity());
         List<DataClass> thismonthdata = db.getPosData(newdate);
 

@@ -122,4 +122,16 @@
         android:width="152dp"
         android:onClick="viewSummary" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_view_debt"
+        android:id="@+id/btn_view_debt"
+        android:background="#efad61"
+        android:width="152dp"
+        android:onClick="viewSummary"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/btn_view_summary_this_month"
+        android:layout_alignStart="@+id/btn_view_summary_this_month" />
+
 </RelativeLayout>

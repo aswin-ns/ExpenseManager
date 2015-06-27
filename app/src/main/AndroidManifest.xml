@@ -78,6 +78,22 @@
             android:name=".AddDebt"
             android:label="@string/title_activity_add_debt" >
         </activity>
+        <activity
+            android:name="info.vertecs.tabsswipe.ViewDebt"
+            android:label="@string/title_activity_view_debt" >
+        </activity>
+        <activity
+            android:name="info.vertecs.ViewDebt"
+            android:label="@string/title_activity_view_debt" >
+        </activity>
+        <activity
+            android:name="info.vertecs.exsd.ViewDebt"
+            android:label="@string/title_activity_view_debt" >
+        </activity>
+        <activity
+            android:name=".ViewDebt"
+            android:label="@string/title_activity_view_debt" >
+        </activity>
     </application>
 
 </manifest>
