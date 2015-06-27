@@ -39,7 +39,7 @@ public class ListAdapterDebt extends ArrayAdapter<String> {
 
         textView.setText(name[position]);
 textView2.setText(type[position]);
-        textView3.setText(amnt[position]);
+//        textView3.setText(amnt[position]);
         // Change icon based on name
 
 
