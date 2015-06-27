@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="update_graph">Update</string>
+    <string name="this_month">This Month</string>
     <string name="app_name">XpenseManager</string>
     <string name="action_settings">Settings</string>
     <string name="str_expense">Expense</string>
