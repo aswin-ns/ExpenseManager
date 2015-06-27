@@ -84,6 +84,12 @@ public class ThisMonthFragment extends Fragment {
         });
 
 
+        //TODO: these toasts should not be in onCreateView. Consider using onStart or onResume
+
+
+
+
+
 
         int exp = Integer.parseInt(expense.getText().toString());
         int inc = Integer.parseInt(income.getText().toString());

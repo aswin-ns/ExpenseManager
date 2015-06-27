@@ -1,7 +1,6 @@
 package info.vertecs.expensemanager.adapter;
 
-public class Debt
-{
+public class Debt {
 
     public Debt(int id, String name, String type, int leasedamnt, int borrowedamnt) {
         this.id = id;
@@ -18,12 +17,13 @@ public class Debt
         this.type = type;
         this.borrowedamnt = borrowedamnt;
     }
-public Debt(String name, int leasedamnt,String type)
-{
-    this.name = name;
-    this.leasedamnt = leasedamnt;
-    this.type = type;
-}
+
+    public Debt(String name, int leasedamnt, String type) {
+        this.name = name;
+        this.leasedamnt = leasedamnt;
+        this.type = type;
+    }
+
     String name;
     String type;
 
@@ -31,10 +31,9 @@ public Debt(String name, int leasedamnt,String type)
     int borrowedamnt;
     //TODO EMPTY CONSTRUCTOR//
 
- public Debt()
- {
+    public Debt() {
 
-}
+    }
 
     public int getId() {
         return id;

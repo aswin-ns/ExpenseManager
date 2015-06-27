@@ -83,7 +83,8 @@ Button pie;
         showDate(year, month + 1);
 
         pie = (Button)findViewById(R.id.btn_pie);
-        Toast.makeText(getApplicationContext(), date, Toast.LENGTH_LONG).show();
+
+
        pie.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
@@ -103,7 +104,7 @@ Button pie;
     public void ShowDateNew(View v)
     {
         showDialog(999);
-        Toast.makeText(getApplicationContext(), "ca", Toast.LENGTH_SHORT)
+        Toast.makeText(getApplicationContext(), "Pick A Date", Toast.LENGTH_SHORT)
                 .show();
 
     }
