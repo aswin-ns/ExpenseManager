@@ -91,10 +91,12 @@ Button pie;
                date = dateView.getText().toString();
                GraphicalView gViewdp = getGraphViewForMonth(date, "exp");
                LinearLayout graph_l = (LinearLayout)findViewById(R.id.chart_1);
+               graph_l.removeAllViews();
                graph_l.addView(gViewdp);
 
                GraphicalView gView1 = getGraphViewForMonth(date, "inc");
                LinearLayout graph_l_1 = (LinearLayout)findViewById(R.id.chart_2);
+               graph_l_1.removeAllViews();
                graph_l_1.addView(gView1);
            }
 
