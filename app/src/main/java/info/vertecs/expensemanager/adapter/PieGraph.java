@@ -22,14 +22,10 @@ int [] colors = new int[size];
 
 
      CategorySeries series = new CategorySeries("Pie Graph");
-     int k = 0;
-     for (int value : values) {
-         series.add("Section " + ++k, value);
+     for (int i=0;i<size;i++) {
+         series.add(String.valueOf(type[i]), values[i]);
+         colors[i] = Color.argb(255,(((i+1)*100)%255),(((i+1)*200)%255),(((i+1)*300)%255));
      }
-            for(int i=0;i<size;i++) {
-                colors[i] = Color.argb(255,(((i+1)*100)%255),(((i+1)*200)%255),(((i+1)*300)%255));
-
-            }
         DefaultRenderer renderer = new DefaultRenderer();
         for (int color : colors) {
             SimpleSeriesRenderer r = new SimpleSeriesRenderer();
