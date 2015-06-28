@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import java.util.List;
+
 import info.vertecs.expensemanager.adapter.DatabaseHandlerAddDebt;
 import info.vertecs.expensemanager.adapter.Debt;
 
@@ -23,6 +25,16 @@ public class AddDebt extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_debt);
+       int i = 0;
+        DatabaseHandlerAddDebt db = new DatabaseHandlerAddDebt(this);
+
+        List<String>getNamesList = db.getName();
+        String [] getNamesString = new String[getNamesList.size()];
+        int size = getNamesList.size();
+        if(size == 0)
+        {
+
+        }
         array_spinner=new String[2];
         array_spinner[0]="Borrowed";
         array_spinner[1]="Lended";

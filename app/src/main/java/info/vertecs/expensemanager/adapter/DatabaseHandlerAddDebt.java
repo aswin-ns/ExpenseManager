@@ -61,6 +61,20 @@ public void OnAdd(Debt dbt)
     db.insert(TABLE_DEBT, null, values);
     db.close(); // Closing database connection
 }
+public List<String>getName()
+{
+    List<String>getNames = new ArrayList<String>();
+    SQLiteDatabase db = this.getWritableDatabase();
+    String selectQuery = "select name from debt ";
+    Cursor cursor = db.rawQuery(selectQuery,null);
+    if (cursor.moveToFirst()) {
+        do {
+            getNames.add(cursor.getString(0));
+        }
+        while (cursor.moveToNext());
+    }
+        return getNames;
+    }
 
 
 public List<Debt>getDebtData() {

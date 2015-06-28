@@ -38,10 +38,10 @@ public class LoginActivity extends Activity {
         String usernameg = pref.getString(PREFS_USERNAME, null);
         String passwordg = pref.getString(PREFS_PASSWORD, null);
 
-        if (usernameg == null || passwordg == null) {
+
             username.setText(usernameg);
             password.setText(passwordg);
-        }
+
         String date = "13/06/2015";
         if (username == null || password == null) {
             //Prompt for username and password
