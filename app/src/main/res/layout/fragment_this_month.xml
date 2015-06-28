@@ -130,8 +130,9 @@
         android:background="#efad61"
         android:width="152dp"
         android:onClick="viewSummary"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/btn_view_summary_this_month"
         android:layout_alignLeft="@+id/btn_view_summary_this_month"
-        android:layout_alignStart="@+id/btn_view_summary_this_month" />
+        android:layout_alignStart="@+id/btn_view_summary_this_month"
+        android:layout_marginTop="20dp" />
 
 </RelativeLayout>

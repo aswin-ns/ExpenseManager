@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import info.vertecs.expensemanager.R;
@@ -18,43 +19,41 @@ import info.vertecs.expensemanager.adapter.Debt;
 /**
  * Created by USER on 03-06-2015.
  */
-public class ListAdapterDebt extends ArrayAdapter<String> {
+public class ListAdapterDebt extends ArrayAdapter<Debt> {
     private final Context context;
-   private List< String>  type = new List<String>();
-    List<int> amnt = new List<int>();
-    List< String>  name = new List<String>();
-    public ListAdapterDebt(Context context) {
-        super(context, R.layout.list_item );
+
+    private ArrayList<Debt>listnew;
+
+    public ListAdapterDebt(Context context,ArrayList<Debt>listnew) {
+        super(context, R.layout.list_item,listnew );
         this.context = context;
-        DatabaseHandlerAddDebt db = new DatabaseHandlerAddDebt(context);
-        List<Debt >list = db.getDebtData();
-
-        int i=0;
-        for(Debt cn:list)
-        {
-           type.add(cn.getType());
-            amnt.add(cn.getAmnt());
-            name.add(cn.getName());
-
-
+this.listnew = listnew;
         }
-    }
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
+        Debt item = listnew.get(position);
         View rowView = inflater.inflate(R.layout.list_item_debt, parent, false);
         TextView textView = (TextView) rowView.findViewById(R.id.name);
         TextView textView2 = (TextView) rowView.findViewById(R.id.code);
         TextView textView3 = (TextView) rowView.findViewById(R.id.amount);
+if(item != null) {
+    textView2.setText(item.getName());
 
-        textView.setText(name[position]);
-textView2.setText(type[position]);
-        textView3.setText(amnt[position]);
+if(item.getAmnt()<0)
+{
+    textView.setText("Is Owed");
+}
+    else
+{
+    textView.setText("Owes You");
+}
+    textView3.setText(String.valueOf(item.getAmnt()));
 //        // Change icon based on name
-
+}
 
 
         return rowView;

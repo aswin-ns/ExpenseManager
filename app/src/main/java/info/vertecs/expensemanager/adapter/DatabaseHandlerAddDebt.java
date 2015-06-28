@@ -64,7 +64,7 @@ public void OnAdd(Debt dbt)
 public String[] getName()
 {
 
-    int i = 0;
+
     SQLiteDatabase db = this.getWritableDatabase();
     String selectQuery = "select name from debt ";
     Cursor cursor = db.rawQuery(selectQuery,null);
@@ -73,6 +73,8 @@ public String[] getName()
     if (cursor.moveToFirst()) {
         do {
          abc.add(cursor.getString(0));
+
+            Log.d("A",cursor.getString(0));
 
         }
         while (cursor.moveToNext());
@@ -85,7 +87,7 @@ public String[] getName()
 public List<Debt>getDebtData() {
     List<Debt> dbtdata = new ArrayList<Debt>();
     SQLiteDatabase db = this.getWritableDatabase();
-    String selectQuery = "select name, amnt from debt ";
+    String selectQuery = "select name, coalesce(sum(amnt),0) from debt group by name ";
 
     Cursor cursor = db.rawQuery(selectQuery, null);
     if (cursor.moveToFirst()) {
@@ -93,9 +95,11 @@ public List<Debt>getDebtData() {
             Debt dbt = new Debt();
             dbt.setName(cursor.getString(0));
             dbt.setAmnt(Integer.parseInt(cursor.getString(1)));
+
             dbtdata.add(dbt);
-            Log.d("A",cursor.getString(0));
+            Log.d("ACCESS",cursor.getString(0));
         } while (cursor.moveToNext());
+
     }
         return dbtdata;
     }

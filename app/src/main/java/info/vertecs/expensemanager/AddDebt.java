@@ -51,6 +51,10 @@ name = (AutoCompleteTextView)findViewById(R.id.edt_name_dbt);
                 String name_s = name.getText().toString();
                 int amnt_s = Integer.parseInt(amnt.getText().toString());
                 String spinner_s = spinner_dbt.getSelectedItem().toString();
+                if ((spinner_s).equals("Borrowed"))
+                {
+                    amnt_s = amnt_s*-1;
+                }
                 DatabaseHandlerAddDebt db = new DatabaseHandlerAddDebt(AddDebt.this);
                 db.OnAdd(new Debt(name_s,amnt_s,spinner_s));
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class);

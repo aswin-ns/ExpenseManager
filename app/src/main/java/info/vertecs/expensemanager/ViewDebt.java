@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import info.vertecs.expensemanager.adapter.DatabaseHandlerAddDebt;
@@ -18,11 +19,12 @@ public class ViewDebt extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_debt);
         DatabaseHandlerAddDebt db = new DatabaseHandlerAddDebt(this);
-
-
+        ArrayList<Debt>newlist = (ArrayList<Debt>)db.getDebtData();
+//
 
         ListView ls= (ListView)findViewById(R.id.listView);
-        ls.setAdapter(new ListAdapterDebt(getApplicationContext()));
+        ls.setAdapter(new ListAdapterDebt(getApplicationContext(),newlist));
+
     }
 
 

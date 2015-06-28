@@ -99,7 +99,7 @@
         android:background="@null" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:text="@string/str_add_debt_2"
         android:id="@+id/btn_add_next_month"
@@ -119,5 +119,20 @@
         android:layout_centerHorizontal="true"
         android:background="#efad61"
         android:layout_marginTop="15dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_view_debt"
+        android:id="@+id/btn_view_debt_next_mont"
+        android:background="#efad61"
+        android:width="152dp"
+        android:onClick="viewSummary"
+        android:layout_below="@+id/btn_view_summary_next_month"
+        android:layout_alignRight="@+id/btn_view_summary_next_month"
+        android:layout_alignEnd="@+id/btn_view_summary_next_month"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/btn_view_summary_next_month"
+        android:layout_alignStart="@+id/btn_view_summary_next_month" />
 
 </RelativeLayout>

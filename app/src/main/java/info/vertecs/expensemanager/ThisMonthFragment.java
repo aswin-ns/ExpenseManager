@@ -90,7 +90,7 @@ public class ThisMonthFragment extends Fragment {
                 startActivity(main_to_tab2);
             }
         });
-adddebt = (Button)rootView.findViewById(R.id.btn_add_debt_this_month);
+        adddebt = (Button)rootView.findViewById(R.id.btn_add_debt_this_month);
         adddebt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
