@@ -20,21 +20,22 @@ import info.vertecs.expensemanager.adapter.Debt;
  */
 public class ListAdapterDebt extends ArrayAdapter<String> {
     private final Context context;
-
+   private List< String>  type = new List<String>();
+    List<int> amnt = new List<int>();
+    List< String>  name = new List<String>();
     public ListAdapterDebt(Context context) {
         super(context, R.layout.list_item );
         this.context = context;
         DatabaseHandlerAddDebt db = new DatabaseHandlerAddDebt(context);
         List<Debt >list = db.getDebtData();
-        String [] type = new String[list.size()];
-        int [] amnt = new int[list.size()];
-        String [] name = new String[list.size()];
+
         int i=0;
         for(Debt cn:list)
         {
-            name[i] = cn.getName();
-            type[i] = cn.getType();
-            amnt[i] = cn.getAmnt();
+           type.add(cn.getType());
+            amnt.add(cn.getAmnt());
+            name.add(cn.getName());
+
 
         }
     }
@@ -49,9 +50,9 @@ public class ListAdapterDebt extends ArrayAdapter<String> {
         TextView textView2 = (TextView) rowView.findViewById(R.id.code);
         TextView textView3 = (TextView) rowView.findViewById(R.id.amount);
 
-//        textView.setText(name[position]);
-//textView2.setText(type[position]);
-//        textView3.setText(amnt[position]);
+        textView.setText(name[position]);
+textView2.setText(type[position]);
+        textView3.setText(amnt[position]);
 //        // Change icon based on name
 
 

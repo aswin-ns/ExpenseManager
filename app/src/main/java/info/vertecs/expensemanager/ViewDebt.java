@@ -21,8 +21,8 @@ public class ViewDebt extends BaseActivity {
 
 
 
-//        ListView ls= (ListView)findViewById(R.id.listView);
-//        ls.setAdapter(new ListAdapterDebt(getApplicationContext(),name,type,amnt));
+        ListView ls= (ListView)findViewById(R.id.listView);
+        ls.setAdapter(new ListAdapterDebt(getApplicationContext()));
     }
 
 
