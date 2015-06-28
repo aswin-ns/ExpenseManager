@@ -47,7 +47,7 @@ public class NextMonthFragment extends Fragment {
 
         String newdate = newmonth+"/"+newyear;
         //TODO: these toasts should not be in onCreateView. Consider using onStart or onResume
-        Toast.makeText(getActivity(), newdate, Toast.LENGTH_LONG).show();
+
         DatabaseHandlerAddData db = new DatabaseHandlerAddData(getActivity());
         List<DataClass> nextmonthlist = db.getPosData(newdate);
 

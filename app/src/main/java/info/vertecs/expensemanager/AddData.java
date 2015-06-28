@@ -93,7 +93,7 @@ public class AddData extends BaseActivity {
     public void OnChangeDate(View v)
     {
         showDialog(999);
-        Toast.makeText(getApplicationContext(), "ca", Toast.LENGTH_SHORT)
+        Toast.makeText(getApplicationContext(), "Date Selected", Toast.LENGTH_SHORT)
                 .show();
 
     }

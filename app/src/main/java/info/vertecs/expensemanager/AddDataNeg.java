@@ -78,7 +78,7 @@ public class AddDataNeg extends BaseActivity {
     public void OnChangeDateNeg(View v)
     {
         showDialog(999);
-        Toast.makeText(getApplicationContext(), "ca", Toast.LENGTH_SHORT)
+        Toast.makeText(getApplicationContext(), "Date Selected", Toast.LENGTH_SHORT)
                 .show();
 
     }

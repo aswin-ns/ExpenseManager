@@ -124,8 +124,6 @@ Button pie;
     public void ShowDateNew(View v)
     {
         showDialog(999);
-        Toast.makeText(getApplicationContext(), "Pick A Date", Toast.LENGTH_SHORT)
-                .show();
 
     }
 
