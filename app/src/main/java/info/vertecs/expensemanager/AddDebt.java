@@ -31,6 +31,7 @@ public class AddDebt extends Activity {
         DatabaseHandlerAddDebt db = new DatabaseHandlerAddDebt(this);
 
        String [] getNamesString = db.getName();
+
         array_spinner=new String[2];
         array_spinner[0]="Borrowed";
         array_spinner[1]="Lended";

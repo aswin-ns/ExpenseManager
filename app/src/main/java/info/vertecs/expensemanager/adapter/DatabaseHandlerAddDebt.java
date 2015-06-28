@@ -63,18 +63,21 @@ public void OnAdd(Debt dbt)
 }
 public String[] getName()
 {
-    String[] nameList=new String[100];
+
     int i = 0;
     SQLiteDatabase db = this.getWritableDatabase();
     String selectQuery = "select name from debt ";
     Cursor cursor = db.rawQuery(selectQuery,null);
+    List<String>abc = new ArrayList<String>();
+
     if (cursor.moveToFirst()) {
         do {
-         nameList[i] = (cursor.getString(0));
-            i++;
+         abc.add(cursor.getString(0));
+
         }
         while (cursor.moveToNext());
     }
+    String[] nameList=abc.toArray(new String[abc.size()]);
         return nameList;
     }
 
@@ -91,7 +94,7 @@ public List<Debt>getDebtData() {
             dbt.setName(cursor.getString(0));
             dbt.setAmnt(Integer.parseInt(cursor.getString(1)));
             dbtdata.add(dbt);
-            Log.d("A",cursor.getString(1));
+            Log.d("A",cursor.getString(0));
         } while (cursor.moveToNext());
     }
         return dbtdata;
