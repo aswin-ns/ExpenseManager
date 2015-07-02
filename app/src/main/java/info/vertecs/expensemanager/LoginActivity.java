@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -29,6 +30,9 @@ public class LoginActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
         setContentView(R.layout.activity_login);
         username = (EditText)findViewById(R.id.edt_usr_name);
         password = (EditText)findViewById(R.id.edt_psw_wrd);
@@ -85,7 +89,7 @@ public class LoginActivity extends Activity {
                 SharedPreferences.Editor prefEditor = pref.edit();
                 prefEditor.putBoolean("logged_in", true);
                 prefEditor.apply();
-                getSharedPreferences(PREFS_NAME,MODE_PRIVATE)
+                getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
                         .edit()
                         .putString(PREFS_USERNAME, usr_name)
                         .commit();

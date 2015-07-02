@@ -24,6 +24,7 @@ EditText username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_register);
         username = (EditText)findViewById(R.id.edt_usr_name_register);
         password = (EditText)findViewById(R.id.edt_psw_wrd_register);
