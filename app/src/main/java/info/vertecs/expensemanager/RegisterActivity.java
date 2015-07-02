@@ -34,7 +34,7 @@ EditText username;
             public void onClick(View view) {
                 String usr_name = username.getText().toString();
                 String psw_wrd = password.getText().toString();
-
+                setTitle("Xpense Manager");
                 db.addContact(new Login(usr_name,psw_wrd));
                 Toast.makeText(getApplicationContext(),"Registration Sucessfull",Toast.LENGTH_LONG).show();
                 List<Login> login = db.getAllContacts();

@@ -24,6 +24,7 @@ public class Tab2 extends FragmentBaseActivity implements
         viewPager = (ViewPager) findViewById(R.id.tab2pager);
         actionBar = getActionBar();
         mAdapter = new Tabs2Adapter(getSupportFragmentManager());
+        setTitle("Xpense Manager");
 
         viewPager.setAdapter(mAdapter);
         actionBar.setHomeButtonEnabled(false);

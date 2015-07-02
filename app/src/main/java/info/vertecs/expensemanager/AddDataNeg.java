@@ -58,7 +58,7 @@ public class AddDataNeg extends BaseActivity {
         date = dateView.getText().toString();
         edt_amnt = (EditText)findViewById(R.id.editText_amount);
         edt_note = (EditText)findViewById(R.id.edt_text_note);
-
+        setTitle("Xpense Manager");
         final DatabaseHandlerAddData db = new DatabaseHandlerAddData(this);
         enter = (Button)findViewById(R.id.button_enter);
 

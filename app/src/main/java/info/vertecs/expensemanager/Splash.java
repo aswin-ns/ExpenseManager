@@ -16,6 +16,7 @@ public class Splash extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTitle("Xpense Manager");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
         SharedPreferences pref = getSharedPreferences(PREFS_NAME,0);

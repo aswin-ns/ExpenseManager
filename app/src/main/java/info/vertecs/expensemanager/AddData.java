@@ -59,7 +59,7 @@ public class AddData extends BaseActivity {
         pos_amnt = (EditText)findViewById(R.id.edt_amnt);
         pos_note = (EditText)findViewById(R.id.edt_note);
 
-
+        setTitle("Xpense Manager");
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
         showDate(year, month+1, day);

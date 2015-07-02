@@ -32,7 +32,7 @@ public class LoginActivity extends Activity {
         setContentView(R.layout.activity_login);
         username = (EditText)findViewById(R.id.edt_usr_name);
         password = (EditText)findViewById(R.id.edt_psw_wrd);
-
+        setTitle("Xpense Manager");
         remeber_me = (CheckBox)findViewById(R.id.chk_box_remeber_me);
         SharedPreferences pref = getSharedPreferences(PREFS_NAME,MODE_PRIVATE);
         String usernameg = pref.getString(PREFS_USERNAME, null);

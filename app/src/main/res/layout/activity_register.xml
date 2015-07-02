@@ -27,7 +27,7 @@
         android:width="270dp"
         android:layout_marginTop="32dp"
         android:background="#efad61"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/edt_psw_wrd_register"
         android:layout_centerHorizontal="true" />
 
 
@@ -46,7 +46,7 @@
         android:layout_height="40dp"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/edt_psw_wrd_register"
         android:layout_below="@+id/edt_usr_name_register"
         android:layout_alignLeft="@+id/edt_usr_name_register"
         android:layout_alignStart="@+id/edt_usr_name_register"

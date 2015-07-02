@@ -41,7 +41,7 @@ Button pie;
         setContentView(R.layout.activity_view_summary);
 //        ErrorMessage = (TextView) findViewById(R.id.txt_error_message);
         //TODO GETTING PUT EXTRA FROM THE FRAGMENT//
-
+        setTitle("Xpense Manager");
         String newString;
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();

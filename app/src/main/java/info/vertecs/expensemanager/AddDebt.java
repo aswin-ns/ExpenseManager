@@ -35,7 +35,7 @@ public class AddDebt extends Activity {
         array_spinner=new String[2];
         array_spinner[0]="Borrowed";
         array_spinner[1]="Lended";
-
+        setTitle("Xpense Manager");
         final Spinner spinner_dbt = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter adapter = new ArrayAdapter(this,
         android.R.layout.simple_spinner_item, array_spinner);
