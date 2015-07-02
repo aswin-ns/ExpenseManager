@@ -33,7 +33,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/str_authenticate"
+        android:text="@string/str_sign_in"
         android:id="@+id/btn_authenticate_login"
         android:height="66dp"
         android:width="270dp"
