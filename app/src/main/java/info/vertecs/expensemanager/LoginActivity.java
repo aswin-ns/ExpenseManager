@@ -88,7 +88,6 @@ public class LoginActivity extends Activity {
                 getSharedPreferences(PREFS_NAME,MODE_PRIVATE)
                         .edit()
                         .putString(PREFS_USERNAME, usr_name)
-                        .putString(PREFS_PASSWORD, psw_wrd)
                         .commit();
             }
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
