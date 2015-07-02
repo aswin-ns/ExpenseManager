@@ -19,9 +19,10 @@ public class ViewDebt extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_debt);
         DatabaseHandlerAddDebt db = new DatabaseHandlerAddDebt(this);
+        setTitle("Xpense Manager");
         ArrayList<Debt>newlist = (ArrayList<Debt>)db.getDebtData();
 //
-        setTitle("Xpense Manager");
+
         ListView ls= (ListView)findViewById(R.id.listView);
         ls.setAdapter(new ListAdapterDebt(getApplicationContext(),newlist));
 
