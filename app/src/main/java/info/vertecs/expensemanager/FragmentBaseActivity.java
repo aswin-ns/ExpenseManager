@@ -42,7 +42,7 @@ public class FragmentBaseActivity extends FragmentActivity {
             prefEditor.apply();
             Intent i = new Intent(this, LoginActivity.class);
             startActivity(i);
-            finish();
+
             Toast.makeText(this, "You have logged out!", Toast.LENGTH_SHORT).show();
             return true;
         }

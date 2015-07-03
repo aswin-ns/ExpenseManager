@@ -23,7 +23,7 @@
         android:theme="@style/AppTheme"
         android:screenOrientation="portrait">
         <activity
-            android:noHistory="true"
+
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
@@ -46,7 +46,7 @@
         <activity
             android:name=".Splash"
             android:label="@string/title_activity_splash"
-            android:noHistory="true"
+
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -61,13 +61,13 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
-            android:noHistory="true"
+
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".RegisterActivity"
             android:label="@string/title_activity_register"
-            android:noHistory="true"
+
             android:screenOrientation="portrait">
         </activity>
         <activity

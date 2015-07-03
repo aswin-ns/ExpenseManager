@@ -97,7 +97,7 @@ public class LoginActivity extends Activity {
                     .commit();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
-                finish();
+
 
 
         }

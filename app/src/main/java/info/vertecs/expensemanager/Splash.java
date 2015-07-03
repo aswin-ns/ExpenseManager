@@ -27,7 +27,7 @@ public class Splash extends Activity {
                 public void run() {
                     Intent i = new Intent(Splash.this, MainActivity.class);
                     startActivity(i);
-                    finish();
+
                 }
             }, SPLASH_TIME_OUT);
         } else {

@@ -6,6 +6,7 @@ import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.view.KeyEvent;
 
 public class MainActivity extends FragmentBaseActivity implements
 		ActionBar.TabListener {
@@ -74,6 +75,14 @@ public class MainActivity extends FragmentBaseActivity implements
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 	}
 
-
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0)
+        {
+            this.moveTaskToBack(true);
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 
 }
