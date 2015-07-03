@@ -89,11 +89,12 @@ public class LoginActivity extends Activity {
                 SharedPreferences.Editor prefEditor = pref.edit();
                 prefEditor.putBoolean("logged_in", true);
                 prefEditor.apply();
-                getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
-                        .edit()
-                        .putString(PREFS_USERNAME, usr_name)
-                        .commit();
+
             }
+            getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
+                    .edit()
+                    .putString(PREFS_USERNAME, usr_name)
+                    .commit();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
