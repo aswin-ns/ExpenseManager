@@ -59,7 +59,7 @@ name = (AutoCompleteTextView)findViewById(R.id.edt_name_dbt);
                 db.OnAdd(new Debt(name_s,amnt_s,spinner_s));
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
-
+               finish();
             }
         });
 
