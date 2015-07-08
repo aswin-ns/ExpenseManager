@@ -12,8 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import java.util.List;
-
 import info.vertecs.expensemanager.adapter.DatabaseHandlerAddDebt;
 import info.vertecs.expensemanager.adapter.Debt;
 
@@ -40,7 +38,7 @@ public class AddDebt extends Activity {
         ArrayAdapter adapter = new ArrayAdapter(this,
         android.R.layout.simple_spinner_item, array_spinner);
         spinner_dbt.setAdapter(adapter);
-name = (AutoCompleteTextView)findViewById(R.id.edt_name_dbt);
+        name = (AutoCompleteTextView)findViewById(R.id.edt_name_dbt);
         ArrayAdapter<String>autocompleteadapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,getNamesString);
         name.setAdapter(autocompleteadapter);
                 amnt = (EditText) findViewById(R.id.edt_amnt_dbt);
