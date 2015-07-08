@@ -1,5 +1,6 @@
 package info.vertecs.expensemanager;
 
+import android.app.ActionBar;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -33,8 +35,13 @@ public class AddDataNeg extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+       AddDataNeg.this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        AddDataNeg.this.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_data_neg);
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayShowHomeEnabled(false);
         final String newString;
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();

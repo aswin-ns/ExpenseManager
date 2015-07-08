@@ -1,18 +1,17 @@
 package info.vertecs.expensemanager;
 
+import android.app.ActionBar;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import info.vertecs.expensemanager.adapter.DatabaseHandlerAddDebt;
 import info.vertecs.expensemanager.adapter.Debt;
@@ -22,6 +21,11 @@ public class ViewDebt extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ViewDebt.this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        ViewDebt.this.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayShowHomeEnabled(false);
         setContentView(R.layout.activity_view_debt);
         DatabaseHandlerAddDebt db = new DatabaseHandlerAddDebt(this);
         setTitle("Xpense Manager");

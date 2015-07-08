@@ -1,18 +1,16 @@
 package info.vertecs.expensemanager;
 
+import android.app.ActionBar;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.achartengine.GraphicalView;
 
@@ -38,6 +36,9 @@ Button pie;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayShowHomeEnabled(false);
         setContentView(R.layout.activity_view_summary);
 //        ErrorMessage = (TextView) findViewById(R.id.txt_error_message);
         //TODO GETTING PUT EXTRA FROM THE FRAGMENT//

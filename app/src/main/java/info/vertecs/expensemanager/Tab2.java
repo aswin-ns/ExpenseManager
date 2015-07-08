@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.view.WindowManager;
 
 import info.vertecs.expensemanager.adapter.Tabs2Adapter;
 
@@ -20,9 +21,14 @@ public class Tab2 extends FragmentBaseActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Tab2.this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        Tab2.this.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
         setContentView(R.layout.activity_tab2);
         viewPager = (ViewPager) findViewById(R.id.tab2pager);
         actionBar = getActionBar();
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayShowHomeEnabled(false);
         mAdapter = new Tabs2Adapter(getSupportFragmentManager());
         setTitle("Xpense Manager");
 
@@ -42,6 +48,11 @@ public class Tab2 extends FragmentBaseActivity implements
 
             @Override
             public void onPageSelected(int position) {
+
+
+
+
+
                 // on changing the page
                 // make respected tab selected
                 actionBar.setSelectedNavigationItem(position);

@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.List;
@@ -60,9 +59,6 @@ public class NextMonthFragment extends Fragment {
         viewsummary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-
                 Intent viewSummary = new Intent(getActivity(),ViewSummary.class);
                 viewSummary.putExtra("STRING_I_NEED", newdate);
                 startActivity(viewSummary);
@@ -77,7 +73,8 @@ public class NextMonthFragment extends Fragment {
             }
         });
 
-        //TODO: these toasts should not be in onCreateView. Consider using onStart or onResume
+        //TODO: these toasts should not be in onCr
+        // eateView. Consider using onStart or onResume
 
         DatabaseHandlerAddData db = new DatabaseHandlerAddData(getActivity());
         List<DataClass> nextmonthlist = db.getPosData(newdate);

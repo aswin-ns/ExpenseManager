@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-
+import android.view.Window;
 
 
 public class Splash extends Activity {
@@ -17,6 +17,7 @@ public class Splash extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTitle("Xpense Manager");
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
         SharedPreferences pref = getSharedPreferences(PREFS_NAME,0);

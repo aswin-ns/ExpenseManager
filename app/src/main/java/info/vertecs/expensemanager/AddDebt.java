@@ -1,11 +1,13 @@
 package info.vertecs.expensemanager;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -24,12 +26,15 @@ public class AddDebt extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AddDebt.this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        AddDebt.this.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
         setContentView(R.layout.activity_add_debt);
        int i = 0;
         DatabaseHandlerAddDebt db = new DatabaseHandlerAddDebt(this);
-
-       String [] getNamesString = db.getName();
-
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayShowHomeEnabled(false);
+        String [] getNamesString = db.getName();
         array_spinner=new String[2];
         array_spinner[0]="Borrowed";
         array_spinner[1]="Lended";

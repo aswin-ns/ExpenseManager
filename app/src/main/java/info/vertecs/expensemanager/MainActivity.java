@@ -1,12 +1,14 @@
 package info.vertecs.expensemanager;
 
-import info.vertecs.expensemanager.adapter.TabsPagerAdapter;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
+import android.view.WindowManager;
+
+import info.vertecs.expensemanager.adapter.TabsPagerAdapter;
 
 public class MainActivity extends FragmentBaseActivity implements
 		ActionBar.TabListener {
@@ -22,11 +24,16 @@ public class MainActivity extends FragmentBaseActivity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
         setTitle("Xpense Manager");
+        MainActivity.this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        MainActivity.this.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
+
+
 		// Initilization
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		actionBar = getActionBar();
 		mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
-
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayShowHomeEnabled(false);
 		viewPager.setAdapter(mAdapter);
 		actionBar.setHomeButtonEnabled(false);
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);		
