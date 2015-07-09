@@ -53,13 +53,13 @@
             <View
                 android:id="@+id/view_1"
                 android:layout_width="fill_parent"
-    android:background="@drawable/abc"
+                 android:background="@drawable/abc"
 
-
-    android:visibility="gone"
-                android:layout_height="409dp">
+                 android:visibility="gone"
+                android:layout_height="200dp">
 
             </View>
+
         </LinearLayout>
         <!--<TextView-->
             <!--android:visibility="gone"-->
@@ -75,7 +75,17 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="45"
+
              />
+        <View
+            android:id="@+id/view_2"
+            android:layout_width="fill_parent"
+            android:background="@drawable/abc"
+
+            android:visibility="gone"
+            android:layout_height="200dp">
+
+        </View>
 
     </LinearLayout>
 
