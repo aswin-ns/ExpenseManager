@@ -63,55 +63,31 @@ Button pie;
         List<SumByClass> ThisMonthPos = db.getPie(newString);
         List<SumByClass> ThisMonthNegPie = db.getNegPie(newString);
         int i ;
-        if ((ThisMonthPos.isEmpty()))
+        if(ThisMonthPos.isEmpty() || ThisMonthNegPie.isEmpty())
         {
-
-           i = 1;
-        }
-         if ((ThisMonthNegPie.isEmpty()))
-        {
-
-            i = 2;
-        }
-         if((ThisMonthPos.isEmpty()) && (ThisMonthNegPie).isEmpty())
-        {
-            i = 12;
-        }
-        else
-        {
-         i = 123;
-
-        }
-        switch (i)
-        {
-            case 1:
-                View view1 = (View)findViewById(R.id.view_1);
-                LinearLayout gpl = (LinearLayout)findViewById(R.id.chart_1);
-                view1.setVisibility(View.VISIBLE);
-                break;
-            case 2:
-                View view2 = (View)findViewById(R.id.view_2);
-                LinearLayout gp2 = (LinearLayout)findViewById(R.id.chart_2);
-                view2.setVisibility(View.VISIBLE);
-                break;
-            case 12:
+            if (ThisMonthPos.isEmpty())
+            {
                 View view3 = (View)findViewById(R.id.view_1);
                 LinearLayout gp3 = (LinearLayout)findViewById(R.id.chart_1);
                 view3.setVisibility(View.VISIBLE);
+            }
+            if (ThisMonthNegPie.isEmpty())
+            {
                 View view4 = (View)findViewById(R.id.view_2);
                 LinearLayout gp4 = (LinearLayout)findViewById(R.id.chart_2);
                 view4.setVisibility(View.VISIBLE);
-                break;
-            case 123:
-                GraphicalView gViewtp = getGraphViewForMonth(newString, "exp");
-                LinearLayout graph_l = (LinearLayout) findViewById(R.id.chart_1);
-                graph_l.addView(gViewtp);
+            }
 
-                GraphicalView gViewnp = getGraphViewForMonth(newString, "inc");
-                LinearLayout graph_np = (LinearLayout) findViewById(R.id.chart_2);
-                graph_np.addView(gViewnp);
-                break;
 
+        }
+else
+        {   GraphicalView gViewpp = getGraphViewForMonth(newString, "exp");
+            LinearLayout graph_pp = (LinearLayout) findViewById(R.id.chart_1);
+            graph_pp.addView(gViewpp);
+
+            GraphicalView gViewnp = getGraphViewForMonth(newString, "inc");
+            LinearLayout graph_np = (LinearLayout) findViewById(R.id.chart_2);
+            graph_np.addView(gViewnp);
         }
         dateView = (TextView) findViewById(R.id.txt_date_summary);
         calendar = Calendar.getInstance();
