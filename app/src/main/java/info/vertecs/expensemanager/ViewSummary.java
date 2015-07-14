@@ -71,7 +71,7 @@ Button pie;
                 LinearLayout gp3 = (LinearLayout)findViewById(R.id.chart_1);
                 view3.setVisibility(View.VISIBLE);
             }
-            if (ThisMonthNegPie.isEmpty())
+           else if (ThisMonthNegPie.isEmpty())
             {
                 View view4 = (View)findViewById(R.id.view_2);
                 LinearLayout gp4 = (LinearLayout)findViewById(R.id.chart_2);

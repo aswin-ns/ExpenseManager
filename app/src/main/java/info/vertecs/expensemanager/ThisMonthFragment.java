@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +25,7 @@ public class ThisMonthFragment extends Fragment {
     Button  viewsummary;
     Button adddebt;
     Button viewdebt;
+    Button Donut;
 //    // TODO: Move this to a BaseActivity
 //    public static final String PREFS_NAME = "preferences";
 //    final DatabaseHandlerAddData db = new DatabaseHandlerAddData(getActivity());
@@ -42,7 +42,7 @@ public class ThisMonthFragment extends Fragment {
         String newyear = String.valueOf(year);
         String newmonth = String.valueOf(month+1);
         final String newdate = newmonth+"/"+newyear;
-
+        Donut = (Button)rootView.findViewById(R.id.btn_test);
         expense = (TextView)rootView.findViewById(R.id.txt_expense);
         income = (TextView)rootView.findViewById(R.id.txt_income);
         balance = (TextView)rootView.findViewById(R.id.txt_bal);
@@ -97,6 +97,13 @@ public class ThisMonthFragment extends Fragment {
             public void onClick(View view) {
                 Intent main_activity_to_add_debt = new Intent(getActivity(),AddDebt.class);
                 startActivity(main_activity_to_add_debt);
+            }
+        });
+        Donut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               Intent D = new Intent(getActivity(),Donut.class);
+                startActivity(D);
             }
         });
 

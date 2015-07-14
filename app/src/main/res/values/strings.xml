@@ -45,4 +45,5 @@
     <string name="str_view_debt">VIEW DEBT</string>
     <string name="str_sign_in">Sign In</string>
     <string name="str_sign_up">Sign Up</string>
+    <string name="title_activity_donut">DonutActivity</string>
 </resources>
